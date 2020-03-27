@@ -1,0 +1,35 @@
+name: views2
+channels:
+  - defaults
+dependencies:
+ - python
+ - pip # for the pip-only deps
+ - jupyter # jupyter notebooks
+ - numpy
+ - pandas >= 1.0
+ - scipy # more math
+ - scikit-learn #models
+ - statsmodels # models
+ - matplotlib # plotting
+ - psycopg2 #postgres io
+ - sqlalchemy # postgres io
+ - ipython # interactive terminal
+ - pyyaml # YAML IO
+ - pysal
+ - joblib # easier multiprocessing and a faster pickler
+ - h5py # hdf5 file for dynasim aggregation
+ - geopandas # geometry for python + map plotting
+ - pylint # run_lints.sh
+ - beautifulsoup4 # Web scraping
+ - lxml # parser for bs4
+ - netcdf4 # SPEI loading
+ - xarray # SPEI loading
+ - numba # For fast stuff
+ - pyarrow # For Parquet IO in pandas
+ - psutil # For physical core detection, thread's don't help dynasim
+ # These packages are only available from pip or have later versions there
+ - pip:
+   - black # Code formatting
+   - requests # read the web
+   - flake8 # Grumpy linter
+   - mypy # Type checking

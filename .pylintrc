@@ -1,0 +1,20 @@
+[MASTER]
+disable=bad-continuation, # Conflicts with black
+        logging-format-interpolation, # f-strings are better than %
+
+
+good-names=log,
+           df,
+           f,
+           i,
+           zf,
+           s,
+           y,
+           df_X,
+           ln,
+           t,
+           log,
+           tp,
+           tn,
+           fp,
+           fn
