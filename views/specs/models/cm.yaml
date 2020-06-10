@@ -1,0 +1,2102 @@
+# The current regular CM models in the ViEWS system
+
+colsets:
+
+  conflict_dummies:
+    - ged_dummy_sb
+    - ged_dummy_ns
+    - ged_dummy_os
+
+  time_since_best_5:
+    - time_since_greq_5_ged_best_sb
+    - time_since_greq_5_ged_best_ns
+    - time_since_greq_5_ged_best_os
+
+  time_since_greq_25_ged_best_sb_ns_os:
+    - time_since_greq_25_ged_best_sb
+    - time_since_greq_25_ged_best_ns
+    - time_since_greq_25_ged_best_os
+
+  time_since_best_100:
+    - time_since_greq_100_ged_best_sb
+    - time_since_greq_100_ged_best_ns
+    - time_since_greq_100_ged_best_os
+
+  time_since_greq_500_ged_best_sb_ns_os:
+    - time_since_greq_500_ged_best_sb
+    - time_since_greq_500_ged_best_ns
+    - time_since_greq_500_ged_best_os
+
+  tlags_1_to_12_greq_1_ged_best_sb:
+    - tlag_1_greq_1_ged_best_sb
+    - tlag_2_greq_1_ged_best_sb
+    - tlag_3_greq_1_ged_best_sb
+    - tlag_4_greq_1_ged_best_sb
+    - tlag_5_greq_1_ged_best_sb
+    - tlag_6_greq_1_ged_best_sb
+    - tlag_7_greq_1_ged_best_sb
+    - tlag_8_greq_1_ged_best_sb
+    - tlag_9_greq_1_ged_best_sb
+    - tlag_10_greq_1_ged_best_sb
+    - tlag_11_greq_1_ged_best_sb
+    - tlag_12_greq_1_ged_best_sb
+
+  tlags_1_to_12_greq_5_ged_best_sb:
+    - tlag_1_greq_5_ged_best_sb
+    - tlag_2_greq_5_ged_best_sb
+    - tlag_3_greq_5_ged_best_sb
+    - tlag_4_greq_5_ged_best_sb
+    - tlag_5_greq_5_ged_best_sb
+    - tlag_6_greq_5_ged_best_sb
+    - tlag_7_greq_5_ged_best_sb
+    - tlag_8_greq_5_ged_best_sb
+    - tlag_9_greq_5_ged_best_sb
+    - tlag_10_greq_5_ged_best_sb
+    - tlag_11_greq_5_ged_best_sb
+    - tlag_12_greq_5_ged_best_sb
+
+  tlags_1_to_12_greq_25_ged_best_sb:
+    - tlag_1_greq_25_ged_best_sb
+    - tlag_2_greq_25_ged_best_sb
+    - tlag_3_greq_25_ged_best_sb
+    - tlag_4_greq_25_ged_best_sb
+    - tlag_5_greq_25_ged_best_sb
+    - tlag_6_greq_25_ged_best_sb
+    - tlag_7_greq_25_ged_best_sb
+    - tlag_8_greq_25_ged_best_sb
+    - tlag_9_greq_25_ged_best_sb
+    - tlag_10_greq_25_ged_best_sb
+    - tlag_11_greq_25_ged_best_sb
+    - tlag_12_greq_25_ged_best_sb
+
+  tlags_1_to_12_greq_100_ged_best_sb:
+    - tlag_1_greq_100_ged_best_sb
+    - tlag_2_greq_100_ged_best_sb
+    - tlag_3_greq_100_ged_best_sb
+    - tlag_4_greq_100_ged_best_sb
+    - tlag_5_greq_100_ged_best_sb
+    - tlag_6_greq_100_ged_best_sb
+    - tlag_7_greq_100_ged_best_sb
+    - tlag_8_greq_100_ged_best_sb
+    - tlag_9_greq_100_ged_best_sb
+    - tlag_10_greq_100_ged_best_sb
+    - tlag_11_greq_100_ged_best_sb
+    - tlag_12_greq_100_ged_best_sb
+
+  tlags_1_to_12_greq_500_ged_best_sb:
+    - tlag_1_greq_500_ged_best_sb
+    - tlag_2_greq_500_ged_best_sb
+    - tlag_3_greq_500_ged_best_sb
+    - tlag_4_greq_500_ged_best_sb
+    - tlag_5_greq_500_ged_best_sb
+    - tlag_6_greq_500_ged_best_sb
+    - tlag_7_greq_500_ged_best_sb
+    - tlag_8_greq_500_ged_best_sb
+    - tlag_9_greq_500_ged_best_sb
+    - tlag_10_greq_500_ged_best_sb
+    - tlag_11_greq_500_ged_best_sb
+    - tlag_12_greq_500_ged_best_sb
+
+  tlags_1_to_12_greq_1_ged_best_ns:
+    - tlag_1_greq_1_ged_best_ns
+    - tlag_2_greq_1_ged_best_ns
+    - tlag_3_greq_1_ged_best_ns
+    - tlag_4_greq_1_ged_best_ns
+    - tlag_5_greq_1_ged_best_ns
+    - tlag_6_greq_1_ged_best_ns
+    - tlag_7_greq_1_ged_best_ns
+    - tlag_8_greq_1_ged_best_ns
+    - tlag_9_greq_1_ged_best_ns
+    - tlag_10_greq_1_ged_best_ns
+    - tlag_11_greq_1_ged_best_ns
+    - tlag_12_greq_1_ged_best_ns
+
+  tlags_1_to_12_greq_5_ged_best_ns:
+    - tlag_1_greq_5_ged_best_ns
+    - tlag_2_greq_5_ged_best_ns
+    - tlag_3_greq_5_ged_best_ns
+    - tlag_4_greq_5_ged_best_ns
+    - tlag_5_greq_5_ged_best_ns
+    - tlag_6_greq_5_ged_best_ns
+    - tlag_7_greq_5_ged_best_ns
+    - tlag_8_greq_5_ged_best_ns
+    - tlag_9_greq_5_ged_best_ns
+    - tlag_10_greq_5_ged_best_ns
+    - tlag_11_greq_5_ged_best_ns
+    - tlag_12_greq_5_ged_best_ns
+
+  tlags_1_to_12_greq_25_ged_best_ns:
+    - tlag_1_greq_25_ged_best_ns
+    - tlag_2_greq_25_ged_best_ns
+    - tlag_3_greq_25_ged_best_ns
+    - tlag_4_greq_25_ged_best_ns
+    - tlag_5_greq_25_ged_best_ns
+    - tlag_6_greq_25_ged_best_ns
+    - tlag_7_greq_25_ged_best_ns
+    - tlag_8_greq_25_ged_best_ns
+    - tlag_9_greq_25_ged_best_ns
+    - tlag_10_greq_25_ged_best_ns
+    - tlag_11_greq_25_ged_best_ns
+    - tlag_12_greq_25_ged_best_ns
+
+  tlags_1_to_12_greq_100_ged_best_ns:
+    - tlag_1_greq_100_ged_best_ns
+    - tlag_2_greq_100_ged_best_ns
+    - tlag_3_greq_100_ged_best_ns
+    - tlag_4_greq_100_ged_best_ns
+    - tlag_5_greq_100_ged_best_ns
+    - tlag_6_greq_100_ged_best_ns
+    - tlag_7_greq_100_ged_best_ns
+    - tlag_8_greq_100_ged_best_ns
+    - tlag_9_greq_100_ged_best_ns
+    - tlag_10_greq_100_ged_best_ns
+    - tlag_11_greq_100_ged_best_ns
+    - tlag_12_greq_100_ged_best_ns
+
+  tlags_1_to_12_greq_500_ged_best_ns:
+    - tlag_1_greq_500_ged_best_ns
+    - tlag_2_greq_500_ged_best_ns
+    - tlag_3_greq_500_ged_best_ns
+    - tlag_4_greq_500_ged_best_ns
+    - tlag_5_greq_500_ged_best_ns
+    - tlag_6_greq_500_ged_best_ns
+    - tlag_7_greq_500_ged_best_ns
+    - tlag_8_greq_500_ged_best_ns
+    - tlag_9_greq_500_ged_best_ns
+    - tlag_10_greq_500_ged_best_ns
+    - tlag_11_greq_500_ged_best_ns
+    - tlag_12_greq_500_ged_best_ns
+
+  tlags_1_to_12_greq_1_ged_best_os:
+    - tlag_1_greq_1_ged_best_os
+    - tlag_2_greq_1_ged_best_os
+    - tlag_3_greq_1_ged_best_os
+    - tlag_4_greq_1_ged_best_os
+    - tlag_5_greq_1_ged_best_os
+    - tlag_6_greq_1_ged_best_os
+    - tlag_7_greq_1_ged_best_os
+    - tlag_8_greq_1_ged_best_os
+    - tlag_9_greq_1_ged_best_os
+    - tlag_10_greq_1_ged_best_os
+    - tlag_11_greq_1_ged_best_os
+    - tlag_12_greq_1_ged_best_os
+
+  tlags_1_to_12_greq_5_ged_best_os:
+    - tlag_1_greq_5_ged_best_os
+    - tlag_2_greq_5_ged_best_os
+    - tlag_3_greq_5_ged_best_os
+    - tlag_4_greq_5_ged_best_os
+    - tlag_5_greq_5_ged_best_os
+    - tlag_6_greq_5_ged_best_os
+    - tlag_7_greq_5_ged_best_os
+    - tlag_8_greq_5_ged_best_os
+    - tlag_9_greq_5_ged_best_os
+    - tlag_10_greq_5_ged_best_os
+    - tlag_11_greq_5_ged_best_os
+    - tlag_12_greq_5_ged_best_os
+
+  tlags_1_to_12_greq_25_ged_best_os:
+    - tlag_1_greq_25_ged_best_os
+    - tlag_2_greq_25_ged_best_os
+    - tlag_3_greq_25_ged_best_os
+    - tlag_4_greq_25_ged_best_os
+    - tlag_5_greq_25_ged_best_os
+    - tlag_6_greq_25_ged_best_os
+    - tlag_7_greq_25_ged_best_os
+    - tlag_8_greq_25_ged_best_os
+    - tlag_9_greq_25_ged_best_os
+    - tlag_10_greq_25_ged_best_os
+    - tlag_11_greq_25_ged_best_os
+    - tlag_12_greq_25_ged_best_os
+
+  tlags_1_to_12_greq_100_ged_best_os:
+    - tlag_1_greq_100_ged_best_os
+    - tlag_2_greq_100_ged_best_os
+    - tlag_3_greq_100_ged_best_os
+    - tlag_4_greq_100_ged_best_os
+    - tlag_5_greq_100_ged_best_os
+    - tlag_6_greq_100_ged_best_os
+    - tlag_7_greq_100_ged_best_os
+    - tlag_8_greq_100_ged_best_os
+    - tlag_9_greq_100_ged_best_os
+    - tlag_10_greq_100_ged_best_os
+    - tlag_11_greq_100_ged_best_os
+    - tlag_12_greq_100_ged_best_os
+
+  tlags_1_to_12_greq_500_ged_best_os:
+    - tlag_1_greq_500_ged_best_os
+    - tlag_2_greq_500_ged_best_os
+    - tlag_3_greq_500_ged_best_os
+    - tlag_4_greq_500_ged_best_os
+    - tlag_5_greq_500_ged_best_os
+    - tlag_6_greq_500_ged_best_os
+    - tlag_7_greq_500_ged_best_os
+    - tlag_8_greq_500_ged_best_os
+    - tlag_9_greq_500_ged_best_os
+    - tlag_10_greq_500_ged_best_os
+    - tlag_11_greq_500_ged_best_os
+    - tlag_12_greq_500_ged_best_os
+
+
+  tlag_1_greq_1_ged_best_sb_ns_os:
+    - tlag_1_greq_1_ged_best_sb
+    - tlag_1_greq_1_ged_best_ns
+    - tlag_1_greq_1_ged_best_os
+
+  tlag_2_to_3_greq_1_ged_best_sb:
+    - tlag_2_greq_1_ged_best_sb
+    - tlag_3_greq_1_ged_best_sb
+
+  time_since_ged_dummy_sb_ns_os:
+    - time_since_ged_dummy_sb
+    - time_since_ged_dummy_ns
+    - time_since_ged_dummy_os
+
+  time_since_splag_1_1_ged_dummy_sb_ns_os:
+    - time_since_splag_1_1_ged_dummy_sb
+    - time_since_splag_1_1_ged_dummy_ns
+    - time_since_splag_1_1_ged_dummy_os
+
+  time_since_acled_dummy_sb_ns_os:
+    - time_since_acled_dummy_sb
+    - time_since_acled_dummy_ns
+    - time_since_acled_dummy_os
+
+  time_since_greq_5_to_500_ged_best_sb_ns_os:
+    - time_since_greq_5_ged_best_sb
+    - time_since_greq_5_ged_best_ns
+    - time_since_greq_5_ged_best_os
+    - time_since_greq_25_ged_best_sb
+    - time_since_greq_25_ged_best_ns
+    - time_since_greq_25_ged_best_os
+    - time_since_greq_100_ged_best_sb
+    - time_since_greq_100_ged_best_ns
+    - time_since_greq_100_ged_best_os
+    - time_since_greq_500_ged_best_sb
+    - time_since_greq_500_ged_best_ns
+    - time_since_greq_500_ged_best_os
+
+  time_since_greq_5_to_500_splag_1_1_ged_best_sb_ns_os:
+    - time_since_greq_5_splag_1_1_ged_best_sb
+    - time_since_greq_5_splag_1_1_ged_best_ns
+    - time_since_greq_5_splag_1_1_ged_best_os
+    - time_since_greq_25_splag_1_1_ged_best_sb
+    - time_since_greq_25_splag_1_1_ged_best_ns
+    - time_since_greq_25_splag_1_1_ged_best_os
+    - time_since_greq_100_splag_1_1_ged_best_sb
+    - time_since_greq_100_splag_1_1_ged_best_ns
+    - time_since_greq_100_splag_1_1_ged_best_os
+    - time_since_greq_500_splag_1_1_ged_best_sb
+    - time_since_greq_500_splag_1_1_ged_best_ns
+    - time_since_greq_500_splag_1_1_ged_best_os
+
+  time_since_splag_1_1_acled_dummy_sb_ns_os:
+    - time_since_splag_1_1_acled_dummy_sb
+    - time_since_splag_1_1_acled_dummy_ns
+    - time_since_splag_1_1_acled_dummy_os
+
+  time_since_greq_100_splag_1_1_ged_best_sb_ns_os:
+    - time_since_greq_100_splag_1_1_ged_best_sb
+    - time_since_greq_100_splag_1_1_ged_best_ns
+    - time_since_greq_100_splag_1_1_ged_best_os
+
+  splag_1_1_ged_best_sb_ns_os:
+    - splag_1_1_ged_best_sb
+    - splag_1_1_ged_best_ns
+    - splag_1_1_ged_best_os
+
+  tlag_1_splag_1_1_ged_best_sb_ns_os:
+    - tlag_1_splag_1_1_ged_best_sb
+    - tlag_1_splag_1_1_ged_best_ns
+    - tlag_1_splag_1_1_ged_best_os
+
+  splag_1_1_splag_1_1_acled_count_sb_ns_os:
+    - splag_1_1_acled_count_sb
+    - splag_1_1_acled_count_ns
+    - splag_1_1_acled_count_os
+
+  splag_1_1_acled_count_sb_ns_os:
+    - splag_1_1_acled_count_sb
+    - splag_1_1_acled_count_ns
+    - splag_1_1_acled_count_os
+
+  only_time_since_greq_100_splag_1_1_ged_best_sb:
+    - time_since_greq_100_splag_1_1_ged_best_sb
+
+
+  cdummies:
+    - cdum_1
+    - cdum_2
+    - cdum_3
+    - cdum_4
+    - cdum_5
+    - cdum_6
+    - cdum_7
+    - cdum_8
+    - cdum_9
+    - cdum_10
+    - cdum_11
+    - cdum_12
+    - cdum_13
+    - cdum_14
+    - cdum_15
+    - cdum_16
+    - cdum_17
+    - cdum_18
+    - cdum_19
+    - cdum_20
+    - cdum_21
+    - cdum_22
+    - cdum_23
+    - cdum_24
+    - cdum_25
+    - cdum_26
+    - cdum_27
+    - cdum_28
+    - cdum_29
+    - cdum_30
+    - cdum_31
+    - cdum_32
+    - cdum_33
+    - cdum_34
+    - cdum_35
+    - cdum_36
+    - cdum_37
+    - cdum_38
+    - cdum_39
+    - cdum_40
+    - cdum_41
+    - cdum_42
+    - cdum_43
+    - cdum_44
+    - cdum_45
+    - cdum_46
+    - cdum_47
+    - cdum_48
+    - cdum_49
+    - cdum_50
+    - cdum_51
+    - cdum_52
+    - cdum_53
+    - cdum_54
+    - cdum_55
+    - cdum_56
+    - cdum_57
+    - cdum_58
+    - cdum_59
+    - cdum_60
+    - cdum_61
+    - cdum_62
+    - cdum_63
+    - cdum_64
+    - cdum_65
+    - cdum_66
+    - cdum_67
+    - cdum_68
+    - cdum_69
+    - cdum_70
+    - cdum_71
+    - cdum_72
+    - cdum_73
+    - cdum_74
+    - cdum_75
+    - cdum_76
+    - cdum_77
+    - cdum_78
+    - cdum_79
+    - cdum_80
+    - cdum_81
+    - cdum_82
+    - cdum_83
+    - cdum_84
+    - cdum_85
+    - cdum_86
+    - cdum_87
+    - cdum_88
+    - cdum_89
+    - cdum_90
+    - cdum_91
+    - cdum_92
+    - cdum_93
+    - cdum_94
+    - cdum_95
+    - cdum_96
+    - cdum_97
+    - cdum_98
+    - cdum_99
+    - cdum_100
+    - cdum_101
+    - cdum_102
+    - cdum_103
+    - cdum_104
+    - cdum_105
+    - cdum_106
+    - cdum_107
+    - cdum_108
+    - cdum_109
+    - cdum_110
+    - cdum_111
+    - cdum_112
+    - cdum_113
+    - cdum_114
+    - cdum_115
+    - cdum_116
+    - cdum_117
+    - cdum_118
+    - cdum_119
+    - cdum_120
+    - cdum_121
+    - cdum_122
+    - cdum_123
+    - cdum_124
+    - cdum_125
+    - cdum_126
+    - cdum_127
+    - cdum_128
+    - cdum_129
+    - cdum_130
+    - cdum_131
+    - cdum_132
+    - cdum_133
+    - cdum_134
+    - cdum_135
+    - cdum_136
+    - cdum_137
+    - cdum_138
+    - cdum_139
+    - cdum_140
+    - cdum_141
+    - cdum_142
+    - cdum_143
+    - cdum_144
+    - cdum_145
+    - cdum_146
+    - cdum_147
+    - cdum_148
+    - cdum_149
+    - cdum_150
+    - cdum_151
+    - cdum_152
+    - cdum_153
+    - cdum_154
+    - cdum_155
+    - cdum_156
+    - cdum_157
+    - cdum_158
+    - cdum_159
+    - cdum_160
+    - cdum_161
+    - cdum_162
+    - cdum_163
+    - cdum_164
+    - cdum_165
+    - cdum_166
+    - cdum_167
+    - cdum_168
+    - cdum_169
+    - cdum_170
+    - cdum_171
+    - cdum_172
+    - cdum_173
+    - cdum_174
+    - cdum_175
+    - cdum_176
+    - cdum_177
+    - cdum_178
+    - cdum_179
+    - cdum_180
+    - cdum_181
+    - cdum_182
+    - cdum_183
+    - cdum_184
+    - cdum_185
+    - cdum_186
+    - cdum_187
+    - cdum_188
+    - cdum_189
+    - cdum_190
+    - cdum_191
+    - cdum_192
+    - cdum_193
+    - cdum_194
+    - cdum_195
+    - cdum_196
+    - cdum_197
+    - cdum_198
+    - cdum_199
+    - cdum_200
+    - cdum_201
+    - cdum_202
+    - cdum_203
+    - cdum_204
+    - cdum_205
+    - cdum_206
+    - cdum_207
+    - cdum_208
+    - cdum_209
+    - cdum_210
+    - cdum_211
+    - cdum_212
+    - cdum_213
+    - cdum_214
+    - cdum_215
+    - cdum_216
+    - cdum_217
+    - cdum_218
+    - cdum_219
+    - cdum_220
+    - cdum_221
+    - cdum_222
+    - cdum_223
+    - cdum_224
+    - cdum_225
+    - cdum_226
+    - cdum_227
+    - cdum_228
+    - cdum_229
+    - cdum_230
+    - cdum_231
+    - cdum_232
+    - cdum_233
+    - cdum_234
+    - cdum_235
+    - cdum_236
+    - cdum_237
+    - cdum_238
+    - cdum_239
+    - cdum_240
+    - cdum_241
+    - cdum_242
+    - cdum_243
+    - cdum_244
+    - cdum_245
+    - cdum_246
+    - cdum_247
+    - cdum_248
+    - cdum_249
+    - cdum_250
+    - cdum_251
+    - cdum_252
+    - cdum_253
+    - cdum_254
+    - cdum_255
+
+  acled_protest:
+    - time_since_acled_dummy_pr
+    - splag_1_1_acled_count_pr
+    - time_since_splag_1_1_acled_dummy_pr
+
+  inst:
+    - fvp_prop_excluded
+    - fvp_semi
+    - fvp_demo
+    - fvp_timeindep
+    - fvp_timesincepreindepwar
+    - fvp_timesinceregimechange
+    - fvp_prop_discriminated
+    - fvp_prop_dominant
+    - fvp_prop_irrelevant
+    - fvp_prop_powerless
+    - fvp_indepyear
+
+  vdem:
+    - vdem_v2x_accountability
+    - vdem_v2x_api
+    - vdem_v2x_civlib
+    - vdem_v2x_clphy
+    - vdem_v2x_clpol
+    - vdem_v2x_clpriv
+    - vdem_v2x_corr
+    - vdem_v2x_cspart
+    - vdem_v2x_delibdem
+    - vdem_v2x_diagacc
+    # - vdem_v2x_diagacc_osp @TODO: Removed
+    - vdem_v2x_divparctrl
+    - vdem_v2x_edcomp_thick
+    - vdem_v2x_egal
+    - vdem_v2x_egaldem
+    - vdem_v2x_elecoff
+    - vdem_v2x_elecreg
+    - vdem_v2x_ex_confidence
+    - vdem_v2x_ex_direlect
+    - vdem_v2x_ex_hereditary
+    - vdem_v2x_ex_military
+    - vdem_v2x_ex_party
+    - vdem_v2x_execorr
+    - vdem_v2x_feduni
+    - vdem_v2x_frassoc_thick
+    - vdem_v2x_freexp
+    - vdem_v2x_freexp_altinf
+    - vdem_v2x_gencl
+    - vdem_v2x_gencs
+    - vdem_v2x_gender
+    - vdem_v2x_genpp
+    - vdem_v2x_horacc
+    # - vdem_v2x_horacc_osp @TODO: Removed
+    - vdem_v2x_hosabort
+    - vdem_v2x_hosinter
+    - vdem_v2x_jucon
+    - vdem_v2x_legabort
+    - vdem_v2x_libdem
+    - vdem_v2x_liberal
+    - vdem_v2x_mpi
+    - vdem_v2x_neopat
+    - vdem_v2x_partip
+    - vdem_v2x_partipdem
+    - vdem_v2x_polyarchy
+    - vdem_v2x_pubcorr
+    - vdem_v2x_regime
+    - vdem_v2x_regime_amb
+    - vdem_v2x_rule
+    - vdem_v2x_suffr
+    - vdem_v2x_veracc
+    # - vdem_v2x_veracc_osp @TODO: Removed
+
+  reign_base:
+    - reign_age
+    - reign_anticipation
+    - reign_change_recent
+    - reign_defeat_recent
+    - reign_delayed
+    - reign_direct_recent
+    - reign_elected
+    - reign_election_now
+    - reign_election_recent
+    - reign_exec_ant
+    - reign_exec_recent
+    - reign_gov_dominant_party
+    - reign_gov_foreign_occupied
+    - reign_gov_indirect_military
+    - reign_gov_military
+    - reign_gov_military_personal
+    - reign_gov_monarchy
+    - reign_gov_oligarchy
+    - reign_gov_parliamentary_democracy
+    - reign_gov_party_military
+    - reign_gov_party_personal
+    - reign_gov_party_personal_military_hybrid
+    - reign_gov_personal_dictatorship
+    - reign_gov_presidential_democracy
+    - reign_gov_provisional_civilian
+    - reign_gov_provisional_military
+    - reign_gov_warlordism
+    - reign_indirect_recent
+    - reign_irreg_lead_ant
+    - reign_irregular
+    - reign_lastelection
+    - reign_lead_recent
+    - reign_leg_ant
+    - reign_leg_recent
+    - reign_loss
+    - reign_male
+    - reign_militarycareer
+    - reign_nochange_recent
+#    - reign_prev_conflict
+    - reign_pt_attempt
+    - reign_pt_suc
+    - reign_ref_ant
+    - reign_ref_recent
+    - reign_tenure_months
+    - reign_victory_recent
+
+  reign_coups:
+    - reign_couprisk
+    - reign_pctile_risk
+
+  reign_drought:
+    - reign_precip
+
+
+  econ:
+    - wdi_ny_gdp_pcap_cd
+    - wdi_ny_gdp_mktp_cd
+    - fvp_grgdpcap_nonoilrent
+    - fvp_grgdpcap_oilrent
+    - fvp_lngdpcap_nonoilrent
+    - fvp_lngdpcap_oilrent
+    - fvp_lngdp200
+    - fvp_lngdppercapita200
+
+  demog:
+    - fvp_population200
+    - fvp_ssp2_edu_sec_15_24_prop
+    - fvp_ssp2_urban_share_iiasa
+    - fvp_grpop200
+    - wdi_sp_dyn_imrt_in
+    - wdi_sp_dyn_tfrt_in
+
+  fvp_base:
+    - fvp_grgdpcap_nonoilrent
+    - fvp_grgdpcap_oilrent
+    - fvp_lngdpcap_nonoilrent
+    - fvp_lngdpcap_oilrent
+    - fvp_population200
+    - fvp_ssp2_edu_sec_15_24_prop
+    - fvp_ssp2_urban_share_iiasa
+
+  icgcw:
+    - icgcw_alerts
+    - icgcw_opportunities
+    - icgcw_deteriorated
+    - icgcw_improved
+    - icgcw_unobserved
+
+
+  vdem_high:
+    - vdem_v2x_delibdem
+    - vdem_v2x_egaldem
+    - vdem_v2x_libdem
+    - vdem_v2x_partipdem
+    - vdem_v2x_polyarchy
+
+###############################
+## IMPORTED FROM FEATLIST_HH ##
+###############################
+  vdem_hh:
+    - vdem_v2x_accountability
+    - vdem_v2x_api
+    - vdem_v2x_civlib
+    - vdem_v2x_clphy
+    - vdem_v2x_clpol
+    - vdem_v2x_clpriv
+    - vdem_v2x_corr
+    - vdem_v2x_cspart
+    - vdem_v2x_delibdem
+    - vdem_v2x_diagacc
+    - vdem_v2x_divparctrl
+    - vdem_v2x_edcomp_thick
+    - vdem_v2x_egal
+    - vdem_v2x_egaldem
+    - vdem_v2x_elecoff
+    - vdem_v2x_elecreg
+    - vdem_v2x_ex_confidence
+    - vdem_v2x_ex_direlect
+    - vdem_v2x_ex_hereditary
+    - vdem_v2x_ex_military
+    - vdem_v2x_ex_party
+    - vdem_v2x_execorr
+    - vdem_v2x_feduni
+    - vdem_v2x_frassoc_thick
+    - vdem_v2x_freexp
+    - vdem_v2x_freexp_altinf
+    - vdem_v2x_gencl
+    - vdem_v2x_gencs
+    - vdem_v2x_gender
+    - vdem_v2x_genpp
+    - vdem_v2x_horacc
+    - vdem_v2x_hosabort
+    - vdem_v2x_hosinter
+    - vdem_v2x_jucon
+    - vdem_v2x_legabort
+    - vdem_v2x_libdem
+    - vdem_v2x_liberal
+    - vdem_v2x_mpi
+    - vdem_v2x_neopat
+    - vdem_v2x_partip
+    - vdem_v2x_partipdem
+    - vdem_v2x_polyarchy
+    - vdem_v2x_pubcorr
+    - vdem_v2x_regime
+    - vdem_v2x_regime_amb
+    - vdem_v2x_rule
+    - vdem_v2x_suffr
+    - vdem_v2x_veracc
+    - vdem_v2xcl_acjst
+    - vdem_v2xcl_disc
+    - vdem_v2xcl_dmove
+    - vdem_v2xcl_prpty
+    - vdem_v2xcl_rol
+    - vdem_v2xcl_slave
+    - vdem_v2xcs_ccsi
+    - vdem_v2xdd_cic
+    - vdem_v2xdd_dd
+    - vdem_v2xdd_i_or
+    - vdem_v2xdd_i_pi
+    - vdem_v2xdd_i_pl
+    - vdem_v2xdd_i_rf
+    - vdem_v2xdd_toc
+    - vdem_v2xdl_delib
+    - vdem_v2xeg_eqaccess
+    - vdem_v2xeg_eqdr
+    - vdem_v2xeg_eqprotec
+    - vdem_v2xel_elecparl
+    - vdem_v2xel_elecpres
+    - vdem_v2xel_frefair
+    - vdem_v2xel_locelec
+    - vdem_v2xel_regelec
+    - vdem_v2xex_elecleg
+    - vdem_v2xex_elecreg
+    - vdem_v2xlg_elecreg
+    - vdem_v2xlg_legcon
+    - vdem_v2xlg_leginter
+    - vdem_v2xme_altinf
+    - vdem_v2xnp_client
+    - vdem_v2xnp_pres
+    - vdem_v2xnp_regcorr
+    - vdem_v2xpe_exlecon
+    - vdem_v2xpe_exlgender
+    - vdem_v2xpe_exlgeo
+    - vdem_v2xpe_exlpol
+    - vdem_v2xpe_exlsocgr
+    - vdem_v2xps_party
+    - tlag_12_vdem_v2x_accountability
+    - tlag_12_vdem_v2x_api
+    - tlag_12_vdem_v2x_civlib
+    - tlag_12_vdem_v2x_clphy
+    - tlag_12_vdem_v2x_clpol
+    - tlag_12_vdem_v2x_clpriv
+    - tlag_12_vdem_v2x_corr
+    - tlag_12_vdem_v2x_cspart
+    - tlag_12_vdem_v2x_delibdem
+    - tlag_12_vdem_v2x_diagacc
+    - tlag_12_vdem_v2x_divparctrl
+    - tlag_12_vdem_v2x_edcomp_thick
+    - tlag_12_vdem_v2x_egal
+    - tlag_12_vdem_v2x_egaldem
+    - tlag_12_vdem_v2x_elecoff
+    - tlag_12_vdem_v2x_elecreg
+    - tlag_12_vdem_v2x_ex_confidence
+    - tlag_12_vdem_v2x_ex_direlect
+    - tlag_12_vdem_v2x_ex_hereditary
+    - tlag_12_vdem_v2x_ex_military
+    - tlag_12_vdem_v2x_ex_party
+    - tlag_12_vdem_v2x_execorr
+    - tlag_12_vdem_v2x_feduni
+    - tlag_12_vdem_v2x_frassoc_thick
+    - tlag_12_vdem_v2x_freexp
+    - tlag_12_vdem_v2x_freexp_altinf
+    - tlag_12_vdem_v2x_gencl
+    - tlag_12_vdem_v2x_gencs
+    - tlag_12_vdem_v2x_gender
+    - tlag_12_vdem_v2x_genpp
+    - tlag_12_vdem_v2x_horacc
+    - tlag_12_vdem_v2x_hosabort
+    - tlag_12_vdem_v2x_hosinter
+    - tlag_12_vdem_v2x_jucon
+    - tlag_12_vdem_v2x_legabort
+    - tlag_12_vdem_v2x_libdem
+    - tlag_12_vdem_v2x_liberal
+    - tlag_12_vdem_v2x_mpi
+    - tlag_12_vdem_v2x_neopat
+    - tlag_12_vdem_v2x_partip
+    - tlag_12_vdem_v2x_partipdem
+    - tlag_12_vdem_v2x_polyarchy
+    - tlag_12_vdem_v2x_pubcorr
+    - tlag_12_vdem_v2x_regime
+    - tlag_12_vdem_v2x_regime_amb
+    - tlag_12_vdem_v2x_rule
+    - tlag_12_vdem_v2x_suffr
+    - tlag_12_vdem_v2x_veracc
+    - tlag_12_vdem_v2xcl_acjst
+    - tlag_12_vdem_v2xcl_disc
+    - tlag_12_vdem_v2xcl_dmove
+    - tlag_12_vdem_v2xcl_prpty
+    - tlag_12_vdem_v2xcl_rol
+    - tlag_12_vdem_v2xcl_slave
+    - tlag_12_vdem_v2xcs_ccsi
+    - tlag_12_vdem_v2xdd_cic
+    - tlag_12_vdem_v2xdd_dd
+    - tlag_12_vdem_v2xdd_i_or
+    - tlag_12_vdem_v2xdd_i_pi
+    - tlag_12_vdem_v2xdd_i_pl
+    - tlag_12_vdem_v2xdd_i_rf
+    - tlag_12_vdem_v2xdd_toc
+    - tlag_12_vdem_v2xdl_delib
+    - tlag_12_vdem_v2xeg_eqaccess
+    - tlag_12_vdem_v2xeg_eqdr
+    - tlag_12_vdem_v2xeg_eqprotec
+    - tlag_12_vdem_v2xel_elecparl
+    - tlag_12_vdem_v2xel_elecpres
+    - tlag_12_vdem_v2xel_frefair
+    - tlag_12_vdem_v2xel_locelec
+    - tlag_12_vdem_v2xel_regelec
+    - tlag_12_vdem_v2xex_elecleg
+    - tlag_12_vdem_v2xex_elecreg
+    - tlag_12_vdem_v2xlg_elecreg
+    - tlag_12_vdem_v2xlg_legcon
+    - tlag_12_vdem_v2xlg_leginter
+    - tlag_12_vdem_v2xme_altinf
+    - tlag_12_vdem_v2xnp_client
+    - tlag_12_vdem_v2xnp_pres
+    - tlag_12_vdem_v2xnp_regcorr
+    - tlag_12_vdem_v2xpe_exlecon
+    - tlag_12_vdem_v2xpe_exlgender
+    - tlag_12_vdem_v2xpe_exlgeo
+    - tlag_12_vdem_v2xpe_exlpol
+    - tlag_12_vdem_v2xpe_exlsocgr
+    - tlag_12_vdem_v2xps_party
+
+  gender:
+    - wdi_iq_cpa_gndr_xq
+    - wdi_se_enr_prsc_fm_zs # School enrollment, primary and secondary (gross), gender parity index (GPI)
+    - wdi_sl_tlf_totl_fe_zs # Labor force, female (% of total labor force)
+    - vdem_v2x_gender
+    - vdem_v2x_gencl
+    - vdem_v2x_genpp
+    - vdem_v2x_gencs
+    - vdem_v2cldmovew
+    - vdem_v2cldmovem
+    - vdem_v2clslavem
+    - vdem_v2clslavef
+    - vdem_v2clprptyw
+    - vdem_v2clprptym
+    #  - vdem_v2clacjstf
+    - vdem_v2clacjstm
+    - vdem_v2cldiscw
+    - vdem_v2cldiscm
+    - vdem_v2csgender
+    - vdem_v2mefemjrn
+    - vdem_v2lgfemleg
+    - vdem_v2pepwrgen
+    #  - vdem_v2elwomcab
+    - vdem_v2lgqugen
+    - vdem_v2lgqugens
+
+  sovereignty:
+    - vdem_v2svdomaut
+    - vdem_v2svstterr
+    - vdem_v2svinlaut
+    #  - vdem_v2svstpop
+    - vdem_v2svindep
+    - reign_gov_foreign_occupied
+
+  cons_repression:
+    - vdem_v2x_elecoff
+    - vdem_v2x_edcomp_thick
+    - vdem_v2x_suffr
+    - vdem_v2xel_frefair
+    - vdem_v2x_jucon
+    - vdem_v2xlg_legcon
+    - vdem_v2x_cspart
+    - vdem_v2x_civlib
+    - vdem_v2x_clpriv
+    - vdem_v2x_clpol
+    - vdem_v2x_clphy
+    - vdem_v2x_accountability
+    #  - vdem_v2csreprss
+    - vdem_v2csprtcpt
+    - reign_gov_military
+    - reign_gov_military_personal
+    - reign_gov_monarchy
+    - reign_gov_oligarchy
+    - reign_gov_parliamentary_democracy
+    - reign_gov_party_military
+    - reign_gov_party_personal
+    - reign_gov_party_personal_military_hybrid
+    - reign_gov_personal_dictatorship
+    - reign_gov_presidential_democracy
+    - reign_gov_provisional_civilian
+    - reign_gov_provisional_military
+    - reign_gov_warlordism
+
+  cons_opposition:
+    - vdem_v2x_veracc
+    - vdem_v2x_horacc
+
+  power_access:
+    - vdem_v2x_polyarchy
+    - vdem_v2xeg_eqprotec
+    - vdem_v2xeg_eqaccess
+    - vdem_v2elrstrct
+    - vdem_v2elrsthos
+    - vdem_v2elrsthog
+    #  - vdem_v2elnoncit
+
+  regime_change:
+    - vdem_v2x_polyarchy
+    - vdem_v2x_liberal
+    - vdem_v2x_partip
+    - vdem_v2x_egal
+    - vdem_v2xdl_delib
+    - vdem_v2xlg_elecreg
+    - vdem_v2xex_elecreg
+    - vdem_v2x_hosinter
+    - reign_change_recent
+    - reign_pt_attempt
+    - reign_pt_suc
+    - reign_age
+    - reign_nochange_recent
+    - reign_tenure_months
+    - reign_gov_provisional_military
+    - reign_gov_provisional_civilian
+
+  governance:
+    - vdem_v2xcl_rol
+    - vdem_v2x_pubcorr
+    - vdem_v2x_corr
+    - vdem_v2x_execorr
+    - wdi_iq_cpa_econ_xq
+    - wdi_iq_cpa_fisp_xq
+    - wdi_iq_cpa_macr_xq
+    - wdi_iq_cpa_prop_xq
+    - wdi_iq_cpa_pubs_xq
+    - wdi_iq_cpa_soci_xq
+    - wdi_iq_cpa_trad_xq
+    - wdi_iq_cpa_tran_xq
+
+  inconsistency_int:
+    - vdem_v2xlg_elecreg
+    - vdem_v2xex_elecreg
+    - vdem_v2x_suffr
+    - vdem_v2x_jucon
+    - vdem_v2xlg_legcon
+    - vdem_v2x_divparctrl
+    - vdem_v2x_veracc
+    - vdem_v2x_horacc
+    - vdem_v2elsuffrage
+    - vdem_v2csantimv
+
+  inconsistency_ext:
+    - vdem_v2x_polyarchy
+    - vdem_v2x_liberal
+    - vdem_v2x_partip
+    - wdi_ny_gdp_pcap_kd
+    - wdi_ny_gdp_petr_rt_zs
+    - wdi_nv_agr_totl_zs
+    - wdi_nv_ind_manf_zs
+    - wdi_nv_ind_totl_zs
+    - wdi_nv_srv_totl_zs
+    - wdi_tx_val_fuel_zs_un
+    - wdi_ny_gdp_coal_rt_zs
+    - wdi_ny_gdp_frst_rt_zs
+    - wdi_ny_gdp_minr_rt_zs
+    - wdi_ny_gdp_ngas_rt_zs
+
+  elections:
+    - reign_lastelection
+    - reign_election_now
+    - reign_election_recent
+    - reign_exec_ant
+    - reign_exec_recent
+    - reign_anticipation
+    - reign_ref_ant
+    - reign_ref_recent
+    - reign_leg_ant
+    - reign_leg_recent
+    - reign_lead_recent
+    - reign_direct_recent
+    - reign_indirect_recent
+    - reign_victory_recent
+    - reign_defeat_recent
+    - reign_change_recent
+    - reign_delayed
+    - vdem_v2elembaut
+    - vdem_v2elembcap
+    - vdem_v2x_edcomp_thick
+    - vdem_v2x_suffr
+    - vdem_v2xel_frefair
+    - vdem_v2xlg_elecreg
+    - vdem_v2xex_elecreg
+    - vdem_v2xel_elecparl
+    - vdem_v2xel_elecpres
+
+
+  irregular:
+    - reign_pt_attempt
+    - reign_pt_suc
+    - vdem_v2xlg_leginter
+    - vdem_v2xex_elecreg
+    - vdem_v2xlg_elecreg
+    - vdem_v2x_hosinter
+    - vdem_v2x_hosabort
+    - vdem_v2x_legabort
+    - reign_irreg_lead_ant
+    - reign_irregular
+
+  local_autonomy:
+    - v2xel_locelec
+    - vdem_v2xel_regelec
+
+  grievances:
+    - vdem_v2x_egal
+    - vdem_v2xeg_eqprotec
+    - vdem_v2xeg_eqaccess
+    - vdem_v2xeg_eqdr
+    - vdem_v2x_gender
+    - vdem_v2x_gencl
+    - vdem_v2x_gencs
+    - vdem_v2x_genpp
+    - wdi_si_dst_frst_10
+    - wdi_si_dst_frst_20
+    - wdi_si_dst_02nd_20
+    - wdi_si_dst_03rd_20
+    - wdi_si_dst_04th_20
+    - wdi_si_dst_05th_20
+    - wdi_si_pov_gini
+
+  feat_vdem_old:
+    - vdem_e_regionpol
+    - vdem_e_regionpol_6c
+    - vdem_v2x_accountability
+    - vdem_v2x_api
+    - vdem_v2x_civlib
+    - vdem_v2x_clphy
+    - vdem_v2x_clpol
+    - vdem_v2x_clpriv
+    - vdem_v2x_corr
+    - vdem_v2x_cspart
+    - vdem_v2x_delibdem
+    - vdem_v2x_diagacc
+    - vdem_v2x_diagacc_osp
+    - vdem_v2x_divparctrl
+    - vdem_v2x_edcomp_thick
+    - vdem_v2x_egal
+    - vdem_v2x_egaldem
+    - vdem_v2x_elecoff
+    - vdem_v2x_elecreg
+    - vdem_v2x_ex_confidence
+    - vdem_v2x_ex_direlect
+    - vdem_v2x_ex_hereditary
+    - vdem_v2x_ex_military
+    - vdem_v2x_ex_party
+    - vdem_v2x_execorr
+    - vdem_v2x_feduni
+    - vdem_v2x_frassoc_thick
+    - vdem_v2x_freexp
+    - vdem_v2x_freexp_altinf
+    - vdem_v2x_gencl
+    - vdem_v2x_gencs
+    - vdem_v2x_gender
+    - vdem_v2x_genpp
+    - vdem_v2x_horacc
+    - vdem_v2x_horacc_osp
+    - vdem_v2x_hosabort
+    - vdem_v2x_hosinter
+    - vdem_v2x_jucon
+    - vdem_v2x_legabort
+    - vdem_v2x_libdem
+    - vdem_v2x_liberal
+    - vdem_v2x_mpi
+    - vdem_v2x_neopat
+    - vdem_v2x_partip
+    - vdem_v2x_partipdem
+    - vdem_v2x_polyarchy
+    - vdem_v2x_pubcorr
+    - vdem_v2x_regime
+    - vdem_v2x_regime_amb
+    - vdem_v2x_rule
+    - vdem_v2x_suffr
+    - vdem_v2x_veracc
+    - vdem_v2x_veracc_osp
+    - vdem_v2xcl_acjst
+    - vdem_v2xcl_disc
+    - vdem_v2xcl_dmove
+    - vdem_v2xcl_prpty
+    - vdem_v2xcl_rol
+    - vdem_v2xcl_slave
+    - vdem_v2xcs_ccsi
+    - vdem_v2xdd_cic
+    - vdem_v2xdd_dd
+    - vdem_v2xdd_i_or
+    - vdem_v2xdd_i_pi
+    - vdem_v2xdd_i_pl
+    - vdem_v2xdd_i_rf
+    - vdem_v2xdd_toc
+    - vdem_v2xdl_delib
+    - vdem_v2xeg_eqaccess
+    - vdem_v2xeg_eqdr
+    - vdem_v2xeg_eqprotec
+    - vdem_v2xel_elecparl
+    - vdem_v2xel_elecpres
+    - vdem_v2xel_frefair
+    - vdem_v2xel_locelec
+    - vdem_v2xel_regelec
+    - vdem_v2xex_elecleg
+    - vdem_v2xex_elecreg
+    - vdem_v2xlg_elecreg
+    - vdem_v2xlg_legcon
+    - vdem_v2xlg_leginter
+    - vdem_v2xme_altinf
+    - vdem_v2xnp_client
+    - vdem_v2xnp_pres
+    - vdem_v2xnp_regcorr
+    - vdem_v2xpe_exlecon
+    - vdem_v2xpe_exlgender
+    - vdem_v2xpe_exlgeo
+    - vdem_v2xpe_exlpol
+    - vdem_v2xpe_exlsocgr
+    - vdem_v2xps_party
+
+  # All included in cflong as python transforms
+  #colsfrompreflight:
+
+
+  # WDI features broken up in categories
+  wdi_rest:
+    - wdi_bx_trf_pwkr_dt_gd_zs # Personal remittances, received (% of GDP)
+    - wdi_eg_elc_accs_zs # Access to electricity (% of population)
+    - wdi_eg_use_elec_kh_pc # Electric power consumption (kWh per capita)
+    - wdi_eg_use_pcap_kg_oe # Energy use (kg of oil equivalent per capita)
+    - wdi_en_urb_mcty_tl_zs # Population in urban agglomerations of more than 1 million (% of total population)
+    - wdi_ep_pmp_desl_cd
+    - wdi_ep_pmp_sgas_cd
+    - wdi_fp_cpi_totl
+    - wdi_fr_inr_dpst
+    - wdi_fr_inr_lndp
+    - wdi_gc_dod_totl_gd_zs
+    - wdi_ic_bus_ease_xq
+    - wdi_ne_con_prvt_pc_kd_zg
+    - wdi_ne_dab_totl_kd # Gross national expenditure (constant 2010 US$)
+    - wdi_ne_dab_totl_zs
+    - wdi_ne_exp_gnfs_zs
+    - wdi_ne_gdi_totl_zs
+    - wdi_ne_imp_gnfs_kd
+    - wdi_ne_imp_gnfs_kd_zg
+    - wdi_ne_imp_gnfs_zs
+    - wdi_ne_rsb_gnfs_zs
+    - wdi_ne_trd_gnfs_zs
+    - wdi_ny_adj_dfor_cd
+    - wdi_ny_adj_dmin_gn_zs
+    - wdi_ny_adj_dres_gn_zs
+    - wdi_ny_adj_ictr_gn_zs
+    - wdi_ny_adj_nnty_kd
+    - wdi_ny_adj_nnty_kd_zg
+    - wdi_per_si_allsi_cov_pop_tot
+    - wdi_per_si_allsi_cov_q1_tot
+    - wdi_per_si_allsi_cov_q2_tot
+    - wdi_per_si_allsi_cov_q3_tot
+    - wdi_per_si_allsi_cov_q4_tot
+    - wdi_per_si_allsi_cov_q5_tot
+    - wdi_sg_gen_parl_zs
+    - wdi_sg_vaw_reas_zs
+    - wdi_sl_agr_empl_ma_zs
+    - wdi_sl_agr_empl_zs
+    - wdi_sl_ind_empl_zs
+    - wdi_sl_srv_empl_zs
+    - wdi_sn_itk_defc_zs
+    - wdi_st_int_arvl # International tourism, number of arrivals
+    - wdi_st_int_rcpt_xp_zs # International tourism, receipts (% of total exports)
+    #  - wdi_vc_btl_deth # UCDP BRDs
+
+  wdi_milexp:
+    - wdi_ms_mil_mprt_kd # Arms imports (SIPRI trend indicator values)
+    - wdi_ms_mil_xpnd_gd_zs
+    - wdi_ms_mil_xpnd_zs
+
+
+  wdi_unemp:
+    - wdi_sl_uem_advn_fe_zs
+    - wdi_sl_uem_advn_ma_zs
+    - wdi_sl_uem_advn_zs # Unemployment with advanced education (% of total labor force with advanced education)
+    - wdi_sl_uem_neet_fe_zs
+    - wdi_sl_uem_neet_ma_zs
+    - wdi_sl_uem_neet_zs
+    - wdi_sl_uem_totl_fe_zs # Unemployment, female (% of female labor force) (modeled ILO estimate)
+    - wdi_sl_uem_totl_ma_zs
+    - wdi_sl_uem_totl_zs
+
+
+
+  wdi_macro:
+    #- wdi_pa_nus_ppp_05 # 2005 PPP conversion factor, GDP (LCU per international $)
+    - wdi_bn_cab_xoka_gd_zs # Current-account balance
+    - wdi_bx_gsr_mrch_cd # Goods exports (BoP, current US$)
+
+
+  wdi_cpia:
+    - wdi_iq_cpa_econ_xq
+    - wdi_iq_cpa_fisp_xq
+    - wdi_iq_cpa_macr_xq
+    - wdi_iq_cpa_prop_xq
+    - wdi_iq_cpa_pubs_xq
+    - wdi_iq_cpa_soci_xq
+    - wdi_iq_cpa_trad_xq
+    - wdi_iq_cpa_tran_xq
+
+  wdi_fdi:
+    - wdi_bm_klt_dinv_wd_gd_zs
+    - wdi_bx_klt_dinv_cd_wd # Foreign direct investment, net inflows (BoP, current US$)
+    - wdi_bx_klt_dinv_wd_gd_zs # Foreign direct investment, net inflows (% of GDP)
+
+
+  wdi_gender:
+    - wdi_iq_cpa_gndr_xq
+    - wdi_se_enr_prsc_fm_zs # School enrollment, primary and secondary (gross), gender parity index (GPI)
+    - wdi_sl_tlf_totl_fe_zs # Labor force, female (% of total labor force)
+
+
+  wdi_poverty:
+    - wdi_si_pov_dday
+    - wdi_si_pov_gaps
+    - wdi_si_pov_lmic
+    - wdi_si_pov_umic
+    - wdi_en_pop_slum_ur_zs # Population living in slums (% of urban population)
+
+
+  wdi_ineq:
+    - wdi_si_dst_02nd_20
+    - wdi_si_dst_03rd_20
+    - wdi_si_dst_04th_20
+    - wdi_si_dst_05th_20
+    - wdi_si_dst_10th_10
+    - wdi_si_dst_frst_10
+    - wdi_si_dst_frst_20
+    - wdi_si_pov_gini
+
+
+  wdi_refugees:
+    - wdi_sm_pop_refg # Refugee population by country or territory of asylum
+    - wdi_sm_pop_refg_or # Refugee population by country or territory of origin
+    - wdi_sm_pop_netm # Net migration
+    - wdi_sm_pop_totl_zs # International migrant stock (% of population)
+    - wdi_vc_idp_nwcv # iInternally displaced persons, new displacement associated with conflict and violence (number of cases)
+    - wdi_vc_idp_nwds # Internally displaced persons, new displacement associated with disasters (number of cases)
+    - wdi_vc_idp_tocv # Internally displaced persons, total displaced by conflict and violence (number of people)
+
+  wdi_gdp:
+    - wdi_ny_gdp_coal_rt_zs
+    - wdi_ny_gdp_defl_kd_zg
+    - wdi_ny_gdp_defl_kd_zg_ad
+    - wdi_ny_gdp_defl_zs
+    - wdi_ny_gdp_defl_zs_ad
+    - wdi_ny_gdp_disc_cn
+    - wdi_ny_gdp_disc_kn
+    - wdi_ny_gdp_fcst_cd
+    - wdi_ny_gdp_fcst_cn
+    - wdi_ny_gdp_fcst_kd
+    - wdi_ny_gdp_fcst_kn
+    - wdi_ny_gdp_frst_rt_zs
+    - wdi_ny_gdp_minr_rt_zs
+    - wdi_ny_gdp_mktp_cd
+    - wdi_ny_gdp_mktp_cn
+    - wdi_ny_gdp_mktp_cn_ad
+    - wdi_ny_gdp_mktp_kd
+    - wdi_ny_gdp_mktp_kd_zg
+    - wdi_ny_gdp_mktp_kn
+    - wdi_ny_gdp_mktp_pp_cd
+    - wdi_ny_gdp_mktp_pp_kd
+    - wdi_ny_gdp_ngas_rt_zs
+    - wdi_ny_gdp_pcap_cd
+    - wdi_ny_gdp_pcap_cn
+    - wdi_ny_gdp_pcap_kd
+    - wdi_ny_gdp_pcap_kd_zg
+    - wdi_ny_gdp_pcap_kn
+    - wdi_ny_gdp_pcap_pp_cd
+    - wdi_ny_gdp_pcap_pp_kd
+    - wdi_ny_gdp_petr_rt_zs
+    - wdi_ny_gdp_totl_rt_zs
+    - wdi_ny_gnp_mktp_kd
+    - wdi_ny_gnp_mktp_pp_kd
+    - wdi_nv_agr_empl_kd
+    - wdi_nv_agr_totl_cd
+    - wdi_nv_agr_totl_cn
+    - wdi_nv_agr_totl_kd # Agriculture, forestry, and fishing, value added (constant 2010 US$)
+    - wdi_nv_agr_totl_kd_zg
+    - wdi_nv_agr_totl_kn
+    - wdi_nv_agr_totl_zs
+    - wdi_nv_ind_empl_kd
+    - wdi_nv_ind_manf_cd
+    - wdi_nv_ind_manf_cn
+    - wdi_nv_ind_manf_kd
+    - wdi_nv_ind_manf_kd_zg
+    - wdi_nv_ind_manf_kn
+    - wdi_nv_ind_manf_zs
+    - wdi_nv_ind_totl_cd
+    - wdi_nv_ind_totl_cn
+    - wdi_nv_ind_totl_kd
+    - wdi_nv_ind_totl_kd_zg
+    - wdi_nv_ind_totl_kn
+    - wdi_nv_ind_totl_zs
+    - wdi_nv_mnf_chem_zs_un
+    - wdi_nv_mnf_fbto_zs_un
+    - wdi_nv_mnf_mtrn_zs_un
+    - wdi_nv_mnf_othr_zs_un
+    - wdi_nv_mnf_tech_zs_un
+    - wdi_nv_mnf_txtl_zs_un
+    - wdi_nv_srv_empl_kd
+    - wdi_nv_srv_totl_cd
+    - wdi_nv_srv_totl_cn
+    - wdi_nv_srv_totl_kd
+    - wdi_nv_srv_totl_kd_zg
+    - wdi_nv_srv_totl_kn
+    - wdi_nv_srv_totl_zs
+
+  wdi_agri:
+    - wdi_ag_lnd_agri_zs
+    - wdi_ag_lnd_arbl_zs
+    - wdi_ag_lnd_frst_k2
+    - wdi_ag_lnd_prcp_mm
+    - wdi_ag_lnd_totl_k2
+    - wdi_ag_lnd_totl_ru_k2
+    - wdi_ag_prd_crop_xd
+    - wdi_ag_prd_food_xd
+    - wdi_ag_prd_lvsk_xd
+    - wdi_ag_srf_totl_k2
+    - wdi_ag_yld_crel_kg
+
+  wdi_debt:
+    #- wdi_dt_inr_offt
+    #- wdi_dt_int_dect_ex_zs
+    #- wdi_dt_ixa_dppg_cd
+    #- wdi_dt_ixa_prvt_cd
+    #- wdi_dt_dod_dect_ex_zs
+    - wdi_dt_dod_dect_gn_zs
+    - wdi_dt_dod_pvlx_gn_zs
+    #- wdi_dt_inr_dppg
+    #- wdi_dt_inr_prvt
+    #- wdi_dt_int_dect_gn_zs
+    #- wdi_dt_ixa_dppg_cd_cg
+    #- wdi_dt_ixa_offt_cd
+    - wdi_dt_oda_oatl_kd
+    - wdi_dt_oda_odat_gn_zs
+    - wdi_dt_oda_odat_pc_zs
+    - wdi_dt_tds_dect_gn_zs
+
+  wdi_mort:
+    - wdi_sp_dyn_amrt_fe
+    - wdi_sp_dyn_amrt_ma
+    - wdi_sp_dyn_imrt_fe_in
+    - wdi_sp_dyn_imrt_in
+    - wdi_sp_dyn_imrt_ma_in
+    - wdi_sp_dyn_le00_fe_in
+    - wdi_sp_dyn_le00_in
+    - wdi_sp_dyn_le00_ma_in
+    - wdi_sp_dyn_tfrt_in # Fertility rate, total (births per woman)
+    - wdi_sp_dyn_wfrt # Wanted fertility rate (births per woman)
+    - wdi_sh_dyn_0514
+    - wdi_sh_dyn_mort
+    - wdi_sh_dyn_mort_fe
+    - wdi_sh_dyn_mort_ma
+
+  wdi_educ:
+    - wdi_se_adt_1524_lt_fe_zs
+    - wdi_se_adt_1524_lt_ma_zs
+    - wdi_se_adt_1524_lt_zs
+    - wdi_se_adt_litr_fe_zs
+    - wdi_se_adt_litr_ma_zs
+    - wdi_se_adt_litr_zs
+    - wdi_se_enr_prim_fm_zs
+    - wdi_se_enr_prsc_fm_zs # School enrollment, primary and secondary (gross), gender parity index (GPI)
+    - wdi_se_prm_cmpt_zs
+    - wdi_se_prm_cuat_fe_zs
+    - wdi_se_prm_cuat_ma_zs
+    - wdi_se_prm_cuat_zs
+    - wdi_se_prm_enrr
+    - wdi_se_prm_nenr
+    - wdi_se_prm_tenr_fe
+    - wdi_se_prm_tenr_ma
+    - wdi_se_sec_cmpt_lo_zs
+    - wdi_se_sec_cuat_lo_fe_zs
+    - wdi_se_sec_cuat_lo_ma_zs
+    - wdi_se_sec_cuat_lo_zs
+    - wdi_se_sec_nenr
+    - wdi_se_ter_cuat_do_fe_zs
+    - wdi_se_ter_cuat_do_ma_zs
+    - wdi_se_ter_cuat_do_zs
+
+  wdi_health:
+    - wdi_sh_h2o_basw_ru_zs
+    - wdi_sh_h2o_basw_ur_zs
+    - wdi_sh_h2o_basw_zs
+    - wdi_sh_mmr_risk_zs
+    - wdi_sh_sta_bass_ru_zs
+    - wdi_sh_sta_bass_ur_zs
+    - wdi_sh_sta_bass_zs
+    - wdi_sh_sta_maln_fe_zs
+    - wdi_sh_sta_maln_ma_zs
+    - wdi_sh_sta_maln_zs
+    - wdi_sh_sta_mmrt
+    - wdi_sh_sta_mmrt_ne
+    - wdi_sh_sta_stnt_fe_zs
+    - wdi_sh_sta_stnt_ma_zs
+    - wdi_sh_sta_stnt_zs
+    - wdi_sh_sta_traf_p5
+    - wdi_sh_sta_wash_p5
+    - wdi_sh_svr_wast_fe_zs
+    - wdi_sh_svr_wast_ma_zs
+    - wdi_sh_svr_wast_zs
+
+  wdi_demog:
+    - wdi_sp_hou_fema_zs
+    - wdi_sp_pop_0014_fe_zs
+    - wdi_sp_pop_0014_ma_zs
+    - wdi_sp_pop_0014_to_zs
+    - wdi_sp_pop_1564_fe_zs
+    - wdi_sp_pop_1564_ma_zs
+    - wdi_sp_pop_1564_to_zs
+    - wdi_sp_pop_65up_fe_zs
+    - wdi_sp_pop_65up_ma_zs
+    - wdi_sp_pop_65up_to_zs
+    - wdi_sp_pop_dpnd
+    - wdi_sp_pop_dpnd_ol
+    - wdi_sp_pop_dpnd_yg
+    - wdi_sp_pop_grow
+    - wdi_sp_pop_totl # Population, total
+    - wdi_sp_rur_totl_zg
+    - wdi_sp_rur_totl_zs
+    - wdi_sp_urb_grow
+    - wdi_sp_urb_totl_in_zs
+
+  wdi_trade:
+    - wdi_bg_gsr_nfsv_gd_zs
+    - wdi_tx_val_agri_zs_un
+    - wdi_tx_val_food_zs_un
+    - wdi_tx_val_fuel_zs_un
+    - wdi_tx_val_mmtl_zs_un
+    - wdi_tx_val_tech_mf_zs
+    - wdi_bx_gsr_ccis_zs # "no longer available"
+    - wdi_bx_gsr_cmcp_zs # "no longer available"
+    - wdi_bx_gsr_insf_zs # Insurance and financial services (% of service exports, BoP)
+    - wdi_bx_gsr_mrch_cd # Goods exports (BoP, current US$)
+    - wdi_bx_gsr_tran_zs # Transport services (% of service exports, BoP)
+    - wdi_bx_gsr_trvl_zs # "no longer available"
+
+  wdi_pkos:
+    - wdi_vc_pkp_totl_un # UN peacekeepers
+
+  # High-level v dem model
+  feat_vdem_hlc :
+    - vdem_v2x_delibdem
+    - vdem_v2x_egaldem
+    - vdem_v2x_libdem
+    - vdem_v2x_partipdem
+    - vdem_v2x_polyarchy
+
+  demog_hh:
+    - fvp_grpop200
+    - fvp_lnpop200
+    - fvp_population200
+
+
+  econ_hh:
+    - fvp_gdppc200
+    - fvp_grpop200
+    - fvp_indepyear
+    - fvp_lngdp200
+    - fvp_lngdpcap_nonoilrent
+    - fvp_lngdpcap_oilrent
+    - fvp_lngdppercapita200
+    - fvp_lnoilrent
+    - fvp_lnpop200
+    - fvp_ltimeindep
+    - fvp_population200
+
+
+  inst_hh:
+    - fvp_prop_diexpo
+    - fvp_prop_discexclpowless
+    - fvp_prop_discriminated
+    - fvp_prop_dominant
+    - fvp_prop_excluded
+    - fvp_prop_irrelevant
+    - fvp_prop_junpart
+    - fvp_prop_powerless
+    - fvp_prop_selfexclusion
+    - fvp_prop_senpart
+
+  just_in_africa:
+    - in_africa
+
+themes:
+
+  reign_global:
+    - reign_base
+    - just_in_africa
+
+  vdem_global:
+    - vdem_hh
+    - just_in_africa
+
+  wdi_all_global:
+    - wdi_rest
+    - wdi_gdp
+    - wdi_agri
+    - wdi_debt
+    - wdi_mort
+    - wdi_educ
+    - wdi_health
+    - wdi_demog
+    - wdi_trade
+    - wdi_pkos
+    - wdi_refugees
+    - wdi_cpia
+    - wdi_gender
+    - wdi_ineq
+    - wdi_poverty
+    - wdi_fdi
+    - wdi_macro
+    - wdi_gender
+    - wdi_unemp
+    - just_in_africa
+
+  tlags_1_to_12_greq_1_to_500_ged_best_sb:
+    - tlags_1_to_12_greq_1_ged_best_sb
+    - tlags_1_to_12_greq_5_ged_best_sb
+    - tlags_1_to_12_greq_25_ged_best_sb
+    - tlags_1_to_12_greq_100_ged_best_sb
+    - tlags_1_to_12_greq_500_ged_best_sb
+
+  tlags_1_to_12_greq_1_to_500_ged_best_ns:
+    - tlags_1_to_12_greq_1_ged_best_ns
+    - tlags_1_to_12_greq_5_ged_best_ns
+    - tlags_1_to_12_greq_25_ged_best_ns
+    - tlags_1_to_12_greq_100_ged_best_ns
+    - tlags_1_to_12_greq_500_ged_best_ns
+
+  tlags_1_to_12_greq_1_to_500_ged_best_os:
+    - tlags_1_to_12_greq_1_ged_best_os
+    - tlags_1_to_12_greq_5_ged_best_os
+    - tlags_1_to_12_greq_25_ged_best_os
+    - tlags_1_to_12_greq_100_ged_best_os
+    - tlags_1_to_12_greq_500_ged_best_os
+
+  tlags_1_to_12_greq_1_to_500_ged_best_sb_ns_os:
+    - tlags_1_to_12_greq_1_to_500_ged_best_sb
+    - tlags_1_to_12_greq_1_to_500_ged_best_ns
+    - tlags_1_to_12_greq_1_to_500_ged_best_os
+
+  all:
+    - acled_violence
+    - acled_protest
+    - fvp_base
+    - cfshort
+    - cflong
+    - confhist_2019
+    - demog
+    - demog_conf
+    - econ
+    - econ_conf
+    - icgcw
+    - icgcw_conf
+    - inst
+    - inst_conf
+    - neibhist
+    - reign_base
+    - reign_coups
+    - reign_coups_conf
+    - reign_drought
+    - reign_conf
+    - vdem
+    - vdem_conf
+    - vdem_high
+
+  all_global:
+    - all
+    - just_in_africa
+
+  acled_violence:
+    - time_since_acled_dummy_sb_ns_os
+    - time_since_splag_1_1_acled_dummy_sb_ns_os
+    - splag_1_1_acled_count_sb_ns_os
+
+  cfshort:
+    - splag_1_1_ged_best_sb_ns_os
+    - tlag_1_splag_1_1_ged_best_sb_ns_os
+    - time_since_ged_dummy_sb_ns_os
+    - only_time_since_greq_100_splag_1_1_ged_best_sb
+    - time_since_greq_25_ged_best_sb_ns_os
+    - time_since_greq_500_ged_best_sb_ns_os
+    - time_since_splag_1_1_ged_dummy_sb_ns_os
+    - tlag_1_greq_1_ged_best_sb_ns_os
+    - tlag_2_to_3_greq_1_ged_best_sb
+  cflong:
+    - time_since_ged_dummy_sb_ns_os
+    - tlags_1_to_12_greq_1_to_500_ged_best_sb_ns_os
+    - time_since_greq_5_to_500_ged_best_sb_ns_os
+    - time_since_greq_5_to_500_splag_1_1_ged_best_sb_ns_os
+
+  confhist_2019:
+    - tlags_1_to_12_greq_1_ged_best_sb
+    - time_since_ged_dummy_sb_ns_os
+    - splag_1_1_ged_best_sb_ns_os
+
+  demog_conf:
+    - demog
+    - cfshort
+
+  econ_conf:
+    - econ
+    - cfshort
+
+  icgcw_conf:
+    - icgcw
+    - cfshort
+
+  inst_conf:
+    - inst
+    - cfshort
+
+  neibhist:
+    - time_since_greq_5_to_500_splag_1_1_ged_best_sb_ns_os
+    - splag_1_1_ged_best_sb_ns_os
+    - tlag_1_splag_1_1_ged_best_sb_ns_os
+    - time_since_splag_1_1_acled_dummy_sb_ns_os
+    - splag_1_1_splag_1_1_acled_count_sb_ns_os
+
+  reign_coups_conf:
+    - reign_coups
+    - cfshort
+
+  reign_drought_conf:
+    - reign_drought
+    - cfshort
+  reign_conf:
+    - reign_base
+    - cfshort
+
+  vdem_conf:
+    - vdem
+    - cfshort
+
+
+formulas:
+
+################################################################################
+# SB MODELS
+################################################################################
+
+  sb_all_dummy:
+    col_outcome: ged_dummy_sb
+    cols_features: all
+
+  sb_all_25:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: all
+
+  sb_acled_violence:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: acled_violence
+  sb_acled_protest:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: acled_protest
+
+  sb_cfshort:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: cfshort
+  sb_cflong:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: cflong
+
+  sb_demog:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: demog
+  sb_demog_conf:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: demog_conf
+
+  sb_econ:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: econ
+  sb_econ_conf:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: econ_conf
+
+  sb_inst:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: inst
+  sb_inst_conf:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: inst_conf
+
+  sb_icgcw:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: icgcw
+  sb_icgcw_conf:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: icgcw_conf
+
+  sb_neibhist:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: neibhist
+
+  sb_reign:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: reign_base
+  sb_reign_conf:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: reign_conf
+  sb_reign_drought:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: reign_drought
+  sb_reign_drought_conf:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: reign_drought_conf
+  sb_reign_coups:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: reign_coups
+  sb_reign_coups_conf:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: reign_coups_conf
+
+  sb_vdem:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: vdem
+  sb_vdem_conf:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: vdem_conf
+  sb_vdem_high:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: vdem_high
+
+################################################################################
+# NS MODELS
+################################################################################
+
+  ns_all_dummy:
+    col_outcome: ged_dummy_ns
+    cols_features: all
+  ns_all_25:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: all
+
+  ns_acled_violence:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: acled_violence
+  ns_acled_protest:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: acled_protest
+
+  ns_cfshort:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: cfshort
+  ns_cflong:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: cflong
+
+  ns_demog:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: demog
+  ns_demog_conf:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: demog_conf
+
+  ns_econ:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: econ
+  ns_econ_conf:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: econ_conf
+
+  ns_inst:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: inst
+  ns_inst_conf:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: inst_conf
+
+  ns_icgcw:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: icgcw
+
+  ns_neibhist:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: neibhist
+
+  ns_reign:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: reign_base
+
+  ns_reign_conf:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: reign_conf
+
+  ns_reign_drought:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: reign_drought
+
+  ns_reign_drought_conf:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: reign_drought_conf
+
+  ns_reign_coups:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: reign_coups
+
+  ns_reign_coups_conf:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: reign_coups_conf
+
+  ns_vdem:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: vdem
+
+  ns_vdem_conf:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: vdem_conf
+
+  ns_vdem_high:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: vdem_high
+
+################################################################################
+# OS MODELS
+################################################################################
+
+  os_all_dummy:
+    col_outcome: ged_dummy_os
+    cols_features: all
+
+  os_all_25:
+    col_outcome: greq_25_ged_best_os
+    cols_features: all
+
+  os_acled_violence:
+    col_outcome: greq_25_ged_best_os
+    cols_features: acled_violence
+
+  os_acled_protest:
+    col_outcome: greq_25_ged_best_os
+    cols_features: acled_protest
+
+  os_cfshort:
+    col_outcome: greq_25_ged_best_os
+    cols_features: cfshort
+  os_cflong:
+    col_outcome: greq_25_ged_best_os
+    cols_features: cflong
+
+  os_demog:
+    col_outcome: greq_25_ged_best_os
+    cols_features: demog
+  os_demog_conf:
+    col_outcome: greq_25_ged_best_os
+    cols_features: demog_conf
+
+  os_econ:
+    col_outcome: greq_25_ged_best_os
+    cols_features: econ
+  os_econ_conf:
+    col_outcome: greq_25_ged_best_os
+    cols_features: econ_conf
+
+  os_inst:
+    col_outcome: greq_25_ged_best_os
+    cols_features: inst
+
+  os_inst_conf:
+    col_outcome: greq_25_ged_best_os
+    cols_features: inst_conf
+
+  os_icgcw:
+    col_outcome: greq_25_ged_best_os
+    cols_features: icgcw
+
+  os_neibhist:
+    col_outcome: greq_25_ged_best_os
+    cols_features: neibhist
+
+  os_reign:
+    col_outcome: greq_25_ged_best_os
+    cols_features: reign_base
+
+  os_reign_conf:
+    col_outcome: greq_25_ged_best_os
+    cols_features: reign_conf
+
+  os_reign_drought:
+    col_outcome: greq_25_ged_best_os
+    cols_features: reign_drought
+
+  os_reign_drought_conf:
+    col_outcome: greq_25_ged_best_os
+    cols_features: reign_drought_conf
+
+  os_reign_coups:
+    col_outcome: greq_25_ged_best_os
+    cols_features: reign_coups
+
+  os_reign_coups_conf:
+    col_outcome: greq_25_ged_best_os
+    cols_features: reign_coups_conf
+
+  os_vdem:
+    col_outcome: greq_25_ged_best_os
+    cols_features: vdem
+
+  os_vdem_conf:
+    col_outcome: greq_25_ged_best_os
+    cols_features: vdem_conf
+
+  os_vdem_high:
+    col_outcome: greq_25_ged_best_os
+    cols_features: vdem_high
+
+
+################################################################################
+# ONSET MODELS
+# Onset models do the onset transformation themselves.
+# See apps/pipeline/models_cm.py
+# These get an onset_window of 24
+################################################################################
+
+  sbonset24_25_all:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: all
+  nsonset24_25_all:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: all
+  osonset24_25_all:
+    col_outcome: greq_25_ged_best_os
+    cols_features: all
+
+################################################################################
+# 100+ DEATHS MODELS
+################################################################################
+
+  sb100_all:
+    col_outcome: greq_100_ged_best_sb
+    cols_features: all
+  ns100_all:
+    col_outcome: greq_100_ged_best_ns
+    cols_features: all
+  os100_all:
+    col_outcome: greq_100_ged_best_os
+    cols_features: all
+
+################################################################################
+# Country dummies models
+################################################################################
+
+
+  sb_cdummies:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: cdummies
+  ns_cdummies:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: cdummies
+  os_cdummies:
+    col_outcome: greq_25_ged_best_os
+    cols_features: cdummies
+
+################################################################################
+# Global models as per hh model dev notebook
+################################################################################
+
+  sb_vdem_global:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: vdem_global
+  sb_wdi_global:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: wdi_all_global
+  sb_reign_global:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: reign_global
+  sb_all_global:
+    col_outcome: greq_25_ged_best_sb
+    cols_features: all_global
+
+  ns_vdem_global:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: vdem_global
+  ns_wdi_global:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: wdi_all_global
+  ns_reign_global:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: reign_global
+  ns_all_global:
+    col_outcome: greq_25_ged_best_ns
+    cols_features: all_global
+
+  os_vdem_global:
+    col_outcome: greq_25_ged_best_os
+    cols_features: vdem_global
+  os_wdi_global:
+    col_outcome: greq_25_ged_best_os
+    cols_features: wdi_all_global
+  os_reign_global:
+    col_outcome: greq_25_ged_best_os
+    cols_features: reign_global
+  os_all_global:
+    col_outcome: greq_25_ged_best_os
+    cols_features: all_global

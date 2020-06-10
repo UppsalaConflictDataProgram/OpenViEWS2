@@ -2,9 +2,10 @@ name: views2
 channels:
   - defaults
 dependencies:
- - python
+ - python == 3.8
  - pip # for the pip-only deps
  - jupyter # jupyter notebooks
+ - jupyterlab # jupyter lab, much nicer notebooks
  - numpy
  - pandas >= 1.0
  - scipy # more math
@@ -15,21 +16,28 @@ dependencies:
  - sqlalchemy # postgres io
  - ipython # interactive terminal
  - pyyaml # YAML IO
- - pysal
+ - libpysal #
  - joblib # easier multiprocessing and a faster pickler
  - h5py # hdf5 file for dynasim aggregation
  - geopandas # geometry for python + map plotting
- - pylint # run_lints.sh
+ - pylint == 2.4.4 # linting, freeze at 2.4.4 as 2.5 gave errors
  - beautifulsoup4 # Web scraping
  - lxml # parser for bs4
- - netcdf4 # SPEI loading
  - xarray # SPEI loading
  - numba # For fast stuff
  - pyarrow # For Parquet IO in pandas
  - psutil # For physical core detection, thread's don't help dynasim
+ - descartes # Basic Geopandas Plotting
  # These packages are only available from pip or have later versions there
  - pip:
    - black # Code formatting
    - requests # read the web
    - flake8 # Grumpy linter
    - mypy # Type checking
+   - pytest # Testing
+   - coverage # Test coverage report
+   - geoalchemy2 # Geometry types for pushing geodataframes to postgres
+   - netcdf4 # SPEI loading
+   - sphinx # Docs
+   - html5lib # Reign loader bs4 parser
+

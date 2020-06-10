@@ -1,0 +1,2925 @@
+definitions:
+  cols:
+    cols_pgm: &cols-pgm
+      - acled_count_ns
+      - acled_count_os
+      - acled_count_pr
+      - acled_count_sb
+      - acled_dummy_ns
+      - acled_dummy_os
+      - acled_dummy_pr
+      - acled_dummy_sb
+      - acled_fat_ns
+      - acled_fat_os
+      - acled_fat_pr
+      - acled_fat_sb
+      - fvp_demo
+      - fvp_semi
+      - fvp_grgdpcap_nonoilrent
+      - fvp_grgdpcap_oilrent
+      - fvp_lngdpcap_nonoilrent
+      - fvp_lngdpcap_oilrent
+      - fvp_prop_excluded
+      - fvp_ssp2_edu_sec_15_24_prop
+      - fvp_ssp2_urban_share_iiasa
+      - ged_best_ns
+      - ged_best_os
+      - ged_best_sb
+      - ged_count_ns
+      - ged_count_os
+      - ged_count_sb
+      - ged_dummy_ns
+      - ged_dummy_os
+      - ged_dummy_sb
+      - greq_1_pgd_excluded
+      - fvp_population200
+      - fvp_timeindep
+      - fvp_timesincepreindepwar
+      - fvp_timesinceregimechange
+      - ln_pgd_bdist3
+      - ln_pgd_capdist
+      - ln_pgd_pop_gpw_sum
+      - ln_pgd_ttime_mean
+      - pgd_agri_gc
+      - pgd_agri_ih
+      - pgd_aquaveg_gc
+      - pgd_barren_gc
+      - pgd_barren_ih
+      - pgd_bdist3
+      - pgd_capdist
+      - pgd_cmr_mean
+      - pgd_diamprim
+      - pgd_diamsec
+      - pgd_drug_y
+      - pgd_excluded
+      - pgd_forest_gc
+      - pgd_forest_ih
+      - pgd_gcp_mer
+      - pgd_gem
+      - pgd_goldplacer
+      - pgd_goldsurface
+      - pgd_goldvein
+      - pgd_grass_ih
+      - pgd_gwarea
+      - pgd_harvarea
+      - pgd_herb_gc
+      - pgd_imr_mean
+      - pgd_landarea
+      - pgd_maincrop
+      - pgd_mountains_mean
+      - pgd_nlights_calib_mean
+      - pgd_pasture_ih
+      - pgd_petroleum
+      - pgd_pop_gpw_sum
+      - pgd_savanna_ih
+      - pgd_shrub_gc
+      - pgd_shrub_ih
+      - pgd_temp
+      - pgd_ttime_mean
+      - pgd_urban_gc
+      - pgd_urban_ih
+      - pgd_water_gc
+      - pgd_water_ih
+      - spei_1
+      - spei_3
+      - spei_12
+      - spei_24
+      - spei_36
+      - spei_48
+  ids:
+    ids_cm: &ids-cm
+      - month_id
+      - country_id
+    ids_cy: &ids-cy
+      - year
+      - country_id
+    ids_pgm: &ids-pgm
+      - month_id
+      - pg_id
+    ids_pgy: &ids-pgy
+      - year
+      - pg_id
+  transforms:
+    transforms_cm: &transforms-cm
+      acled_dummy_pr:
+        f: greq
+        col: acled_count_pr
+        value: 1
+      acled_dummy_sb:
+        f: greq
+        col: acled_count_sb
+        value: 1
+      acled_dummy_ns:
+        f: greq
+        col: acled_count_ns
+        value: 1
+      acled_dummy_os:
+        f: greq
+        col: acled_count_os
+        value: 1
+      ged_dummy_sb:
+        f: greq
+        col: ged_count_sb
+        value: 1
+      ged_dummy_ns:
+        f: greq
+        col: ged_count_ns
+        value: 1
+      ged_dummy_os:
+        f: greq
+        col: ged_count_os
+        value: 1
+      greq_1_ged_best_sb:
+        f: greq
+        col: ged_best_sb
+        value: 1
+      greq_1_ged_best_ns:
+        f: greq
+        col: ged_best_ns
+        value: 1
+      greq_1_ged_best_os:
+        f: greq
+        col: ged_best_os
+        value: 1
+      greq_5_ged_best_sb:
+        f: greq
+        col: ged_best_sb
+        value: 5
+      greq_5_ged_best_ns:
+        f: greq
+        col: ged_best_ns
+        value: 5
+      greq_5_ged_best_os:
+        f: greq
+        col: ged_best_os
+        value: 5
+      greq_25_ged_best_sb:
+        f: greq
+        col: ged_best_sb
+        value: 25
+      greq_25_ged_best_ns:
+        f: greq
+        col: ged_best_ns
+        value: 25
+      greq_25_ged_best_os:
+        f: greq
+        col: ged_best_os
+        value: 25
+      greq_100_ged_best_sb:
+        f: greq
+        col: ged_best_sb
+        value: 100
+      greq_100_ged_best_ns:
+        f: greq
+        col: ged_best_ns
+        value: 100
+      greq_100_ged_best_os:
+        f: greq
+        col: ged_best_os
+        value: 100
+      greq_500_ged_best_sb:
+        f: greq
+        col: ged_best_sb
+        value: 500
+      greq_500_ged_best_ns:
+        f: greq
+        col: ged_best_ns
+        value: 500
+      greq_500_ged_best_os:
+        f: greq
+        col: ged_best_os
+        value: 500
+      greq_5_splag_1_1_ged_best_sb:
+        f: greq
+        col: splag_1_1_ged_best_sb
+        value: 5
+      greq_5_splag_1_1_ged_best_ns:
+        f: greq
+        col: splag_1_1_ged_best_ns
+        value: 5
+      greq_5_splag_1_1_ged_best_os:
+        f: greq
+        col: splag_1_1_ged_best_os
+        value: 5
+      greq_25_splag_1_1_ged_best_sb:
+        f: greq
+        col: splag_1_1_ged_best_sb
+        value: 25
+      greq_25_splag_1_1_ged_best_ns:
+        f: greq
+        col: splag_1_1_ged_best_ns
+        value: 25
+      greq_25_splag_1_1_ged_best_os:
+        f: greq
+        col: splag_1_1_ged_best_os
+        value: 25
+      greq_100_splag_1_1_ged_best_sb:
+        f: greq
+        col: splag_1_1_ged_best_sb
+        value: 100
+      greq_100_splag_1_1_ged_best_ns:
+        f: greq
+        col: splag_1_1_ged_best_ns
+        value: 100
+      greq_100_splag_1_1_ged_best_os:
+        f: greq
+        col: splag_1_1_ged_best_os
+        value: 100
+      greq_500_splag_1_1_ged_best_sb:
+        f: greq
+        col: splag_1_1_ged_best_sb
+        value: 500
+      greq_500_splag_1_1_ged_best_ns:
+        f: greq
+        col: splag_1_1_ged_best_ns
+        value: 500
+      greq_500_splag_1_1_ged_best_os:
+        f: greq
+        col: splag_1_1_ged_best_os
+        value: 500
+      time_since_acled_dummy_pr:
+        f: time_since
+        col: acled_dummy_pr
+        seed: 999
+      time_since_acled_dummy_sb:
+        f: time_since
+        col: acled_dummy_sb
+        seed: 999
+      time_since_acled_dummy_ns:
+        f: time_since
+        col: acled_dummy_ns
+        seed: 999
+      time_since_acled_dummy_os:
+        f: time_since
+        col: acled_dummy_os
+        seed: 999
+      time_since_ged_dummy_sb:
+        f: time_since
+        col: ged_dummy_sb
+        seed: 999
+      time_since_ged_dummy_ns:
+        f: time_since
+        col: ged_dummy_ns
+        seed: 999
+      time_since_ged_dummy_os:
+        f: time_since
+        col: ged_dummy_os
+        seed: 999
+      time_since_greq_5_ged_best_sb:
+        f: time_since
+        col: greq_5_ged_best_sb
+        seed: 999
+      time_since_greq_5_ged_best_ns:
+        f: time_since
+        col: greq_5_ged_best_ns
+        seed: 999
+      time_since_greq_5_ged_best_os:
+        f: time_since
+        col: greq_5_ged_best_os
+        seed: 999
+      time_since_greq_25_ged_best_sb:
+        f: time_since
+        col: greq_25_ged_best_sb
+        seed: 999
+      time_since_greq_25_ged_best_ns:
+        f: time_since
+        col: greq_25_ged_best_ns
+        seed: 999
+      time_since_greq_25_ged_best_os:
+        f: time_since
+        col: greq_25_ged_best_os
+        seed: 999
+      time_since_greq_100_ged_best_sb:
+        f: time_since
+        col: greq_100_ged_best_sb
+        seed: 999
+      time_since_greq_100_ged_best_ns:
+        f: time_since
+        col: greq_100_ged_best_ns
+        seed: 999
+      time_since_greq_100_ged_best_os:
+        f: time_since
+        col: greq_100_ged_best_os
+        seed: 999
+      time_since_greq_500_ged_best_sb:
+        f: time_since
+        col: greq_500_ged_best_sb
+        seed: 999
+      time_since_greq_500_ged_best_ns:
+        f: time_since
+        col: greq_500_ged_best_ns
+        seed: 999
+      time_since_greq_500_ged_best_os:
+        f: time_since
+        col: greq_500_ged_best_os
+        seed: 999
+      time_since_splag_1_1_acled_dummy_pr:
+        f: time_since
+        col: splag_1_1_acled_dummy_pr
+        seed: 999
+      time_since_splag_1_1_acled_dummy_sb:
+        f: time_since
+        col: splag_1_1_acled_dummy_sb
+        seed: 999
+      time_since_splag_1_1_acled_dummy_ns:
+        f: time_since
+        col: splag_1_1_acled_dummy_ns
+        seed: 999
+      time_since_splag_1_1_acled_dummy_os:
+        f: time_since
+        col: splag_1_1_acled_dummy_os
+        seed: 999
+      time_since_greq_5_splag_1_1_ged_best_sb:
+        f: time_since
+        col: greq_5_splag_1_1_ged_best_sb
+        seed: 999
+      time_since_greq_5_splag_1_1_ged_best_ns:
+        f: time_since
+        col: greq_5_splag_1_1_ged_best_ns
+        seed: 999
+      time_since_greq_5_splag_1_1_ged_best_os:
+        f: time_since
+        col: greq_5_splag_1_1_ged_best_os
+        seed: 999
+      time_since_greq_25_splag_1_1_ged_best_sb:
+        f: time_since
+        col: greq_25_splag_1_1_ged_best_sb
+        seed: 999
+      time_since_greq_25_splag_1_1_ged_best_ns:
+        f: time_since
+        col: greq_25_splag_1_1_ged_best_ns
+        seed: 999
+      time_since_greq_25_splag_1_1_ged_best_os:
+        f: time_since
+        col: greq_25_splag_1_1_ged_best_os
+        seed: 999
+      time_since_greq_100_splag_1_1_ged_best_sb:
+        f: time_since
+        col: greq_100_splag_1_1_ged_best_sb
+        seed: 999
+      time_since_greq_100_splag_1_1_ged_best_ns:
+        f: time_since
+        col: greq_100_splag_1_1_ged_best_ns
+        seed: 999
+      time_since_greq_100_splag_1_1_ged_best_os:
+        f: time_since
+        col: greq_100_splag_1_1_ged_best_os
+        seed: 999
+      time_since_greq_500_splag_1_1_ged_best_sb:
+        f: time_since
+        col: greq_500_splag_1_1_ged_best_sb
+        seed: 999
+      time_since_greq_500_splag_1_1_ged_best_ns:
+        f: time_since
+        col: greq_500_splag_1_1_ged_best_ns
+        seed: 999
+      time_since_greq_500_splag_1_1_ged_best_os:
+        f: time_since
+        col: greq_500_splag_1_1_ged_best_os
+        seed: 999
+      time_since_splag_1_1_ged_dummy_sb:
+        f: time_since
+        col: splag_1_1_ged_dummy_sb
+        seed: 999
+      time_since_splag_1_1_ged_dummy_ns:
+        f: time_since
+        col: splag_1_1_ged_dummy_ns
+        seed: 999
+      time_since_splag_1_1_ged_dummy_os:
+        f: time_since
+        col: splag_1_1_ged_dummy_os
+        seed: 999
+      tlag_1_ged_best_sb:
+        f: tlag
+        col: ged_best_sb
+        time: 1
+      tlag_1_ged_best_ns:
+        f: tlag
+        col: ged_best_ns
+        time: 1
+      tlag_1_ged_best_os:
+        f: tlag
+        col: ged_best_os
+        time: 1
+      tlag_1_splag_1_1_ged_best_sb:
+        f: tlag
+        col: splag_1_1_ged_best_sb
+        time: 1
+      tlag_1_splag_1_1_ged_best_ns:
+        f: tlag
+        col: splag_1_1_ged_best_ns
+        time: 1
+      tlag_1_splag_1_1_ged_best_os:
+        f: tlag
+        col: splag_1_1_ged_best_os
+        time: 1
+      tlag_1_greq_1_ged_best_sb:
+        f: tlag
+        col: greq_1_ged_best_sb
+        time: 1
+      tlag_1_greq_1_ged_best_ns:
+        f: tlag
+        col: greq_1_ged_best_ns
+        time: 1
+      tlag_1_greq_1_ged_best_os:
+        f: tlag
+        col: greq_1_ged_best_os
+        time: 1
+      tlag_2_greq_1_ged_best_sb:
+        f: tlag
+        col: greq_1_ged_best_sb
+        time: 2
+      tlag_2_greq_1_ged_best_ns:
+        f: tlag
+        col: greq_1_ged_best_ns
+        time: 2
+      tlag_2_greq_1_ged_best_os:
+        f: tlag
+        col: greq_1_ged_best_os
+        time: 2
+      tlag_3_greq_1_ged_best_sb:
+        f: tlag
+        col: greq_1_ged_best_sb
+        time: 3
+      tlag_3_greq_1_ged_best_ns:
+        f: tlag
+        col: greq_1_ged_best_ns
+        time: 3
+      tlag_3_greq_1_ged_best_os:
+        f: tlag
+        col: greq_1_ged_best_os
+        time: 3
+      tlag_4_greq_1_ged_best_sb:
+        f: tlag
+        col: greq_1_ged_best_sb
+        time: 4
+      tlag_4_greq_1_ged_best_ns:
+        f: tlag
+        col: greq_1_ged_best_ns
+        time: 4
+      tlag_4_greq_1_ged_best_os:
+        f: tlag
+        col: greq_1_ged_best_os
+        time: 4
+      tlag_5_greq_1_ged_best_sb:
+        f: tlag
+        col: greq_1_ged_best_sb
+        time: 5
+      tlag_5_greq_1_ged_best_ns:
+        f: tlag
+        col: greq_1_ged_best_ns
+        time: 5
+      tlag_5_greq_1_ged_best_os:
+        f: tlag
+        col: greq_1_ged_best_os
+        time: 5
+      tlag_6_greq_1_ged_best_sb:
+        f: tlag
+        col: greq_1_ged_best_sb
+        time: 6
+      tlag_6_greq_1_ged_best_ns:
+        f: tlag
+        col: greq_1_ged_best_ns
+        time: 6
+      tlag_6_greq_1_ged_best_os:
+        f: tlag
+        col: greq_1_ged_best_os
+        time: 6
+      tlag_7_greq_1_ged_best_sb:
+        f: tlag
+        col: greq_1_ged_best_sb
+        time: 7
+      tlag_7_greq_1_ged_best_ns:
+        f: tlag
+        col: greq_1_ged_best_ns
+        time: 7
+      tlag_7_greq_1_ged_best_os:
+        f: tlag
+        col: greq_1_ged_best_os
+        time: 7
+      tlag_8_greq_1_ged_best_sb:
+        f: tlag
+        col: greq_1_ged_best_sb
+        time: 8
+      tlag_8_greq_1_ged_best_ns:
+        f: tlag
+        col: greq_1_ged_best_ns
+        time: 8
+      tlag_8_greq_1_ged_best_os:
+        f: tlag
+        col: greq_1_ged_best_os
+        time: 8
+      tlag_9_greq_1_ged_best_sb:
+        f: tlag
+        col: greq_1_ged_best_sb
+        time: 9
+      tlag_9_greq_1_ged_best_ns:
+        f: tlag
+        col: greq_1_ged_best_ns
+        time: 9
+      tlag_9_greq_1_ged_best_os:
+        f: tlag
+        col: greq_1_ged_best_os
+        time: 9
+      tlag_10_greq_1_ged_best_sb:
+        f: tlag
+        col: greq_1_ged_best_sb
+        time: 10
+      tlag_10_greq_1_ged_best_ns:
+        f: tlag
+        col: greq_1_ged_best_ns
+        time: 10
+      tlag_10_greq_1_ged_best_os:
+        f: tlag
+        col: greq_1_ged_best_os
+        time: 10
+      tlag_11_greq_1_ged_best_sb:
+        f: tlag
+        col: greq_1_ged_best_sb
+        time: 11
+      tlag_11_greq_1_ged_best_ns:
+        f: tlag
+        col: greq_1_ged_best_ns
+        time: 11
+      tlag_11_greq_1_ged_best_os:
+        f: tlag
+        col: greq_1_ged_best_os
+        time: 11
+      tlag_12_greq_1_ged_best_sb:
+        f: tlag
+        col: greq_1_ged_best_sb
+        time: 12
+      tlag_12_greq_1_ged_best_ns:
+        f: tlag
+        col: greq_1_ged_best_ns
+        time: 12
+      tlag_12_greq_1_ged_best_os:
+        f: tlag
+        col: greq_1_ged_best_os
+        time: 12
+      tlag_1_greq_5_ged_best_sb:
+        f: tlag
+        col: greq_5_ged_best_sb
+        time: 1
+      tlag_1_greq_5_ged_best_ns:
+        f: tlag
+        col: greq_5_ged_best_ns
+        time: 1
+      tlag_1_greq_5_ged_best_os:
+        f: tlag
+        col: greq_5_ged_best_os
+        time: 1
+      tlag_2_greq_5_ged_best_sb:
+        f: tlag
+        col: greq_5_ged_best_sb
+        time: 2
+      tlag_2_greq_5_ged_best_ns:
+        f: tlag
+        col: greq_5_ged_best_ns
+        time: 2
+      tlag_2_greq_5_ged_best_os:
+        f: tlag
+        col: greq_5_ged_best_os
+        time: 2
+      tlag_3_greq_5_ged_best_sb:
+        f: tlag
+        col: greq_5_ged_best_sb
+        time: 3
+      tlag_3_greq_5_ged_best_ns:
+        f: tlag
+        col: greq_5_ged_best_ns
+        time: 3
+      tlag_3_greq_5_ged_best_os:
+        f: tlag
+        col: greq_5_ged_best_os
+        time: 3
+      tlag_4_greq_5_ged_best_sb:
+        f: tlag
+        col: greq_5_ged_best_sb
+        time: 4
+      tlag_4_greq_5_ged_best_ns:
+        f: tlag
+        col: greq_5_ged_best_ns
+        time: 4
+      tlag_4_greq_5_ged_best_os:
+        f: tlag
+        col: greq_5_ged_best_os
+        time: 4
+      tlag_5_greq_5_ged_best_sb:
+        f: tlag
+        col: greq_5_ged_best_sb
+        time: 5
+      tlag_5_greq_5_ged_best_ns:
+        f: tlag
+        col: greq_5_ged_best_ns
+        time: 5
+      tlag_5_greq_5_ged_best_os:
+        f: tlag
+        col: greq_5_ged_best_os
+        time: 5
+      tlag_6_greq_5_ged_best_sb:
+        f: tlag
+        col: greq_5_ged_best_sb
+        time: 6
+      tlag_6_greq_5_ged_best_ns:
+        f: tlag
+        col: greq_5_ged_best_ns
+        time: 6
+      tlag_6_greq_5_ged_best_os:
+        f: tlag
+        col: greq_5_ged_best_os
+        time: 6
+      tlag_7_greq_5_ged_best_sb:
+        f: tlag
+        col: greq_5_ged_best_sb
+        time: 7
+      tlag_7_greq_5_ged_best_ns:
+        f: tlag
+        col: greq_5_ged_best_ns
+        time: 7
+      tlag_7_greq_5_ged_best_os:
+        f: tlag
+        col: greq_5_ged_best_os
+        time: 7
+      tlag_8_greq_5_ged_best_sb:
+        f: tlag
+        col: greq_5_ged_best_sb
+        time: 8
+      tlag_8_greq_5_ged_best_ns:
+        f: tlag
+        col: greq_5_ged_best_ns
+        time: 8
+      tlag_8_greq_5_ged_best_os:
+        f: tlag
+        col: greq_5_ged_best_os
+        time: 8
+      tlag_9_greq_5_ged_best_sb:
+        f: tlag
+        col: greq_5_ged_best_sb
+        time: 9
+      tlag_9_greq_5_ged_best_ns:
+        f: tlag
+        col: greq_5_ged_best_ns
+        time: 9
+      tlag_9_greq_5_ged_best_os:
+        f: tlag
+        col: greq_5_ged_best_os
+        time: 9
+      tlag_10_greq_5_ged_best_sb:
+        f: tlag
+        col: greq_5_ged_best_sb
+        time: 10
+      tlag_10_greq_5_ged_best_ns:
+        f: tlag
+        col: greq_5_ged_best_ns
+        time: 10
+      tlag_10_greq_5_ged_best_os:
+        f: tlag
+        col: greq_5_ged_best_os
+        time: 10
+      tlag_11_greq_5_ged_best_sb:
+        f: tlag
+        col: greq_5_ged_best_sb
+        time: 11
+      tlag_11_greq_5_ged_best_ns:
+        f: tlag
+        col: greq_5_ged_best_ns
+        time: 11
+      tlag_11_greq_5_ged_best_os:
+        f: tlag
+        col: greq_5_ged_best_os
+        time: 11
+      tlag_12_greq_5_ged_best_sb:
+        f: tlag
+        col: greq_5_ged_best_sb
+        time: 12
+      tlag_12_greq_5_ged_best_ns:
+        f: tlag
+        col: greq_5_ged_best_ns
+        time: 12
+      tlag_12_greq_5_ged_best_os:
+        f: tlag
+        col: greq_5_ged_best_os
+        time: 12
+      tlag_1_greq_25_ged_best_sb:
+        f: tlag
+        col: greq_25_ged_best_sb
+        time: 1
+      tlag_1_greq_25_ged_best_ns:
+        f: tlag
+        col: greq_25_ged_best_ns
+        time: 1
+      tlag_1_greq_25_ged_best_os:
+        f: tlag
+        col: greq_25_ged_best_os
+        time: 1
+      tlag_2_greq_25_ged_best_sb:
+        f: tlag
+        col: greq_25_ged_best_sb
+        time: 2
+      tlag_2_greq_25_ged_best_ns:
+        f: tlag
+        col: greq_25_ged_best_ns
+        time: 2
+      tlag_2_greq_25_ged_best_os:
+        f: tlag
+        col: greq_25_ged_best_os
+        time: 2
+      tlag_3_greq_25_ged_best_sb:
+        f: tlag
+        col: greq_25_ged_best_sb
+        time: 3
+      tlag_3_greq_25_ged_best_ns:
+        f: tlag
+        col: greq_25_ged_best_ns
+        time: 3
+      tlag_3_greq_25_ged_best_os:
+        f: tlag
+        col: greq_25_ged_best_os
+        time: 3
+      tlag_4_greq_25_ged_best_sb:
+        f: tlag
+        col: greq_25_ged_best_sb
+        time: 4
+      tlag_4_greq_25_ged_best_ns:
+        f: tlag
+        col: greq_25_ged_best_ns
+        time: 4
+      tlag_4_greq_25_ged_best_os:
+        f: tlag
+        col: greq_25_ged_best_os
+        time: 4
+      tlag_5_greq_25_ged_best_sb:
+        f: tlag
+        col: greq_25_ged_best_sb
+        time: 5
+      tlag_5_greq_25_ged_best_ns:
+        f: tlag
+        col: greq_25_ged_best_ns
+        time: 5
+      tlag_5_greq_25_ged_best_os:
+        f: tlag
+        col: greq_25_ged_best_os
+        time: 5
+      tlag_6_greq_25_ged_best_sb:
+        f: tlag
+        col: greq_25_ged_best_sb
+        time: 6
+      tlag_6_greq_25_ged_best_ns:
+        f: tlag
+        col: greq_25_ged_best_ns
+        time: 6
+      tlag_6_greq_25_ged_best_os:
+        f: tlag
+        col: greq_25_ged_best_os
+        time: 6
+      tlag_7_greq_25_ged_best_sb:
+        f: tlag
+        col: greq_25_ged_best_sb
+        time: 7
+      tlag_7_greq_25_ged_best_ns:
+        f: tlag
+        col: greq_25_ged_best_ns
+        time: 7
+      tlag_7_greq_25_ged_best_os:
+        f: tlag
+        col: greq_25_ged_best_os
+        time: 7
+      tlag_8_greq_25_ged_best_sb:
+        f: tlag
+        col: greq_25_ged_best_sb
+        time: 8
+      tlag_8_greq_25_ged_best_ns:
+        f: tlag
+        col: greq_25_ged_best_ns
+        time: 8
+      tlag_8_greq_25_ged_best_os:
+        f: tlag
+        col: greq_25_ged_best_os
+        time: 8
+      tlag_9_greq_25_ged_best_sb:
+        f: tlag
+        col: greq_25_ged_best_sb
+        time: 9
+      tlag_9_greq_25_ged_best_ns:
+        f: tlag
+        col: greq_25_ged_best_ns
+        time: 9
+      tlag_9_greq_25_ged_best_os:
+        f: tlag
+        col: greq_25_ged_best_os
+        time: 9
+      tlag_10_greq_25_ged_best_sb:
+        f: tlag
+        col: greq_25_ged_best_sb
+        time: 10
+      tlag_10_greq_25_ged_best_ns:
+        f: tlag
+        col: greq_25_ged_best_ns
+        time: 10
+      tlag_10_greq_25_ged_best_os:
+        f: tlag
+        col: greq_25_ged_best_os
+        time: 10
+      tlag_11_greq_25_ged_best_sb:
+        f: tlag
+        col: greq_25_ged_best_sb
+        time: 11
+      tlag_11_greq_25_ged_best_ns:
+        f: tlag
+        col: greq_25_ged_best_ns
+        time: 11
+      tlag_11_greq_25_ged_best_os:
+        f: tlag
+        col: greq_25_ged_best_os
+        time: 11
+      tlag_12_greq_25_ged_best_sb:
+        f: tlag
+        col: greq_25_ged_best_sb
+        time: 12
+      tlag_12_greq_25_ged_best_ns:
+        f: tlag
+        col: greq_25_ged_best_ns
+        time: 12
+      tlag_12_greq_25_ged_best_os:
+        f: tlag
+        col: greq_25_ged_best_os
+        time: 12
+      tlag_1_greq_100_ged_best_sb:
+        f: tlag
+        col: greq_100_ged_best_sb
+        time: 1
+      tlag_1_greq_100_ged_best_ns:
+        f: tlag
+        col: greq_100_ged_best_ns
+        time: 1
+      tlag_1_greq_100_ged_best_os:
+        f: tlag
+        col: greq_100_ged_best_os
+        time: 1
+      tlag_2_greq_100_ged_best_sb:
+        f: tlag
+        col: greq_100_ged_best_sb
+        time: 2
+      tlag_2_greq_100_ged_best_ns:
+        f: tlag
+        col: greq_100_ged_best_ns
+        time: 2
+      tlag_2_greq_100_ged_best_os:
+        f: tlag
+        col: greq_100_ged_best_os
+        time: 2
+      tlag_3_greq_100_ged_best_sb:
+        f: tlag
+        col: greq_100_ged_best_sb
+        time: 3
+      tlag_3_greq_100_ged_best_ns:
+        f: tlag
+        col: greq_100_ged_best_ns
+        time: 3
+      tlag_3_greq_100_ged_best_os:
+        f: tlag
+        col: greq_100_ged_best_os
+        time: 3
+      tlag_4_greq_100_ged_best_sb:
+        f: tlag
+        col: greq_100_ged_best_sb
+        time: 4
+      tlag_4_greq_100_ged_best_ns:
+        f: tlag
+        col: greq_100_ged_best_ns
+        time: 4
+      tlag_4_greq_100_ged_best_os:
+        f: tlag
+        col: greq_100_ged_best_os
+        time: 4
+      tlag_5_greq_100_ged_best_sb:
+        f: tlag
+        col: greq_100_ged_best_sb
+        time: 5
+      tlag_5_greq_100_ged_best_ns:
+        f: tlag
+        col: greq_100_ged_best_ns
+        time: 5
+      tlag_5_greq_100_ged_best_os:
+        f: tlag
+        col: greq_100_ged_best_os
+        time: 5
+      tlag_6_greq_100_ged_best_sb:
+        f: tlag
+        col: greq_100_ged_best_sb
+        time: 6
+      tlag_6_greq_100_ged_best_ns:
+        f: tlag
+        col: greq_100_ged_best_ns
+        time: 6
+      tlag_6_greq_100_ged_best_os:
+        f: tlag
+        col: greq_100_ged_best_os
+        time: 6
+      tlag_7_greq_100_ged_best_sb:
+        f: tlag
+        col: greq_100_ged_best_sb
+        time: 7
+      tlag_7_greq_100_ged_best_ns:
+        f: tlag
+        col: greq_100_ged_best_ns
+        time: 7
+      tlag_7_greq_100_ged_best_os:
+        f: tlag
+        col: greq_100_ged_best_os
+        time: 7
+      tlag_8_greq_100_ged_best_sb:
+        f: tlag
+        col: greq_100_ged_best_sb
+        time: 8
+      tlag_8_greq_100_ged_best_ns:
+        f: tlag
+        col: greq_100_ged_best_ns
+        time: 8
+      tlag_8_greq_100_ged_best_os:
+        f: tlag
+        col: greq_100_ged_best_os
+        time: 8
+      tlag_9_greq_100_ged_best_sb:
+        f: tlag
+        col: greq_100_ged_best_sb
+        time: 9
+      tlag_9_greq_100_ged_best_ns:
+        f: tlag
+        col: greq_100_ged_best_ns
+        time: 9
+      tlag_9_greq_100_ged_best_os:
+        f: tlag
+        col: greq_100_ged_best_os
+        time: 9
+      tlag_10_greq_100_ged_best_sb:
+        f: tlag
+        col: greq_100_ged_best_sb
+        time: 10
+      tlag_10_greq_100_ged_best_ns:
+        f: tlag
+        col: greq_100_ged_best_ns
+        time: 10
+      tlag_10_greq_100_ged_best_os:
+        f: tlag
+        col: greq_100_ged_best_os
+        time: 10
+      tlag_11_greq_100_ged_best_sb:
+        f: tlag
+        col: greq_100_ged_best_sb
+        time: 11
+      tlag_11_greq_100_ged_best_ns:
+        f: tlag
+        col: greq_100_ged_best_ns
+        time: 11
+      tlag_11_greq_100_ged_best_os:
+        f: tlag
+        col: greq_100_ged_best_os
+        time: 11
+      tlag_12_greq_100_ged_best_sb:
+        f: tlag
+        col: greq_100_ged_best_sb
+        time: 12
+      tlag_12_greq_100_ged_best_ns:
+        f: tlag
+        col: greq_100_ged_best_ns
+        time: 12
+      tlag_12_greq_100_ged_best_os:
+        f: tlag
+        col: greq_100_ged_best_os
+        time: 12
+      tlag_1_greq_500_ged_best_sb:
+        f: tlag
+        col: greq_500_ged_best_sb
+        time: 1
+      tlag_1_greq_500_ged_best_ns:
+        f: tlag
+        col: greq_500_ged_best_ns
+        time: 1
+      tlag_1_greq_500_ged_best_os:
+        f: tlag
+        col: greq_500_ged_best_os
+        time: 1
+      tlag_2_greq_500_ged_best_sb:
+        f: tlag
+        col: greq_500_ged_best_sb
+        time: 2
+      tlag_2_greq_500_ged_best_ns:
+        f: tlag
+        col: greq_500_ged_best_ns
+        time: 2
+      tlag_2_greq_500_ged_best_os:
+        f: tlag
+        col: greq_500_ged_best_os
+        time: 2
+      tlag_3_greq_500_ged_best_sb:
+        f: tlag
+        col: greq_500_ged_best_sb
+        time: 3
+      tlag_3_greq_500_ged_best_ns:
+        f: tlag
+        col: greq_500_ged_best_ns
+        time: 3
+      tlag_3_greq_500_ged_best_os:
+        f: tlag
+        col: greq_500_ged_best_os
+        time: 3
+      tlag_4_greq_500_ged_best_sb:
+        f: tlag
+        col: greq_500_ged_best_sb
+        time: 4
+      tlag_4_greq_500_ged_best_ns:
+        f: tlag
+        col: greq_500_ged_best_ns
+        time: 4
+      tlag_4_greq_500_ged_best_os:
+        f: tlag
+        col: greq_500_ged_best_os
+        time: 4
+      tlag_5_greq_500_ged_best_sb:
+        f: tlag
+        col: greq_500_ged_best_sb
+        time: 5
+      tlag_5_greq_500_ged_best_ns:
+        f: tlag
+        col: greq_500_ged_best_ns
+        time: 5
+      tlag_5_greq_500_ged_best_os:
+        f: tlag
+        col: greq_500_ged_best_os
+        time: 5
+      tlag_6_greq_500_ged_best_sb:
+        f: tlag
+        col: greq_500_ged_best_sb
+        time: 6
+      tlag_6_greq_500_ged_best_ns:
+        f: tlag
+        col: greq_500_ged_best_ns
+        time: 6
+      tlag_6_greq_500_ged_best_os:
+        f: tlag
+        col: greq_500_ged_best_os
+        time: 6
+      tlag_7_greq_500_ged_best_sb:
+        f: tlag
+        col: greq_500_ged_best_sb
+        time: 7
+      tlag_7_greq_500_ged_best_ns:
+        f: tlag
+        col: greq_500_ged_best_ns
+        time: 7
+      tlag_7_greq_500_ged_best_os:
+        f: tlag
+        col: greq_500_ged_best_os
+        time: 7
+      tlag_8_greq_500_ged_best_sb:
+        f: tlag
+        col: greq_500_ged_best_sb
+        time: 8
+      tlag_8_greq_500_ged_best_ns:
+        f: tlag
+        col: greq_500_ged_best_ns
+        time: 8
+      tlag_8_greq_500_ged_best_os:
+        f: tlag
+        col: greq_500_ged_best_os
+        time: 8
+      tlag_9_greq_500_ged_best_sb:
+        f: tlag
+        col: greq_500_ged_best_sb
+        time: 9
+      tlag_9_greq_500_ged_best_ns:
+        f: tlag
+        col: greq_500_ged_best_ns
+        time: 9
+      tlag_9_greq_500_ged_best_os:
+        f: tlag
+        col: greq_500_ged_best_os
+        time: 9
+      tlag_10_greq_500_ged_best_sb:
+        f: tlag
+        col: greq_500_ged_best_sb
+        time: 10
+      tlag_10_greq_500_ged_best_ns:
+        f: tlag
+        col: greq_500_ged_best_ns
+        time: 10
+      tlag_10_greq_500_ged_best_os:
+        f: tlag
+        col: greq_500_ged_best_os
+        time: 10
+      tlag_11_greq_500_ged_best_sb:
+        f: tlag
+        col: greq_500_ged_best_sb
+        time: 11
+      tlag_11_greq_500_ged_best_ns:
+        f: tlag
+        col: greq_500_ged_best_ns
+        time: 11
+      tlag_11_greq_500_ged_best_os:
+        f: tlag
+        col: greq_500_ged_best_os
+        time: 11
+      tlag_12_greq_500_ged_best_sb:
+        f: tlag
+        col: greq_500_ged_best_sb
+        time: 12
+      tlag_12_greq_500_ged_best_ns:
+        f: tlag
+        col: greq_500_ged_best_ns
+        time: 12
+      tlag_12_greq_500_ged_best_os:
+        f: tlag
+        col: greq_500_ged_best_os
+        time: 12
+      tlag_1_acled_count_pr:
+        f: tlag
+        col: acled_count_pr
+        time: 1
+      tlag_2_acled_count_pr:
+        f: tlag
+        col: acled_count_pr
+        time: 2
+      tlag_3_acled_count_pr:
+        f: tlag
+        col: acled_count_pr
+        time: 3
+      tlag_4_acled_count_pr:
+        f: tlag
+        col: acled_count_pr
+        time: 4
+      tlag_5_acled_count_pr:
+        f: tlag
+        col: acled_count_pr
+        time: 5
+      tlag_6_acled_count_pr:
+        f: tlag
+        col: acled_count_pr
+        time: 6
+      tlag_7_acled_count_pr:
+        f: tlag
+        col: acled_count_pr
+        time: 7
+      tlag_8_acled_count_pr:
+        f: tlag
+        col: acled_count_pr
+        time: 8
+      tlag_9_acled_count_pr:
+        f: tlag
+        col: acled_count_pr
+        time: 9
+      tlag_10_acled_count_pr:
+        f: tlag
+        col: acled_count_pr
+        time: 10
+      tlag_11_acled_count_pr:
+        f: tlag
+        col: acled_count_pr
+        time: 11
+      tlag_12_acled_count_pr:
+        f: tlag
+        col: acled_count_pr
+        time: 12
+      tlag_1_acled_count_sb:
+        f: tlag
+        col: acled_count_sb
+        time: 1
+      tlag_2_acled_count_sb:
+        f: tlag
+        col: acled_count_sb
+        time: 2
+      tlag_3_acled_count_sb:
+        f: tlag
+        col: acled_count_sb
+        time: 3
+      tlag_4_acled_count_sb:
+        f: tlag
+        col: acled_count_sb
+        time: 4
+      tlag_5_acled_count_sb:
+        f: tlag
+        col: acled_count_sb
+        time: 5
+      tlag_6_acled_count_sb:
+        f: tlag
+        col: acled_count_sb
+        time: 6
+      tlag_7_acled_count_sb:
+        f: tlag
+        col: acled_count_sb
+        time: 7
+      tlag_8_acled_count_sb:
+        f: tlag
+        col: acled_count_sb
+        time: 8
+      tlag_9_acled_count_sb:
+        f: tlag
+        col: acled_count_sb
+        time: 9
+      tlag_10_acled_count_sb:
+        f: tlag
+        col: acled_count_sb
+        time: 10
+      tlag_11_acled_count_sb:
+        f: tlag
+        col: acled_count_sb
+        time: 11
+      tlag_12_acled_count_sb:
+        f: tlag
+        col: acled_count_sb
+        time: 12
+      tlag_1_acled_count_ns:
+        f: tlag
+        col: acled_count_ns
+        time: 1
+      tlag_2_acled_count_ns:
+        f: tlag
+        col: acled_count_ns
+        time: 2
+      tlag_3_acled_count_ns:
+        f: tlag
+        col: acled_count_ns
+        time: 3
+      tlag_4_acled_count_ns:
+        f: tlag
+        col: acled_count_ns
+        time: 4
+      tlag_5_acled_count_ns:
+        f: tlag
+        col: acled_count_ns
+        time: 5
+      tlag_6_acled_count_ns:
+        f: tlag
+        col: acled_count_ns
+        time: 6
+      tlag_7_acled_count_ns:
+        f: tlag
+        col: acled_count_ns
+        time: 7
+      tlag_8_acled_count_ns:
+        f: tlag
+        col: acled_count_ns
+        time: 8
+      tlag_9_acled_count_ns:
+        f: tlag
+        col: acled_count_ns
+        time: 9
+      tlag_10_acled_count_ns:
+        f: tlag
+        col: acled_count_ns
+        time: 10
+      tlag_11_acled_count_ns:
+        f: tlag
+        col: acled_count_ns
+        time: 11
+      tlag_12_acled_count_ns:
+        f: tlag
+        col: acled_count_ns
+        time: 12
+      tlag_1_acled_count_os:
+        f: tlag
+        col: acled_count_os
+        time: 1
+      tlag_2_acled_count_os:
+        f: tlag
+        col: acled_count_os
+        time: 2
+      tlag_3_acled_count_os:
+        f: tlag
+        col: acled_count_os
+        time: 3
+      tlag_4_acled_count_os:
+        f: tlag
+        col: acled_count_os
+        time: 4
+      tlag_5_acled_count_os:
+        f: tlag
+        col: acled_count_os
+        time: 5
+      tlag_6_acled_count_os:
+        f: tlag
+        col: acled_count_os
+        time: 6
+      tlag_7_acled_count_os:
+        f: tlag
+        col: acled_count_os
+        time: 7
+      tlag_8_acled_count_os:
+        f: tlag
+        col: acled_count_os
+        time: 8
+      tlag_9_acled_count_os:
+        f: tlag
+        col: acled_count_os
+        time: 9
+      tlag_10_acled_count_os:
+        f: tlag
+        col: acled_count_os
+        time: 10
+      tlag_11_acled_count_os:
+        f: tlag
+        col: acled_count_os
+        time: 11
+      tlag_12_acled_count_os:
+        f: tlag
+        col: acled_count_os
+        time: 12
+      splag_1_1_ged_best_sb:
+        f: splag
+        col: ged_best_sb
+        first: 1
+        last: 1
+      splag_1_1_ged_best_ns:
+        f: splag
+        col: ged_best_ns
+        first: 1
+        last: 1
+      splag_1_1_ged_best_os:
+        f: splag
+        col: ged_best_os
+        first: 1
+        last: 1
+      splag_1_1_ged_dummy_sb:
+        f: splag
+        col: ged_dummy_sb
+        first: 1
+        last: 1
+      splag_1_1_ged_dummy_ns:
+        f: splag
+        col: ged_dummy_ns
+        first: 1
+        last: 1
+      splag_1_1_ged_dummy_os:
+        f: splag
+        col: ged_dummy_os
+        first: 1
+        last: 1
+      splag_1_1_acled_dummy_pr:
+        f: splag
+        col: acled_dummy_pr
+        first: 1
+        last: 1
+      splag_1_1_acled_dummy_sb:
+        f: splag
+        col: acled_dummy_sb
+        first: 1
+        last: 1
+      splag_1_1_acled_dummy_ns:
+        f: splag
+        col: acled_dummy_ns
+        first: 1
+        last: 1
+      splag_1_1_acled_dummy_os:
+        f: splag
+        col: acled_dummy_os
+        first: 1
+        last: 1
+      splag_1_1_acled_count_pr:
+        f: splag
+        col: acled_count_pr
+        first: 1
+        last: 1
+      splag_1_1_acled_count_sb:
+        f: splag
+        col: acled_count_sb
+        first: 1
+        last: 1
+      splag_1_1_acled_count_ns:
+        f: splag
+        col: acled_count_ns
+        first: 1
+        last: 1
+      splag_1_1_acled_count_os:
+        f: splag
+        col: acled_count_os
+        first: 1
+        last: 1
+      rollmax_24_ged_dummy_sb:
+        f: rollmax
+        col: ged_dummy_sb
+        window: 24
+      rollmax_24_ged_dummy_ns:
+        f: rollmax
+        col: ged_dummy_ns
+        window: 24
+      rollmax_24_ged_dummy_os:
+        f: rollmax
+        col: ged_dummy_os
+        window: 24
+      rollmax_24_greq_5_ged_best_sb:
+        f: rollmax
+        col: greq_5_ged_best_sb
+        window: 24
+      onset_24_greq_1_ged_best_sb:
+        f: onset
+        col: greq_1_ged_best_sb
+        window: 24
+      onset_24_greq_1_ged_best_ns:
+        f: onset
+        col: greq_1_ged_best_ns
+        window: 24
+      onset_24_greq_1_ged_best_os:
+        f: onset
+        col: greq_1_ged_best_os
+        window: 24
+      onset_24_greq_5_ged_best_sb:
+        f: onset
+        col: greq_5_ged_best_sb
+        window: 24
+      onset_24_greq_5_ged_best_ns:
+        f: onset
+        col: greq_5_ged_best_ns
+        window: 24
+      onset_24_greq_5_ged_best_os:
+        f: onset
+        col: greq_5_ged_best_os
+        window: 24
+      onset_24_greq_25_ged_best_sb:
+        f: onset
+        col: greq_25_ged_best_sb
+        window: 24
+      onset_24_greq_25_ged_best_ns:
+        f: onset
+        col: greq_25_ged_best_ns
+        window: 24
+      onset_24_greq_25_ged_best_os:
+        f: onset
+        col: greq_25_ged_best_os
+        window: 24
+      onset_24_greq_100_ged_best_sb:
+        f: onset
+        col: greq_100_ged_best_sb
+        window: 24
+      onset_24_greq_100_ged_best_ns:
+        f: onset
+        col: greq_100_ged_best_ns
+        window: 24
+      onset_24_greq_100_ged_best_os:
+        f: onset
+        col: greq_100_ged_best_os
+        window: 24
+      onset_24_greq_500_ged_best_sb:
+        f: onset
+        col: greq_500_ged_best_sb
+        window: 24
+      onset_24_greq_500_ged_best_ns:
+        f: onset
+        col: greq_500_ged_best_ns
+        window: 24
+      onset_24_greq_500_ged_best_os:
+        f: onset
+        col: greq_500_ged_best_os
+        window: 24
+      tlag_12_vdem_v2x_accountability:
+        f: tlag
+        col: vdem_v2x_accountability
+        time: 12
+      tlag_12_vdem_v2x_api:
+        f: tlag
+        col: vdem_v2x_api
+        time: 12
+      tlag_12_vdem_v2x_civlib:
+        f: tlag
+        col: vdem_v2x_civlib
+        time: 12
+      tlag_12_vdem_v2x_clphy:
+        f: tlag
+        col: vdem_v2x_clphy
+        time: 12
+      tlag_12_vdem_v2x_clpol:
+        f: tlag
+        col: vdem_v2x_clpol
+        time: 12
+      tlag_12_vdem_v2x_clpriv:
+        f: tlag
+        col: vdem_v2x_clpriv
+        time: 12
+      tlag_12_vdem_v2x_corr:
+        f: tlag
+        col: vdem_v2x_corr
+        time: 12
+      tlag_12_vdem_v2x_cspart:
+        f: tlag
+        col: vdem_v2x_cspart
+        time: 12
+      tlag_12_vdem_v2x_delibdem:
+        f: tlag
+        col: vdem_v2x_delibdem
+        time: 12
+      tlag_12_vdem_v2x_diagacc:
+        f: tlag
+        col: vdem_v2x_diagacc
+        time: 12
+      tlag_12_vdem_v2x_divparctrl:
+        f: tlag
+        col: vdem_v2x_divparctrl
+        time: 12
+      tlag_12_vdem_v2x_edcomp_thick:
+        f: tlag
+        col: vdem_v2x_edcomp_thick
+        time: 12
+      tlag_12_vdem_v2x_egal:
+        f: tlag
+        col: vdem_v2x_egal
+        time: 12
+      tlag_12_vdem_v2x_egaldem:
+        f: tlag
+        col: vdem_v2x_egaldem
+        time: 12
+      tlag_12_vdem_v2x_elecoff:
+        f: tlag
+        col: vdem_v2x_elecoff
+        time: 12
+      tlag_12_vdem_v2x_elecreg:
+        f: tlag
+        col: vdem_v2x_elecreg
+        time: 12
+      tlag_12_vdem_v2x_ex_confidence:
+        f: tlag
+        col: vdem_v2x_ex_confidence
+        time: 12
+      tlag_12_vdem_v2x_ex_direlect:
+        f: tlag
+        col: vdem_v2x_ex_direlect
+        time: 12
+      tlag_12_vdem_v2x_ex_hereditary:
+        f: tlag
+        col: vdem_v2x_ex_hereditary
+        time: 12
+      tlag_12_vdem_v2x_ex_military:
+        f: tlag
+        col: vdem_v2x_ex_military
+        time: 12
+      tlag_12_vdem_v2x_ex_party:
+        f: tlag
+        col: vdem_v2x_ex_party
+        time: 12
+      tlag_12_vdem_v2x_execorr:
+        f: tlag
+        col: vdem_v2x_execorr
+        time: 12
+      tlag_12_vdem_v2x_feduni:
+        f: tlag
+        col: vdem_v2x_feduni
+        time: 12
+      tlag_12_vdem_v2x_frassoc_thick:
+        f: tlag
+        col: vdem_v2x_frassoc_thick
+        time: 12
+      tlag_12_vdem_v2x_freexp:
+        f: tlag
+        col: vdem_v2x_freexp
+        time: 12
+      tlag_12_vdem_v2x_freexp_altinf:
+        f: tlag
+        col: vdem_v2x_freexp_altinf
+        time: 12
+      tlag_12_vdem_v2x_gencl:
+        f: tlag
+        col: vdem_v2x_gencl
+        time: 12
+      tlag_12_vdem_v2x_gencs:
+        f: tlag
+        col: vdem_v2x_gencs
+        time: 12
+      tlag_12_vdem_v2x_gender:
+        f: tlag
+        col: vdem_v2x_gender
+        time: 12
+      tlag_12_vdem_v2x_genpp:
+        f: tlag
+        col: vdem_v2x_genpp
+        time: 12
+      tlag_12_vdem_v2x_horacc:
+        f: tlag
+        col: vdem_v2x_horacc
+        time: 12
+      tlag_12_vdem_v2x_hosabort:
+        f: tlag
+        col: vdem_v2x_hosabort
+        time: 12
+      tlag_12_vdem_v2x_hosinter:
+        f: tlag
+        col: vdem_v2x_hosinter
+        time: 12
+      tlag_12_vdem_v2x_jucon:
+        f: tlag
+        col: vdem_v2x_jucon
+        time: 12
+      tlag_12_vdem_v2x_legabort:
+        f: tlag
+        col: vdem_v2x_legabort
+        time: 12
+      tlag_12_vdem_v2x_libdem:
+        f: tlag
+        col: vdem_v2x_libdem
+        time: 12
+      tlag_12_vdem_v2x_liberal:
+        f: tlag
+        col: vdem_v2x_liberal
+        time: 12
+      tlag_12_vdem_v2x_mpi:
+        f: tlag
+        col: vdem_v2x_mpi
+        time: 12
+      tlag_12_vdem_v2x_neopat:
+        f: tlag
+        col: vdem_v2x_neopat
+        time: 12
+      tlag_12_vdem_v2x_partip:
+        f: tlag
+        col: vdem_v2x_partip
+        time: 12
+      tlag_12_vdem_v2x_partipdem:
+        f: tlag
+        col: vdem_v2x_partipdem
+        time: 12
+      tlag_12_vdem_v2x_polyarchy:
+        f: tlag
+        col: vdem_v2x_polyarchy
+        time: 12
+      tlag_12_vdem_v2x_pubcorr:
+        f: tlag
+        col: vdem_v2x_pubcorr
+        time: 12
+      tlag_12_vdem_v2x_regime:
+        f: tlag
+        col: vdem_v2x_regime
+        time: 12
+      tlag_12_vdem_v2x_regime_amb:
+        f: tlag
+        col: vdem_v2x_regime_amb
+        time: 12
+      tlag_12_vdem_v2x_rule:
+        f: tlag
+        col: vdem_v2x_rule
+        time: 12
+      tlag_12_vdem_v2x_suffr:
+        f: tlag
+        col: vdem_v2x_suffr
+        time: 12
+      tlag_12_vdem_v2x_veracc:
+        f: tlag
+        col: vdem_v2x_veracc
+        time: 12
+      tlag_12_vdem_v2xcl_acjst:
+        f: tlag
+        col: vdem_v2xcl_acjst
+        time: 12
+      tlag_12_vdem_v2xcl_disc:
+        f: tlag
+        col: vdem_v2xcl_disc
+        time: 12
+      tlag_12_vdem_v2xcl_dmove:
+        f: tlag
+        col: vdem_v2xcl_dmove
+        time: 12
+      tlag_12_vdem_v2xcl_prpty:
+        f: tlag
+        col: vdem_v2xcl_prpty
+        time: 12
+      tlag_12_vdem_v2xcl_rol:
+        f: tlag
+        col: vdem_v2xcl_rol
+        time: 12
+      tlag_12_vdem_v2xcl_slave:
+        f: tlag
+        col: vdem_v2xcl_slave
+        time: 12
+      tlag_12_vdem_v2xcs_ccsi:
+        f: tlag
+        col: vdem_v2xcs_ccsi
+        time: 12
+      tlag_12_vdem_v2xdd_cic:
+        f: tlag
+        col: vdem_v2xdd_cic
+        time: 12
+      tlag_12_vdem_v2xdd_dd:
+        f: tlag
+        col: vdem_v2xdd_dd
+        time: 12
+      tlag_12_vdem_v2xdd_i_or:
+        f: tlag
+        col: vdem_v2xdd_i_or
+        time: 12
+      tlag_12_vdem_v2xdd_i_pi:
+        f: tlag
+        col: vdem_v2xdd_i_pi
+        time: 12
+      tlag_12_vdem_v2xdd_i_pl:
+        f: tlag
+        col: vdem_v2xdd_i_pl
+        time: 12
+      tlag_12_vdem_v2xdd_i_rf:
+        f: tlag
+        col: vdem_v2xdd_i_rf
+        time: 12
+      tlag_12_vdem_v2xdd_toc:
+        f: tlag
+        col: vdem_v2xdd_toc
+        time: 12
+      tlag_12_vdem_v2xdl_delib:
+        f: tlag
+        col: vdem_v2xdl_delib
+        time: 12
+      tlag_12_vdem_v2xeg_eqaccess:
+        f: tlag
+        col: vdem_v2xeg_eqaccess
+        time: 12
+      tlag_12_vdem_v2xeg_eqdr:
+        f: tlag
+        col: vdem_v2xeg_eqdr
+        time: 12
+      tlag_12_vdem_v2xeg_eqprotec:
+        f: tlag
+        col: vdem_v2xeg_eqprotec
+        time: 12
+      tlag_12_vdem_v2xel_elecparl:
+        f: tlag
+        col: vdem_v2xel_elecparl
+        time: 12
+      tlag_12_vdem_v2xel_elecpres:
+        f: tlag
+        col: vdem_v2xel_elecpres
+        time: 12
+      tlag_12_vdem_v2xel_frefair:
+        f: tlag
+        col: vdem_v2xel_frefair
+        time: 12
+      tlag_12_vdem_v2xel_locelec:
+        f: tlag
+        col: vdem_v2xel_locelec
+        time: 12
+      tlag_12_vdem_v2xel_regelec:
+        f: tlag
+        col: vdem_v2xel_regelec
+        time: 12
+      tlag_12_vdem_v2xex_elecleg:
+        f: tlag
+        col: vdem_v2xex_elecleg
+        time: 12
+      tlag_12_vdem_v2xex_elecreg:
+        f: tlag
+        col: vdem_v2xex_elecreg
+        time: 12
+      tlag_12_vdem_v2xlg_elecreg:
+        f: tlag
+        col: vdem_v2xlg_elecreg
+        time: 12
+      tlag_12_vdem_v2xlg_legcon:
+        f: tlag
+        col: vdem_v2xlg_legcon
+        time: 12
+      tlag_12_vdem_v2xlg_leginter:
+        f: tlag
+        col: vdem_v2xlg_leginter
+        time: 12
+      tlag_12_vdem_v2xme_altinf:
+        f: tlag
+        col: vdem_v2xme_altinf
+        time: 12
+      tlag_12_vdem_v2xnp_client:
+        f: tlag
+        col: vdem_v2xnp_client
+        time: 12
+      tlag_12_vdem_v2xnp_pres:
+        f: tlag
+        col: vdem_v2xnp_pres
+        time: 12
+      tlag_12_vdem_v2xnp_regcorr:
+        f: tlag
+        col: vdem_v2xnp_regcorr
+        time: 12
+      tlag_12_vdem_v2xpe_exlecon:
+        f: tlag
+        col: vdem_v2xpe_exlecon
+        time: 12
+      tlag_12_vdem_v2xpe_exlgender:
+        f: tlag
+        col: vdem_v2xpe_exlgender
+        time: 12
+      tlag_12_vdem_v2xpe_exlgeo:
+        f: tlag
+        col: vdem_v2xpe_exlgeo
+        time: 12
+      tlag_12_vdem_v2xpe_exlpol:
+        f: tlag
+        col: vdem_v2xpe_exlpol
+        time: 12
+      tlag_12_vdem_v2xpe_exlsocgr:
+        f: tlag
+        col: vdem_v2xpe_exlsocgr
+        time: 12
+      tlag_12_vdem_v2xps_party:
+        f: tlag
+        col: vdem_v2xps_party
+        time: 12
+      ln_ged_best_sb:
+        f: ln
+        col: ged_best_sb
+      ln_ged_best_ns:
+        f: ln
+        col: ged_best_ns
+      ln_ged_best_os:
+        f: ln
+        col: ged_best_os
+    transforms_pgm: &transforms-pgm
+      acled_dummy_pr:
+        f: greq
+        col: acled_count_pr
+        value: 1
+      acled_dummy_sb:
+        f: greq
+        col: acled_count_sb
+        value: 1
+      acled_dummy_ns:
+        f: greq
+        col: acled_count_ns
+        value: 1
+      acled_dummy_os:
+        f: greq
+        col: acled_count_os
+        value: 1
+      greq_1_ged_best_sb:
+        f: greq
+        col: ged_best_sb
+        value: 1
+      greq_1_ged_best_ns:
+        f: greq
+        col: ged_best_ns
+        value: 1
+      greq_1_ged_best_os:
+        f: greq
+        col: ged_best_os
+        value: 1
+      greq_5_ged_best_sb:
+        f: greq
+        col: ged_best_sb
+        value: 5
+      greq_5_ged_best_ns:
+        f: greq
+        col: ged_best_ns
+        value: 5
+      greq_5_ged_best_os:
+        f: greq
+        col: ged_best_os
+        value: 5
+      greq_25_ged_best_sb:
+        f: greq
+        col: ged_best_sb
+        value: 25
+      greq_25_ged_best_ns:
+        f: greq
+        col: ged_best_ns
+        value: 25
+      greq_25_ged_best_os:
+        f: greq
+        col: ged_best_os
+        value: 25
+      greq_100_ged_best_sb:
+        f: greq
+        col: ged_best_sb
+        value: 100
+      greq_100_ged_best_ns:
+        f: greq
+        col: ged_best_ns
+        value: 100
+      greq_100_ged_best_os:
+        f: greq
+        col: ged_best_os
+        value: 100
+      greq_500_ged_best_sb:
+        f: greq
+        col: ged_best_sb
+        value: 500
+      greq_500_ged_best_ns:
+        f: greq
+        col: ged_best_ns
+        value: 500
+      greq_500_ged_best_os:
+        f: greq
+        col: ged_best_os
+        value: 500
+      time_since_ged_dummy_sb:
+        f: time_since
+        col: ged_dummy_sb
+        seed: 999
+      time_since_ged_dummy_ns:
+        f: time_since
+        col: ged_dummy_ns
+        seed: 999
+      time_since_ged_dummy_os:
+        f: time_since
+        col: ged_dummy_os
+        seed: 999
+      time_since_acled_dummy_pr:
+        f: time_since
+        col: acled_dummy_pr
+        seed: 999
+      decay_12_time_since_ged_dummy_sb:
+        f: decay
+        col: time_since_ged_dummy_sb
+        halflife: 12
+      decay_12_time_since_ged_dummy_ns:
+        f: decay
+        col: time_since_ged_dummy_ns
+        halflife: 12
+      decay_12_time_since_ged_dummy_os:
+        f: decay
+        col: time_since_ged_dummy_os
+        halflife: 12
+      decay_12_time_since_acled_dummy_pr:
+        f: decay
+        col: time_since_acled_dummy_pr
+        halflife: 12
+      stdist_k1_t001_ged_dummy_sb:
+        f: stdist
+        col: ged_dummy_sb
+        k: 1
+        t_scale: 0.01
+      stdist_k1_t001_ged_dummy_ns:
+        f: stdist
+        col: ged_dummy_ns
+        k: 1
+        t_scale: 0.01
+      stdist_k1_t001_ged_dummy_os:
+        f: stdist
+        col: ged_dummy_os
+        k: 1
+        t_scale: 0.01
+      stdist_k1_t1_ged_dummy_sb:
+        f: stdist
+        col: ged_dummy_sb
+        k: 1
+        t_scale: 1
+      stdist_k1_t1_ged_dummy_ns:
+        f: stdist
+        col: ged_dummy_ns
+        k: 1
+        t_scale: 1
+      stdist_k1_t1_ged_dummy_os:
+        f: stdist
+        col: ged_dummy_os
+        k: 1
+        t_scale: 1
+      stdist_k1_t10_ged_dummy_sb:
+        f: stdist
+        col: ged_dummy_sb
+        k: 1
+        t_scale: 10
+      stdist_k1_t10_ged_dummy_ns:
+        f: stdist
+        col: ged_dummy_ns
+        k: 1
+        t_scale: 10
+      stdist_k1_t10_ged_dummy_os:
+        f: stdist
+        col: ged_dummy_os
+        k: 1
+        t_scale: 10
+      splag_1_1_ged_best_sb:
+        f: splag
+        col: ged_best_sb
+        first: 1
+        last: 1
+      splag_1_1_ged_best_ns:
+        f: splag
+        col: ged_best_ns
+        first: 1
+        last: 1
+      splag_1_1_ged_best_os:
+        f: splag
+        col: ged_best_os
+        first: 1
+        last: 1
+      splag_1_1_ged_dummy_sb:
+        f: splag
+        col: ged_dummy_sb
+        first: 1
+        last: 1
+      splag_1_1_ged_dummy_ns:
+        f: splag
+        col: ged_dummy_ns
+        first: 1
+        last: 1
+      splag_1_1_ged_dummy_os:
+        f: splag
+        col: ged_dummy_os
+        first: 1
+        last: 1
+      splag_1_1_acled_dummy_pr:
+        f: splag
+        col: acled_dummy_pr
+        first: 1
+        last: 1
+      spdist_pgd_diamsec:
+        f: spdist
+        col: pgd_diamsec
+        k: 1
+      spdist_pgd_petroleum:
+        f: spdist
+        col: pgd_petroleum
+        k: 1
+      ln_pgd_bdist3:
+        f: ln
+        col: pgd_bdist3
+      ln_pgd_ttime_mean:
+        f: ln
+        col: pgd_ttime_mean
+      ln_pgd_capdist:
+        f: ln
+        col: pgd_capdist
+      ln_pgd_pop_gpw_sum:
+        f: ln
+        col: pgd_pop_gpw_sum
+      greq_1_pgd_excluded:
+        f: greq
+        col: pgd_excluded
+        value: 1
+      ln_fvp_population200:
+        f: ln
+        col: fvp_population200
+      ln_fvp_timeindep:
+        f: ln
+        col: fvp_timeindep
+      ln_fvp_timesincepreindepwar:
+        f: ln
+        col: fvp_timesincepreindepwar
+      ln_fvp_timesinceregimechange:
+        f: ln
+        col: fvp_timesinceregimechange
+      tlag_1_ged_dummy_sb:
+        f: tlag
+        col: ged_dummy_sb
+        time: 1
+      tlag_2_ged_dummy_sb:
+        f: tlag
+        col: ged_dummy_sb
+        time: 2
+      tlag_3_ged_dummy_sb:
+        f: tlag
+        col: ged_dummy_sb
+        time: 3
+      tlag_4_ged_dummy_sb:
+        f: tlag
+        col: ged_dummy_sb
+        time: 4
+      tlag_5_ged_dummy_sb:
+        f: tlag
+        col: ged_dummy_sb
+        time: 5
+      tlag_6_ged_dummy_sb:
+        f: tlag
+        col: ged_dummy_sb
+        time: 6
+      tlag_7_ged_dummy_sb:
+        f: tlag
+        col: ged_dummy_sb
+        time: 7
+      tlag_8_ged_dummy_sb:
+        f: tlag
+        col: ged_dummy_sb
+        time: 8
+      tlag_9_ged_dummy_sb:
+        f: tlag
+        col: ged_dummy_sb
+        time: 9
+      tlag_10_ged_dummy_sb:
+        f: tlag
+        col: ged_dummy_sb
+        time: 10
+      tlag_11_ged_dummy_sb:
+        f: tlag
+        col: ged_dummy_sb
+        time: 11
+      tlag_12_ged_dummy_sb:
+        f: tlag
+        col: ged_dummy_sb
+        time: 12
+      tlag_1_ged_dummy_ns:
+        f: tlag
+        col: ged_dummy_ns
+        time: 1
+      tlag_2_ged_dummy_ns:
+        f: tlag
+        col: ged_dummy_ns
+        time: 2
+      tlag_3_ged_dummy_ns:
+        f: tlag
+        col: ged_dummy_ns
+        time: 3
+      tlag_4_ged_dummy_ns:
+        f: tlag
+        col: ged_dummy_ns
+        time: 4
+      tlag_5_ged_dummy_ns:
+        f: tlag
+        col: ged_dummy_ns
+        time: 5
+      tlag_6_ged_dummy_ns:
+        f: tlag
+        col: ged_dummy_ns
+        time: 6
+      tlag_7_ged_dummy_ns:
+        f: tlag
+        col: ged_dummy_ns
+        time: 7
+      tlag_8_ged_dummy_ns:
+        f: tlag
+        col: ged_dummy_ns
+        time: 8
+      tlag_9_ged_dummy_ns:
+        f: tlag
+        col: ged_dummy_ns
+        time: 9
+      tlag_10_ged_dummy_ns:
+        f: tlag
+        col: ged_dummy_ns
+        time: 10
+      tlag_11_ged_dummy_ns:
+        f: tlag
+        col: ged_dummy_ns
+        time: 11
+      tlag_12_ged_dummy_ns:
+        f: tlag
+        col: ged_dummy_ns
+        time: 12
+      tlag_1_ged_dummy_os:
+        f: tlag
+        col: ged_dummy_os
+        time: 1
+      tlag_2_ged_dummy_os:
+        f: tlag
+        col: ged_dummy_os
+        time: 2
+      tlag_3_ged_dummy_os:
+        f: tlag
+        col: ged_dummy_os
+        time: 3
+      tlag_4_ged_dummy_os:
+        f: tlag
+        col: ged_dummy_os
+        time: 4
+      tlag_5_ged_dummy_os:
+        f: tlag
+        col: ged_dummy_os
+        time: 5
+      tlag_6_ged_dummy_os:
+        f: tlag
+        col: ged_dummy_os
+        time: 6
+      tlag_7_ged_dummy_os:
+        f: tlag
+        col: ged_dummy_os
+        time: 7
+      tlag_8_ged_dummy_os:
+        f: tlag
+        col: ged_dummy_os
+        time: 8
+      tlag_9_ged_dummy_os:
+        f: tlag
+        col: ged_dummy_os
+        time: 9
+      tlag_10_ged_dummy_os:
+        f: tlag
+        col: ged_dummy_os
+        time: 10
+      tlag_11_ged_dummy_os:
+        f: tlag
+        col: ged_dummy_os
+        time: 11
+      tlag_12_ged_dummy_os:
+        f: tlag
+        col: ged_dummy_os
+        time: 12
+      tlag_1_acled_dummy_pr:
+        f: tlag
+        col: acled_dummy_pr
+        time: 1
+      tlag_2_acled_dummy_pr:
+        f: tlag
+        col: acled_dummy_pr
+        time: 2
+      tlag_3_acled_dummy_pr:
+        f: tlag
+        col: acled_dummy_pr
+        time: 3
+      tlag_4_acled_dummy_pr:
+        f: tlag
+        col: acled_dummy_pr
+        time: 4
+      tlag_5_acled_dummy_pr:
+        f: tlag
+        col: acled_dummy_pr
+        time: 5
+      tlag_6_acled_dummy_pr:
+        f: tlag
+        col: acled_dummy_pr
+        time: 6
+      tlag_7_acled_dummy_pr:
+        f: tlag
+        col: acled_dummy_pr
+        time: 7
+      tlag_8_acled_dummy_pr:
+        f: tlag
+        col: acled_dummy_pr
+        time: 8
+      tlag_9_acled_dummy_pr:
+        f: tlag
+        col: acled_dummy_pr
+        time: 9
+      tlag_10_acled_dummy_pr:
+        f: tlag
+        col: acled_dummy_pr
+        time: 10
+      tlag_11_acled_dummy_pr:
+        f: tlag
+        col: acled_dummy_pr
+        time: 11
+      tlag_12_acled_dummy_pr:
+        f: tlag
+        col: acled_dummy_pr
+        time: 12
+      tlag_1_splag_1_1_ged_dummy_sb:
+        f: tlag
+        col: splag_1_1_ged_dummy_sb
+        time: 1
+      tlag_1_splag_1_1_ged_dummy_ns:
+        f: tlag
+        col: splag_1_1_ged_dummy_ns
+        time: 1
+      tlag_1_splag_1_1_ged_dummy_os:
+        f: tlag
+        col: splag_1_1_ged_dummy_os
+        time: 1
+      tlag_1_splag_1_1_acled_dummy_pr:
+        f: tlag
+        col: splag_1_1_acled_dummy_pr
+        time: 1
+      tlag_2_splag_1_1_ged_dummy_sb:
+        f: tlag
+        col: splag_1_1_ged_dummy_sb
+        time: 2
+      tlag_2_splag_1_1_ged_dummy_ns:
+        f: tlag
+        col: splag_1_1_ged_dummy_ns
+        time: 2
+      tlag_2_splag_1_1_ged_dummy_os:
+        f: tlag
+        col: splag_1_1_ged_dummy_os
+        time: 2
+      tlag_2_splag_1_1_acled_dummy_pr:
+        f: tlag
+        col: splag_1_1_acled_dummy_pr
+        time: 2
+      tlag_3_splag_1_1_ged_dummy_sb:
+        f: tlag
+        col: splag_1_1_ged_dummy_sb
+        time: 3
+      tlag_3_splag_1_1_ged_dummy_ns:
+        f: tlag
+        col: splag_1_1_ged_dummy_ns
+        time: 3
+      tlag_3_splag_1_1_ged_dummy_os:
+        f: tlag
+        col: splag_1_1_ged_dummy_os
+        time: 3
+      tlag_3_splag_1_1_acled_dummy_pr:
+        f: tlag
+        col: splag_1_1_acled_dummy_pr
+        time: 3
+      tlag_1_ged_best_sb:
+        f: tlag
+        col: ged_best_sb
+        time: 1
+      tlag_1_ged_best_ns:
+        f: tlag
+        col: ged_best_ns
+        time: 1
+      tlag_1_ged_best_os:
+        f: tlag
+        col: ged_best_os
+        time: 1
+      greq_25_splag_1_1_ged_best_sb:
+          f: greq
+          col: splag_1_1_ged_best_sb
+          value: 25
+      greq_25_splag_1_1_ged_best_ns:
+          f: greq
+          col: splag_1_1_ged_best_ns
+          value: 25
+      greq_25_splag_1_1_ged_best_os:
+          f: greq
+          col: splag_1_1_ged_best_os
+          value: 25
+      greq_500_splag_1_1_ged_best_sb:
+          f: greq
+          col: splag_1_1_ged_best_sb
+          value: 500
+      greq_500_splag_1_1_ged_best_ns:
+          f: greq
+          col: splag_1_1_ged_best_ns
+          value: 500
+      greq_500_splag_1_1_ged_best_os:
+          f: greq
+          col: splag_1_1_ged_best_os
+          value: 500
+      time_since_splag_1_1_ged_dummy_sb:
+        f: time_since
+        col: splag_1_1_ged_dummy_sb
+        seed: 999
+      time_since_splag_1_1_ged_dummy_ns:
+        f: time_since
+        col: splag_1_1_ged_dummy_ns
+        seed: 999
+      time_since_splag_1_1_ged_dummy_os:
+        f: time_since
+        col: splag_1_1_ged_dummy_os
+        seed: 999
+      time_since_greq_25_ged_best_sb:
+        f: time_since
+        col: greq_25_ged_best_sb
+        seed: 999
+      time_since_greq_25_ged_best_ns:
+        f: time_since
+        col: greq_25_ged_best_ns
+        seed: 999
+      time_since_greq_25_ged_best_os:
+        f: time_since
+        col: greq_25_ged_best_os
+        seed: 999
+      time_since_greq_25_splag_1_1_ged_best_sb:
+        f: time_since
+        col: greq_25_splag_1_1_ged_best_sb
+        seed: 999
+      time_since_greq_25_splag_1_1_ged_best_ns:
+        f: time_since
+        col: greq_25_splag_1_1_ged_best_ns
+        seed: 999
+      time_since_greq_25_splag_1_1_ged_best_os:
+        f: time_since
+        col: greq_25_splag_1_1_ged_best_os
+        seed: 999
+      time_since_greq_500_ged_best_sb:
+        f: time_since
+        col: greq_500_ged_best_sb
+        seed: 999
+      time_since_greq_500_ged_best_ns:
+        f: time_since
+        col: greq_500_ged_best_ns
+        seed: 999
+      time_since_greq_500_ged_best_os:
+        f: time_since
+        col: greq_500_ged_best_os
+        seed: 999
+      time_since_greq_500_splag_1_1_ged_best_sb:
+        f: time_since
+        col: greq_500_splag_1_1_ged_best_sb
+        seed: 999
+      time_since_greq_500_splag_1_1_ged_best_ns:
+        f: time_since
+        col: greq_500_splag_1_1_ged_best_ns
+        seed: 999
+      time_since_greq_500_splag_1_1_ged_best_os:
+        f: time_since
+        col: greq_500_splag_1_1_ged_best_os
+        seed: 999
+      ln_ged_best_sb:
+        f: ln
+        col: ged_best_sb
+      ln_ged_best_ns:
+        f: ln
+        col: ged_best_ns
+      ln_ged_best_os:
+        f: ln
+        col: ged_best_os
+
+
+
+
+datasets:
+  cm_global_imp_0:
+    ids: ["month_id", "country_id"]
+    table_skeleton: skeleton.cm_global
+    tables:
+      - acled.cm
+      - cdum.c
+      - fvp_v2.cy_imp_sklearn_0
+      - ged.cm
+      - icgcw_v2.cm
+      - reign_v2.cm_extrapolated
+      - vdem_v10.cy_imp_sklearn_0_part_1
+      - vdem_v10.cy_imp_sklearn_0_part_2
+      - vdem_v10.cy_imp_sklearn_0_part_3
+      - wdi_202005.cy_imp_sklearn_0_part_1
+      - wdi_202005.cy_imp_sklearn_0_part_2
+    balance: False
+    loa: cm
+    transforms: *transforms-cm
+
+  cm_global_imp_1:
+    ids: ["month_id", "country_id"]
+    table_skeleton: skeleton.cm_global
+    tables:
+      - acled.cm
+      - cdum.c
+      - fvp_v2.cy_imp_sklearn_1
+      - ged.cm
+      - icgcw_v2.cm
+      - reign_v2.cm_extrapolated
+      - vdem_v10.cy_imp_sklearn_1_part_1
+      - vdem_v10.cy_imp_sklearn_1_part_2
+      - vdem_v10.cy_imp_sklearn_1_part_3
+      - wdi_202005.cy_imp_sklearn_1_part_1
+      - wdi_202005.cy_imp_sklearn_1_part_2
+    balance: False
+    loa: cm
+    transforms: *transforms-cm
+
+
+  cm_global_imp_2:
+    ids: ["month_id", "country_id"]
+    table_skeleton: skeleton.cm_global
+    tables:
+      - acled.cm
+      - cdum.c
+      - fvp_v2.cy_imp_sklearn_2
+      - ged.cm
+      - icgcw_v2.cm
+      - reign_v2.cm_extrapolated
+      - vdem_v10.cy_imp_sklearn_2_part_1
+      - vdem_v10.cy_imp_sklearn_2_part_2
+      - vdem_v10.cy_imp_sklearn_2_part_3
+      - wdi_202005.cy_imp_sklearn_2_part_1
+      - wdi_202005.cy_imp_sklearn_2_part_2
+    balance: False
+    loa: cm
+    transforms: *transforms-cm
+
+
+  cm_global_imp_3:
+    ids: ["month_id", "country_id"]
+    table_skeleton: skeleton.cm_global
+    tables:
+      - acled.cm
+      - cdum.c
+      - fvp_v2.cy_imp_sklearn_3
+      - ged.cm
+      - icgcw_v2.cm
+      - reign_v2.cm_extrapolated
+      - vdem_v10.cy_imp_sklearn_3_part_1
+      - vdem_v10.cy_imp_sklearn_3_part_2
+      - vdem_v10.cy_imp_sklearn_3_part_3
+      - wdi_202005.cy_imp_sklearn_3_part_1
+      - wdi_202005.cy_imp_sklearn_3_part_2
+    balance: False
+    loa: cm
+    transforms: *transforms-cm
+
+
+  cm_global_imp_4:
+    ids: ["month_id", "country_id"]
+    table_skeleton: skeleton.cm_global
+    tables:
+      - acled.cm
+      - cdum.c
+      - fvp_v2.cy_imp_sklearn_4
+      - ged.cm
+      - icgcw_v2.cm
+      - reign_v2.cm_extrapolated
+      - vdem_v10.cy_imp_sklearn_4_part_1
+      - vdem_v10.cy_imp_sklearn_4_part_2
+      - vdem_v10.cy_imp_sklearn_4_part_3
+      - wdi_202005.cy_imp_sklearn_4_part_1
+      - wdi_202005.cy_imp_sklearn_4_part_2
+    balance: False
+    loa: cm
+    transforms: *transforms-cm
+
+
+  cm_africa_imp_0:
+    ids: ["month_id", "country_id"]
+    table_skeleton: skeleton.cm_africa
+    tables:
+      - acled.cm
+      - cdum.c
+      - fvp_v2.cy_imp_sklearn_0
+      - ged.cm
+      - icgcw_v2.cm
+      - reign_v2.cm_extrapolated
+      - vdem_v10.cy_imp_sklearn_0_part_1
+      - vdem_v10.cy_imp_sklearn_0_part_2
+      - vdem_v10.cy_imp_sklearn_0_part_3
+      - wdi_202005.cy_imp_sklearn_0_part_1
+      - wdi_202005.cy_imp_sklearn_0_part_2
+    balance: False
+    loa: cm
+    transforms: *transforms-cm
+
+
+  cm_africa_imp_1:
+    ids: ["month_id", "country_id"]
+    table_skeleton: skeleton.cm_africa
+    tables:
+      - acled.cm
+      - cdum.c
+      - fvp_v2.cy_imp_sklearn_1
+      - ged.cm
+      - icgcw_v2.cm
+      - reign_v2.cm_extrapolated
+      - vdem_v10.cy_imp_sklearn_1_part_1
+      - vdem_v10.cy_imp_sklearn_1_part_2
+      - vdem_v10.cy_imp_sklearn_1_part_3
+      - wdi_202005.cy_imp_sklearn_1_part_1
+      - wdi_202005.cy_imp_sklearn_1_part_2
+    balance: False
+    loa: cm
+    transforms: *transforms-cm
+
+
+  cm_africa_imp_2:
+    ids: ["month_id", "country_id"]
+    table_skeleton: skeleton.cm_africa
+    tables:
+      - acled.cm
+      - cdum.c
+      - fvp_v2.cy_imp_sklearn_2
+      - ged.cm
+      - icgcw_v2.cm
+      - reign_v2.cm_extrapolated
+      - vdem_v10.cy_imp_sklearn_2_part_1
+      - vdem_v10.cy_imp_sklearn_2_part_2
+      - vdem_v10.cy_imp_sklearn_2_part_3
+      - wdi_202005.cy_imp_sklearn_2_part_1
+      - wdi_202005.cy_imp_sklearn_2_part_2
+    balance: False
+    loa: cm
+    transforms: *transforms-cm
+
+
+  cm_africa_imp_3:
+    ids: ["month_id", "country_id"]
+    table_skeleton: skeleton.cm_africa
+    tables:
+      - acled.cm
+      - cdum.c
+      - fvp_v2.cy_imp_sklearn_3
+      - ged.cm
+      - icgcw_v2.cm
+      - reign_v2.cm_extrapolated
+      - vdem_v10.cy_imp_sklearn_3_part_1
+      - vdem_v10.cy_imp_sklearn_3_part_2
+      - vdem_v10.cy_imp_sklearn_3_part_3
+      - wdi_202005.cy_imp_sklearn_3_part_1
+      - wdi_202005.cy_imp_sklearn_3_part_2
+    balance: False
+    loa: cm
+    transforms: *transforms-cm
+
+
+  cm_africa_imp_4:
+    ids: ["month_id", "country_id"]
+    table_skeleton: skeleton.cm_africa
+    tables:
+      - acled.cm
+      - cdum.c
+      - fvp_v2.cy_imp_sklearn_4
+      - ged.cm
+      - icgcw_v2.cm
+      - reign_v2.cm_extrapolated
+      - vdem_v10.cy_imp_sklearn_4_part_1
+      - vdem_v10.cy_imp_sklearn_4_part_2
+      - vdem_v10.cy_imp_sklearn_4_part_3
+      - wdi_202005.cy_imp_sklearn_4_part_1
+      - wdi_202005.cy_imp_sklearn_4_part_2
+    balance: False
+    loa: cm
+    transforms: *transforms-cm
+
+
+  pgm_global_imp_0:
+    ids: ["month_id", "pg_id"]
+    table_skeleton: skeleton.pgm_global
+    tables:
+      - acled.pgm
+      - cdum.c
+      - fvp_v2.cy_imp_sklearn_0
+      - ged.pgm_geoimp_0
+      - pgdata.pgy_imp_sklearn_0
+      - spei_v2.pgm
+      - vdem_v10.cy_imp_sklearn_0_part_1
+      - vdem_v10.cy_imp_sklearn_0_part_2
+      - vdem_v10.cy_imp_sklearn_0_part_3
+      - wdi_202005.cy_imp_sklearn_0_part_1
+      - wdi_202005.cy_imp_sklearn_0_part_2
+
+    balance: False
+    loa: pgm
+    transforms: *transforms-pgm
+    cols: *cols-pgm
+
+  pgm_global_imp_1:
+    ids: ["month_id", "pg_id"]
+    table_skeleton: skeleton.pgm_global
+    tables:
+      - acled.pgm
+      - cdum.c
+      - fvp_v2.cy_imp_sklearn_1
+      - ged.pgm_geoimp_1
+      - pgdata.pgy_imp_sklearn_1
+      - spei_v2.pgm
+      - vdem_v10.cy_imp_sklearn_1_part_1
+      - vdem_v10.cy_imp_sklearn_1_part_2
+      - vdem_v10.cy_imp_sklearn_1_part_3
+      - wdi_202005.cy_imp_sklearn_1_part_1
+      - wdi_202005.cy_imp_sklearn_1_part_2
+    balance: False
+    loa: pgm
+    transforms: *transforms-pgm
+    cols: *cols-pgm
+
+  pgm_global_imp_2:
+    ids: ["month_id", "pg_id"]
+    table_skeleton: skeleton.pgm_global
+    tables:
+      - acled.pgm
+      - cdum.c
+      - fvp_v2.cy_imp_sklearn_2
+      - ged.pgm_geoimp_2
+      - pgdata.pgy_imp_sklearn_2
+      - spei_v2.pgm
+      - vdem_v10.cy_imp_sklearn_2_part_1
+      - vdem_v10.cy_imp_sklearn_2_part_2
+      - vdem_v10.cy_imp_sklearn_2_part_3
+      - wdi_202005.cy_imp_sklearn_2_part_1
+      - wdi_202005.cy_imp_sklearn_2_part_2
+    balance: False
+    loa: pgm
+    transforms: *transforms-pgm
+    cols: *cols-pgm
+
+  pgm_global_imp_3:
+    ids: ["month_id", "pg_id"]
+    table_skeleton: skeleton.pgm_global
+    tables:
+      - acled.pgm
+      - cdum.c
+      - fvp_v2.cy_imp_sklearn_3
+      - ged.pgm_geoimp_3
+      - pgdata.pgy_imp_sklearn_3
+      - spei_v2.pgm
+      - vdem_v10.cy_imp_sklearn_3_part_1
+      - vdem_v10.cy_imp_sklearn_3_part_2
+      - vdem_v10.cy_imp_sklearn_3_part_3
+      - wdi_202005.cy_imp_sklearn_3_part_1
+      - wdi_202005.cy_imp_sklearn_3_part_2
+    balance: False
+    loa: pgm
+    transforms: *transforms-pgm
+    cols: *cols-pgm
+
+  pgm_global_imp_4:
+    ids: ["month_id", "pg_id"]
+    table_skeleton: skeleton.pgm_global
+    tables:
+      - acled.pgm
+      - cdum.c
+      - fvp_v2.cy_imp_sklearn_4
+      - ged.pgm_geoimp_4
+      - pgdata.pgy_imp_sklearn_4
+      - spei_v2.pgm
+      - vdem_v10.cy_imp_sklearn_4_part_1
+      - vdem_v10.cy_imp_sklearn_4_part_2
+      - vdem_v10.cy_imp_sklearn_4_part_3
+      - wdi_202005.cy_imp_sklearn_4_part_1
+      - wdi_202005.cy_imp_sklearn_4_part_2
+    balance: False
+    loa: pgm
+    transforms: *transforms-pgm
+    cols: *cols-pgm
+
+  pgm_africa_imp_0:
+    ids: ["month_id", "pg_id"]
+    table_skeleton: skeleton.pgm_africa
+    tables:
+      - acled.pgm
+      - cdum.c
+      - fvp_v2.cy_imp_sklearn_0
+      - ged.pgm_geoimp_0
+      - pgdata.pgy_imp_sklearn_0
+      - spei_v2.pgm
+      - vdem_v10.cy_imp_sklearn_0_part_1
+      - vdem_v10.cy_imp_sklearn_0_part_2
+      - vdem_v10.cy_imp_sklearn_0_part_3
+      - wdi_202005.cy_imp_sklearn_0_part_1
+      - wdi_202005.cy_imp_sklearn_0_part_2
+    balance: False
+    loa: pgm
+    transforms: *transforms-pgm
+    cols: *cols-pgm
+
+  pgm_africa_imp_1:
+    ids: ["month_id", "pg_id"]
+    table_skeleton: skeleton.pgm_africa
+    tables:
+      - acled.pgm
+      - cdum.c
+      - fvp_v2.cy_imp_sklearn_1
+      - ged.pgm_geoimp_1
+      - pgdata.pgy_imp_sklearn_1
+      - spei_v2.pgm
+      - vdem_v10.cy_imp_sklearn_1_part_1
+      - vdem_v10.cy_imp_sklearn_1_part_2
+      - vdem_v10.cy_imp_sklearn_1_part_3
+      - wdi_202005.cy_imp_sklearn_1_part_1
+      - wdi_202005.cy_imp_sklearn_1_part_2
+    balance: False
+    loa: pgm
+    transforms: *transforms-pgm
+    cols: *cols-pgm
+
+  pgm_africa_imp_2:
+    ids: ["month_id", "pg_id"]
+    table_skeleton: skeleton.pgm_africa
+    tables:
+      - acled.pgm
+      - cdum.c
+      - fvp_v2.cy_imp_sklearn_2
+      - ged.pgm_geoimp_2
+      - pgdata.pgy_imp_sklearn_2
+      - spei_v2.pgm
+      - vdem_v10.cy_imp_sklearn_2_part_1
+      - vdem_v10.cy_imp_sklearn_2_part_2
+      - vdem_v10.cy_imp_sklearn_2_part_3
+      - wdi_202005.cy_imp_sklearn_2_part_1
+      - wdi_202005.cy_imp_sklearn_2_part_2
+    balance: False
+    loa: pgm
+    transforms: *transforms-pgm
+    cols: *cols-pgm
+
+  pgm_africa_imp_3:
+    ids: ["month_id", "pg_id"]
+    table_skeleton: skeleton.pgm_africa
+    tables:
+      - acled.pgm
+      - cdum.c
+      - fvp_v2.cy_imp_sklearn_3
+      - ged.pgm_geoimp_3
+      - pgdata.pgy_imp_sklearn_3
+      - spei_v2.pgm
+      - vdem_v10.cy_imp_sklearn_3_part_1
+      - vdem_v10.cy_imp_sklearn_3_part_2
+      - vdem_v10.cy_imp_sklearn_3_part_3
+      - wdi_202005.cy_imp_sklearn_3_part_1
+      - wdi_202005.cy_imp_sklearn_3_part_2
+    balance: False
+    loa: pgm
+    transforms: *transforms-pgm
+    cols: *cols-pgm
+
+  pgm_africa_imp_4:
+    ids: ["month_id", "pg_id"]
+    table_skeleton: skeleton.pgm_africa
+    tables:
+      - acled.pgm
+      - cdum.c
+      - fvp_v2.cy_imp_sklearn_4
+      - ged.pgm_geoimp_4
+      - pgdata.pgy_imp_sklearn_4
+      - spei_v2.pgm
+      - vdem_v10.cy_imp_sklearn_4_part_1
+      - vdem_v10.cy_imp_sklearn_4_part_2
+      - vdem_v10.cy_imp_sklearn_4_part_3
+      - wdi_202005.cy_imp_sklearn_4_part_1
+      - wdi_202005.cy_imp_sklearn_4_part_2
+    balance: False
+    loa: pgm
+    transforms: *transforms-pgm
+    cols: *cols-pgm
+
+tables:
+  skeleton.cm_africa:
+    ids: ["year", "month_id", "country_id"]
+  skeleton.cm_global:
+    ids: ["year", "month_id", "country_id"]
+
+  skeleton.cy_africa:
+    ids: ["year", "country_id"]
+  skeleton.cy_global:
+    ids: ["year", "country_id"]
+
+  skeleton.pgm_africa:
+    ids: ["year", "month_id", "country_id", "pg_id"]
+  skeleton.pgm_global:
+    ids: ["year", "month_id", "country_id", "pg_id"]
+
+  skeleton.pgy_africa:
+    ids: ["year", "pg_id", "country_id"]
+  skeleton.pgy_global:
+    ids: ["year", "pg_id", "country_id"]
+
+  acled.cm:
+    ids: *ids-cm
+  acled.pgm:
+    ids: *ids-pgm
+
+  cdum.c:
+    ids: ["country_id"]
+
+  fvp_v2.cy_imp_sklearn_0:
+    ids: *ids-cy
+  fvp_v2.cy_imp_sklearn_1:
+    ids: *ids-cy
+  fvp_v2.cy_imp_sklearn_2:
+    ids: *ids-cy
+  fvp_v2.cy_imp_sklearn_3:
+    ids: *ids-cy
+  fvp_v2.cy_imp_sklearn_4:
+    ids: *ids-cy
+
+  ged.cm:
+    ids: *ids-cm
+  ged.pgm_geoimp_0:
+    ids: *ids-pgm
+  ged.pgm_geoimp_1:
+    ids: *ids-pgm
+  ged.pgm_geoimp_2:
+    ids: *ids-pgm
+  ged.pgm_geoimp_3:
+    ids: *ids-pgm
+  ged.pgm_geoimp_4:
+    ids: *ids-pgm
+
+  icgcw_v2.cm:
+    ids: *ids-cm
+
+  pgdata.pgy_imp_sklearn_0:
+    ids: *ids-pgy
+  pgdata.pgy_imp_sklearn_1:
+    ids: *ids-pgy
+  pgdata.pgy_imp_sklearn_2:
+    ids: *ids-pgy
+  pgdata.pgy_imp_sklearn_3:
+    ids: *ids-pgy
+  pgdata.pgy_imp_sklearn_4:
+    ids: *ids-pgy
+
+  reign_v2.cm_extrapolated:
+    ids: *ids-cm
+
+  spei_v2.pgm:
+    ids: *ids-pgm
+
+  vdem_v10.cy_imp_sklearn_0_part_1:
+    ids: *ids-cy
+  vdem_v10.cy_imp_sklearn_0_part_2:
+    ids: *ids-cy
+  vdem_v10.cy_imp_sklearn_0_part_3:
+    ids: *ids-cy
+  vdem_v10.cy_imp_sklearn_1_part_1:
+    ids: *ids-cy
+  vdem_v10.cy_imp_sklearn_1_part_2:
+    ids: *ids-cy
+  vdem_v10.cy_imp_sklearn_1_part_3:
+    ids: *ids-cy
+  vdem_v10.cy_imp_sklearn_2_part_1:
+    ids: *ids-cy
+  vdem_v10.cy_imp_sklearn_2_part_2:
+    ids: *ids-cy
+  vdem_v10.cy_imp_sklearn_2_part_3:
+    ids: *ids-cy
+  vdem_v10.cy_imp_sklearn_3_part_1:
+    ids: *ids-cy
+  vdem_v10.cy_imp_sklearn_3_part_2:
+    ids: *ids-cy
+  vdem_v10.cy_imp_sklearn_3_part_3:
+    ids: *ids-cy
+  vdem_v10.cy_imp_sklearn_4_part_1:
+    ids: *ids-cy
+  vdem_v10.cy_imp_sklearn_4_part_2:
+    ids: *ids-cy
+  vdem_v10.cy_imp_sklearn_4_part_3:
+    ids: *ids-cy
+
+  wdi_202005.cy_imp_sklearn_0_part_1:
+    ids: *ids-cy
+  wdi_202005.cy_imp_sklearn_0_part_2:
+    ids: *ids-cy
+  wdi_202005.cy_imp_sklearn_1_part_1:
+    ids: *ids-cy
+  wdi_202005.cy_imp_sklearn_1_part_2:
+    ids: *ids-cy
+  wdi_202005.cy_imp_sklearn_2_part_1:
+    ids: *ids-cy
+  wdi_202005.cy_imp_sklearn_2_part_2:
+    ids: *ids-cy
+  wdi_202005.cy_imp_sklearn_3_part_1:
+    ids: *ids-cy
+  wdi_202005.cy_imp_sklearn_3_part_2:
+    ids: *ids-cy
+  wdi_202005.cy_imp_sklearn_4_part_1:
+    ids: *ids-cy
+  wdi_202005.cy_imp_sklearn_4_part_2:
+    ids: *ids-cy

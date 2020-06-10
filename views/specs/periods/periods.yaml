@@ -1,0 +1,184 @@
+# This file defines the time limits used in ViEWS
+# they are organised by each run
+#
+
+runs:
+
+  # First model development run
+  # All models will be trained here
+  # When yearly data is released in 2020.05 or 2020.06 this should be
+  # copied and re-run under a new name so that we are training on
+  # latest yearly-release data
+  # We don't want to move C train back to end at 2018.12 now though
+  # because we have published results trained on data up op 2019.12
+  # already.
+  d_2020_04_01:
+    A: # Calibration period for B
+      train:
+        start: 121  # 1990.01
+        end: 396    # 2012.12
+      predict:
+        start: 397  # 2013.01
+        end: 432    # 2015.12,
+    B:  # Evaluation period. Calibration for C.
+      train:
+        start: 121  # 1990.01
+        end: 432    # 2015.12
+      predict:
+        start: 433  # 2016.01,
+        end: 468    # 2018.12, last month yearly data
+    C:
+      train:
+        start: 121  # 1990.01
+        end: 480    # 2019.12, last month latest data
+      predict:
+        start: 483  # 2020.03
+        end: 520    # 2023.04
+
+
+  d_2020_05_01_prelim:
+    # A preliminary run for UN Covid19 report
+    # Includes the A partition so as to not break any compatibility for now
+    A: # Calibration period for B
+      train:
+        start: 121  # 1990.01
+        end: 396    # 2012.12
+      predict:
+        start: 397  # 2013.01
+        end: 432    # 2015.12,
+    B:  # Evaluation period. Calibration for C.
+      train:
+        start: 121  # 1990.01
+        end: 432    # 2015.12
+      predict:
+        start: 433  # 2016.01,
+        end: 468    # 2018.12, last month yearly data
+    C:
+      train:
+        start: 121  # 1990.01
+        end: 480    # 2019.12
+      predict:
+        start: 484  # 2020.04
+        end: 521    # 2023.05
+
+  d_2020_06_01_prelim:
+    # A preliminary run with OSA only, XGB and DS not merged yet =(
+    # Includes the A partition so as to not break any compatibility for now
+    A: # Calibration period for B
+      train:
+        start: 121  # 1990.01
+        end: 396    # 2012.12
+      predict:
+        start: 397  # 2013.01
+        end: 432    # 2015.12,
+    B:  # Evaluation period. Calibration for C.
+      train:
+        start: 121  # 1990.01
+        end: 432    # 2015.12
+      predict:
+        start: 433  # 2016.01,
+        end: 468    # 2018.12, last month yearly data
+    C:
+      train:
+        start: 121  # 1990.01
+        end: 480    # 2019.12
+      predict:
+        start: 485  # 2020.05
+        end: 522    # 2023.06
+
+
+  r_2020_02_01:
+    B:
+      train:
+        start: 121  # 1990.01
+        end: 432    # 2015.12
+      predict:
+        start: 433  # 2016.01,
+        end: 468    # 2018.12, last month yearly data
+    C:
+      train:
+        start: 121  # 1990.01
+        end: 480    # 2019.12
+      predict:
+        start: 481  # 2020.01
+        end: 518    # 2023.02 # 38 months of forecast
+
+  r_2020_03_01:
+    B:
+      train:
+        start: 121  # 1990.01
+        end: 432    # 2015.12
+      predict:
+        start: 433  # 2016.01,
+        end: 468    # 2018.12, last month yearly data
+    C:
+      train:
+        start: 121  # 1990.01
+        end: 480    # 2019.12
+      predict:
+        start: 482  # 2020.02
+        end: 519    # 2023.03
+
+  r_2020_04_01:
+    B:
+      train:
+        start: 121  # 1990.01
+        end: 432    # 2015.12
+      predict:
+        start: 433  # 2016.01,
+        end: 468    # 2018.12, last month yearly data
+    C:
+      train:
+        start: 121  # 1990.01
+        end: 480    # 2019.12
+      predict:
+        start: 483  # 2020.03
+        end: 520    # 2023.04
+
+  r_2020_05_01:
+    B:
+      train:
+        start: 121  # 1990.01
+        end: 432    # 2015.12
+      predict:
+        start: 433  # 2016.01,
+        end: 468    # 2018.12, last month yearly data
+    C:
+      train:
+        start: 121  # 1990.01
+        end: 480    # 2019.12
+      predict:
+        start: 484  # 2020.04
+        end: 521    # 2023.05
+
+  r_2020_06_01:
+    B:
+      train:
+        start: 121  # 1990.01
+        end: 432    # 2015.12
+      predict:
+        start: 433  # 2016.01,
+        end: 468    # 2018.12, last month yearly data
+    C:
+      train:
+        start: 121  # 1990.01
+        end: 480    # 2019.12
+      predict:
+        start: 485  # 2020.05
+        end: 522    # 2023.06
+
+  r_2020_07_01:
+    B:
+      train:
+        start: 121  # 1990.01
+        end: 432    # 2015.12
+      predict:
+        start: 433  # 2016.01,
+        end: 468    # 2018.12, last month yearly data
+    C:
+      train:
+        start: 121  # 1990.01
+        end: 480    # 2019.12
+      predict:
+        start: 486  # 2020.06
+        end: 523    # 2023.07

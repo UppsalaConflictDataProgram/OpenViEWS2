@@ -1,0 +1,22 @@
+ccode_replaces:
+  germany:
+    old: 255
+    new: 260
+  yemen:
+    old: 679
+    new: 678
+  nauru:
+    old: 970
+    new: 971
+  kiribati:
+    old: 946
+    new: 970
+  tuvalu:
+    old: 947
+    new: 973
+  tonga:
+    old: 955
+    new: 972
+  serbia:
+    old: 345
+    new: 340

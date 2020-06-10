@@ -1,7 +1,11 @@
 """ Common data utilities """
 from typing import List, Union
+import logging
 
+import numpy as np  # type: ignore
 import pandas as pd  # type: ignore
+
+log = logging.getLogger(__name__)
 
 
 def resample(
@@ -19,15 +23,17 @@ def resample(
     datasets where positive outcomes are rare.
 
     """
-
     # If both shares are 1 just return the unaltered df
     if share_positives == 1 and share_negatives == 1:
         return df
 
-    # Those rows where at least one of the cols are greater than threshold
-    df_positives = df[(df[cols] > threshold).max(axis=1)]
-    # it's inverse
-    df_negatives = df[~(df[cols] > threshold).max(axis=1)]
+    # Negatives are rows where all cols are close to zero
+    mask_negatives = np.isclose(df[cols], threshold).max(axis=1)
+    # Positives are all the others
+    mask_positives = ~mask_negatives
+
+    df_positives = df.loc[mask_positives]
+    df_negatives = df.loc[mask_negatives]
 
     len_positives = len(df_positives)
     len_negatives = len(df_negatives)
@@ -43,7 +49,6 @@ def resample(
             df_negatives.sample(n=n_negatives_wanted, replace=replacement_neg),
         ]
     )
-
     return df
 
 
@@ -70,6 +75,7 @@ def balance_panel_last_t(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         df: A reindexed dataframe
     """
+    log.debug(f"Balancing index of panel with shape {df.shape}")
     check_has_multiindex(df)
 
     # Reset the index to actual values,
@@ -89,7 +95,38 @@ def balance_panel_last_t(df: pd.DataFrame) -> pd.DataFrame:
     ).sort_index()
 
 
-def assign_into_df(df_to, df_from):
+def assign_into_df(df_to: pd.DataFrame, df_from: pd.DataFrame) -> pd.DataFrame:
+    """ Assign all columns from df_from into df_to
+
+    Only assigns non-missing values from df_from, meaning the
+    same column can be inserted multiple times and values be
+    retained if the row coverage is different between calls.
+    So a df_a with col_a covering months 100-110 and df_b with col_a covering
+    months 111-120 could be assigned into a single df which would get
+    values of col_a for months 100 - 120.
+    """
+
     for col in df_from:
-        df_to[col] = df_from[col]
+        log.debug(f"Inserting col {col}")
+        # Get a Series of the col for all rows
+        s = df_from.loc[:, col]
+        # Get the "is not null" boolean series to use as mask, ~ is NOT
+        mask = ~s.isnull()
+        # Get the index from that mask,
+        # ix is now index labels of rows with (not missing) data
+        ix = s.loc[mask].index
+        df_to.loc[ix, col] = s.loc[ix]
     return df_to
+
+
+def rebuild_index(data: pd.DataFrame) -> pd.DataFrame:
+    """ Rebuild the index of the dataframe
+
+    Sometimes we construct new dataframes from old ones or subset
+    dataframes by time. The contents of the df.index of the new
+    dataframes then still contain the full set of values from the old
+    df. This function rebuilds the index to only have the actual
+    values with rows.
+    """
+    check_has_multiindex(data)
+    return data.reset_index().set_index(data.index.names).sort_index()

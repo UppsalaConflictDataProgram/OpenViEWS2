@@ -1,0 +1,12 @@
+#!/bin/bash -l
+#SBATCH -o ${LOGFILE_LOCATION}
+#SBATCH -A ${PROJECT_ID}
+#SBATCH -J ${NAME}
+#SBATCH -p node
+#SBATCH -t ${TIME}
+
+echo $$(date -u) - Starting job ${NAME}
+
+${COMMAND}
+
+echo $$(date -u) - Finished job ${NAME}

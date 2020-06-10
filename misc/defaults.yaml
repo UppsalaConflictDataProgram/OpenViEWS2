@@ -1,0 +1,30 @@
+default_database: views
+databases:
+  views:
+    user: username # CHANGE ME!
+    host: janus
+    dbname: views
+    port: 5432
+    use_ssl: True
+    ssl_cert: "~/.postgres/postgresql.crt"
+    ssl_key: "~/.postgres/postgresql.key"
+    ssl_rootcert: "~/.postgres/root.crt"
+  local:
+    user: username
+    host: 127.0.0.1
+    dbname: postgres
+    port: 5432
+    use_ssl: False
+    password: ""
+
+dirs:
+  storage: "" # Emtpy string will default to the storage directory in the repo
+  scratch: "" # Emtpy string will default to the storage/scratch/ directory in the repo
+
+slurm:
+  username: ""
+  project: ""
+
+qualtrics:
+  token: "QUALTRICS_TOKEN"
+

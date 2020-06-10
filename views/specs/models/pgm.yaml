@@ -1,0 +1,510 @@
+# The current regular PGM models in the ViEWS system
+
+colsets:
+
+################################################################################
+# FEATURE TRANSFORM COLSETS
+################################################################################
+
+  time_since_ged_dummy_sb_ns_os:
+    - time_since_ged_dummy_sb
+    - time_since_ged_dummy_ns
+    - time_since_ged_dummy_os
+
+  stdist_k1_t001_ged_dummy_sb_ns_os:
+    - stdist_k1_t001_ged_dummy_sb
+    - stdist_k1_t001_ged_dummy_ns
+    - stdist_k1_t001_ged_dummy_os
+
+  stdist_k1_t1_ged_dummy_sb_ns_os:
+    - stdist_k1_t1_ged_dummy_sb
+    - stdist_k1_t1_ged_dummy_ns
+    - stdist_k1_t1_ged_dummy_os
+
+  stdist_k1_t10_ged_dummy_sb_ns_os:
+    - stdist_k1_t10_ged_dummy_sb
+    - stdist_k1_t10_ged_dummy_ns
+    - stdist_k1_t10_ged_dummy_os
+
+  tlags_2_to_12_ged_dummy_sb:
+    - tlag_2_ged_dummy_sb
+    - tlag_3_ged_dummy_sb
+    - tlag_4_ged_dummy_sb
+    - tlag_5_ged_dummy_sb
+    - tlag_6_ged_dummy_sb
+    - tlag_7_ged_dummy_sb
+    - tlag_8_ged_dummy_sb
+    - tlag_9_ged_dummy_sb
+    - tlag_10_ged_dummy_sb
+    - tlag_11_ged_dummy_sb
+    - tlag_12_ged_dummy_sb
+
+  tlags_2_to_12_ged_dummy_ns:
+    - tlag_2_ged_dummy_ns
+    - tlag_3_ged_dummy_ns
+    - tlag_4_ged_dummy_ns
+    - tlag_5_ged_dummy_ns
+    - tlag_6_ged_dummy_ns
+    - tlag_7_ged_dummy_ns
+    - tlag_8_ged_dummy_ns
+    - tlag_9_ged_dummy_ns
+    - tlag_10_ged_dummy_ns
+    - tlag_11_ged_dummy_ns
+    - tlag_12_ged_dummy_ns
+
+  tlags_2_to_12_ged_dummy_os:
+    - tlag_2_ged_dummy_os
+    - tlag_3_ged_dummy_os
+    - tlag_4_ged_dummy_os
+    - tlag_5_ged_dummy_os
+    - tlag_6_ged_dummy_os
+    - tlag_7_ged_dummy_os
+    - tlag_8_ged_dummy_os
+    - tlag_9_ged_dummy_os
+    - tlag_10_ged_dummy_os
+    - tlag_11_ged_dummy_os
+    - tlag_12_ged_dummy_os
+
+  tlags_2_to_12_acled_dummy_pr:
+    - tlag_2_acled_dummy_pr
+    - tlag_3_acled_dummy_pr
+    - tlag_4_acled_dummy_pr
+    - tlag_5_acled_dummy_pr
+    - tlag_6_acled_dummy_pr
+    - tlag_7_acled_dummy_pr
+    - tlag_8_acled_dummy_pr
+    - tlag_9_acled_dummy_pr
+    - tlag_10_acled_dummy_pr
+    - tlag_11_acled_dummy_pr
+    - tlag_12_acled_dummy_pr
+
+  tlags_2_to_3_splag_1_1_ged_dummy_sb:
+    - tlag_2_splag_1_1_ged_dummy_sb
+    - tlag_3_splag_1_1_ged_dummy_sb
+
+  tlags_2_to_3_splag_1_1_ged_dummy_ns:
+    - tlag_2_splag_1_1_ged_dummy_ns
+    - tlag_3_splag_1_1_ged_dummy_ns
+
+  tlags_2_to_3_splag_1_1_ged_dummy_os:
+    - tlag_2_splag_1_1_ged_dummy_os
+    - tlag_3_splag_1_1_ged_dummy_os
+
+  tlags_2_to_3_splag_1_1_acled_dummy_pr:
+    - tlag_2_splag_1_1_acled_dummy_pr
+    - tlag_3_splag_1_1_acled_dummy_pr
+
+  tlags_1_ged_dummy_sb_ns_os_and_acled_dummy_pr:
+    - tlag_1_ged_dummy_sb
+    - tlag_1_ged_dummy_ns
+    - tlag_1_ged_dummy_os
+
+  decays_12_time_since_ged_sb_ns_os_and_acled_dummy_pr:
+    - decay_12_time_since_ged_dummy_sb
+    - decay_12_time_since_ged_dummy_ns
+    - decay_12_time_since_ged_dummy_os
+    - decay_12_time_since_acled_dummy_pr
+
+  tlag_1_splag_1_1_ged_dummy_sb_ns_os_and_acled_dummy_pr:
+    - tlag_1_splag_1_1_ged_dummy_sb
+    - tlag_1_splag_1_1_ged_dummy_ns
+    - tlag_1_splag_1_1_ged_dummy_os
+    - tlag_1_splag_1_1_acled_dummy_pr
+
+################################################################################
+# LEGACY HISTORY SPEC
+################################################################################
+
+
+  pgd_natural:
+    - spdist_pgd_diamsec
+    - spdist_pgd_petroleum
+    - pgd_agri_ih
+    - pgd_barren_ih
+    - pgd_forest_ih
+    - pgd_mountains_mean
+    - pgd_savanna_ih
+    - pgd_shrub_ih
+    - pgd_pasture_ih
+    - pgd_urban_ih
+
+  pgd_social:
+    - ln_pgd_bdist3
+    - ln_pgd_ttime_mean
+    - ln_pgd_capdist
+    - ln_pgd_pop_gpw_sum
+    - pgd_gcp_mer
+    - pgd_imr_mean
+    - greq_1_pgd_excluded
+
+  inst:
+    - ln_fvp_timeindep
+    - ln_fvp_timesincepreindepwar
+    - ln_fvp_timesinceregimechange
+    - fvp_demo
+    - fvp_semi
+    - fvp_prop_excluded
+
+  demog:
+    - ln_fvp_population200
+    - fvp_ssp2_edu_sec_15_24_prop
+    - fvp_ssp2_urban_share_iiasa
+
+  oil:
+    - fvp_lngdpcap_nonoilrent
+    - fvp_lngdpcap_oilrent
+    - fvp_grgdpcap_oilrent
+    - fvp_grgdpcap_nonoilrent
+
+  spei_subset:
+    - spei_1
+    - spei_3
+    - spei_12
+    - spei_24
+    - spei_36
+    - spei_48
+
+  spei_full:
+    - spei_1
+    - spei_2
+    - spei_3
+    - spei_4
+    - spei_5
+    - spei_6
+    - spei_7
+    - spei_8
+    - spei_9
+    - spei_10
+    - spei_11
+    - spei_12
+    - spei_13
+    - spei_14
+    - spei_15
+    - spei_16
+    - spei_17
+    - spei_18
+    - spei_19
+    - spei_20
+    - spei_21
+    - spei_22
+    - spei_23
+    - spei_24
+    - spei_25
+    - spei_26
+    - spei_27
+    - spei_28
+    - spei_29
+    - spei_30
+    - spei_31
+    - spei_32
+    - spei_33
+    - spei_34
+    - spei_35
+    - spei_36
+    - spei_37
+    - spei_38
+    - spei_39
+    - spei_40
+    - spei_41
+    - spei_42
+    - spei_43
+    - spei_44
+    - spei_45
+    - spei_46
+    - spei_47
+    - spei_48
+
+themes:
+
+  legacy_hist_common:
+    - tlags_1_ged_dummy_sb_ns_os_and_acled_dummy_pr
+    - tlag_1_splag_1_1_ged_dummy_sb_ns_os_and_acled_dummy_pr
+    - decays_12_time_since_ged_sb_ns_os_and_acled_dummy_pr
+
+  legacy_hist_sb:
+    - legacy_hist_common
+    - tlags_2_to_12_ged_dummy_sb
+    - tlags_2_to_3_splag_1_1_ged_dummy_sb
+
+  legacy_hist_ns:
+    - legacy_hist_common
+    - tlags_2_to_12_ged_dummy_ns
+    - tlags_2_to_3_splag_1_1_ged_dummy_ns
+
+  legacy_hist_os:
+    - legacy_hist_common
+    - tlags_2_to_12_ged_dummy_os
+    - tlags_2_to_3_splag_1_1_ged_dummy_os
+
+  legacy_hist_pr:
+    - legacy_hist_common
+    - tlags_2_to_12_acled_dummy_pr
+    - tlags_2_to_3_splag_1_1_acled_dummy_pr
+
+
+  legacy_allthemes_sb:
+    - all_legacy_themes
+    - legacy_hist_common
+    - tlags_2_to_12_ged_dummy_sb
+    - tlags_2_to_3_splag_1_1_ged_dummy_sb
+
+  legacy_allthemes_ns:
+    - all_legacy_themes
+    - legacy_hist_common
+    - tlags_2_to_12_ged_dummy_ns
+    - tlags_2_to_3_splag_1_1_ged_dummy_ns
+
+  legacy_allthemes_os:
+    - all_legacy_themes
+    - legacy_hist_common
+    - tlags_2_to_12_ged_dummy_os
+    - tlags_2_to_3_splag_1_1_ged_dummy_os
+
+  legacy_allthemes_pr:
+    - all_legacy_themes
+    - legacy_hist_common
+    - tlags_2_to_12_acled_dummy_pr
+    - tlags_2_to_3_splag_1_1_acled_dummy_pr
+
+  hist_st:
+    - time_since_ged_dummy_sb_ns_os
+    - stdist_k1_t001_ged_dummy_sb_ns_os
+    - stdist_k1_t1_ged_dummy_sb_ns_os
+    - stdist_k1_t10_ged_dummy_sb_ns_os
+
+
+  all_legacy_themes:
+    - pgd_natural
+    - pgd_social
+    - inst
+    - demog
+    - oil
+
+  all:
+    - legacy_hist_sb
+    - legacy_hist_ns
+    - legacy_hist_os
+    - legacy_hist_pr
+    - all_legacy_themes
+    - spei_full
+    - hist_st
+
+  hist_st_and_all_themes:
+    - hist_st
+    - all_legacy_themes
+
+  spei_sthist_leghist:
+    - spei_subset
+    - hist_st
+
+  spei_leghist:
+    - spei_subset
+    - legacy_hist_common
+
+  speisubset_leghist_sb:
+    - spei_leghist
+    - legacy_hist_sb
+  speisubset_leghist_ns:
+    - spei_leghist
+    - legacy_hist_ns
+  speisubset_leghist_os:
+    - spei_leghist
+    - legacy_hist_os
+
+
+
+  empty: []
+
+formulas:
+
+################################################################################
+# LEGACY MODELS
+################################################################################
+
+  sb_allthemes:
+    col_outcome: ged_dummy_sb
+    cols_features: legacy_allthemes_sb
+  sb_pgd_natural:
+    col_outcome: ged_dummy_sb
+    cols_features: pgd_natural
+  sb_pgd_social:
+    col_outcome: ged_dummy_sb
+    cols_features: pgd_social
+  sb_inst:
+    col_outcome: ged_dummy_sb
+    cols_features: inst
+  sb_demog:
+    col_outcome: ged_dummy_sb
+    cols_features: demog
+  sb_oil:
+    col_outcome: ged_dummy_sb
+    cols_features: oil
+  sb_hist_legacy:
+    col_outcome: ged_dummy_sb
+    cols_features: legacy_hist_sb
+  sb_speisubset_leghist:
+    col_outcome: ged_dummy_sb
+    cols_features: speisubset_leghist_sb
+
+  ns_allthemes:
+    col_outcome: ged_dummy_ns
+    cols_features: legacy_allthemes_ns
+  ns_pgd_natural:
+    col_outcome: ged_dummy_ns
+    cols_features: pgd_natural
+  ns_pgd_social:
+    col_outcome: ged_dummy_ns
+    cols_features: pgd_social
+  ns_inst:
+    col_outcome: ged_dummy_ns
+    cols_features: inst
+  ns_demog:
+    col_outcome: ged_dummy_ns
+    cols_features: demog
+  ns_oil:
+    col_outcome: ged_dummy_ns
+    cols_features: oil
+  ns_hist_legacy:
+    col_outcome: ged_dummy_ns
+    cols_features: legacy_hist_ns
+  ns_speisubset_leghist:
+    col_outcome: ged_dummy_ns
+    cols_features: speisubset_leghist_ns
+
+  os_allthemes:
+    col_outcome: ged_dummy_ns
+    cols_features: legacy_allthemes_os
+  os_pgd_natural:
+    col_outcome: ged_dummy_os
+    cols_features: pgd_natural
+  os_pgd_social:
+    col_outcome: ged_dummy_os
+    cols_features: pgd_social
+  os_inst:
+    col_outcome: ged_dummy_os
+    cols_features: inst
+  os_demog:
+    col_outcome: ged_dummy_os
+    cols_features: demog
+  os_oil:
+    col_outcome: ged_dummy_os
+    cols_features: oil
+  os_hist_legacy:
+    col_outcome: ged_dummy_os
+    cols_features: legacy_hist_os
+  os_speisubset_leghist:
+    col_outcome: ged_dummy_os
+    cols_features: speisubset_leghist_os
+
+
+  pr_allthemes:
+    col_outcome: acled_dummy_pr
+    cols_features: legacy_allthemes_pr
+  pr_pgd_natural:
+    col_outcome: acled_dummy_pr
+    cols_features: pgd_natural
+  pr_pgd_social:
+    col_outcome: acled_dummy_pr
+    cols_features: pgd_social
+  pr_inst:
+    col_outcome: acled_dummy_pr
+    cols_features: inst
+  pr_demog:
+    col_outcome: acled_dummy_pr
+    cols_features: demog
+  pr_oil:
+    col_outcome: acled_dummy_pr
+    cols_features: oil
+  pr_hist_legacy:
+    col_outcome: acled_dummy_pr
+    cols_features: legacy_hist_pr
+
+
+################################################################################
+# NEW MODELS
+################################################################################
+
+  sb_sptime:
+    col_outcome: ged_dummy_sb
+    cols_features: hist_st
+  ns_sptime:
+    col_outcome: ged_dummy_ns
+    cols_features: hist_st
+  os_sptime:
+    col_outcome: ged_dummy_os
+    cols_features: hist_st
+  pr_sptime:
+    col_outcome: acled_dummy_pr
+    cols_features: hist_st
+
+  sb_spei_full:
+    col_outcome: ged_dummy_sb
+    cols_features: spei_full
+  ns_spei_full:
+    col_outcome: ged_dummy_ns
+    cols_features: spei_full
+  os_spei_full:
+    col_outcome: ged_dummy_os
+    cols_features: spei_full
+  pr_spei_full:
+    col_outcome: acled_dummy_pr
+    cols_features: spei_full
+
+  sb_sptime_and_all_themes:
+    col_outcome: ged_dummy_sb
+    cols_features: hist_st_and_all_themes
+  ns_sptime_and_all_themes:
+    col_outcome: ged_dummy_ns
+    cols_features: hist_st_and_all_themes
+  os_sptime_and_all_themes:
+    col_outcome: ged_dummy_os
+    cols_features: hist_st_and_all_themes
+  pr_sptime_and_all_themes:
+    col_outcome: acled_dummy_pr
+    cols_features: hist_st_and_all_themes
+
+  sb_all:
+    col_outcome: ged_dummy_sb
+    cols_features: all
+  ns_all:
+    col_outcome: ged_dummy_ns
+    cols_features: all
+  os_all:
+    col_outcome: ged_dummy_os
+    cols_features: all
+
+
+
+################################################################################
+# ONSET MODELS
+################################################################################
+
+  sb_onset24_1_all:
+    col_outcome: greq_1_ged_best_sb
+    cols_features: all
+  sb_onset24_5_all:
+    col_outcome: greq_5_ged_best_sb
+    cols_features: all
+  sb_onset24_100_all:
+    col_outcome: greq_100_ged_best_sb
+    cols_features: all
+
+  ns_onset24_1_all:
+    col_outcome: greq_1_ged_best_ns
+    cols_features: all
+  ns_onset24_5_all:
+    col_outcome: greq_5_ged_best_ns
+    cols_features: all
+  ns_onset24_100_all:
+    col_outcome: greq_100_ged_best_ns
+    cols_features: all
+
+  os_onset24_1_all:
+    col_outcome: greq_1_ged_best_os
+    cols_features: all
+  os_onset24_5_all:
+    col_outcome: greq_5_ged_best_os
+    cols_features: all
+  os_onset24_100_all:
+    col_outcome: greq_100_ged_best_os
+    cols_features: all

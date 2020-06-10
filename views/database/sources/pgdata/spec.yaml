@@ -1,0 +1,129 @@
+# There's a core var called gid, but they're already indexed by gid
+# So we drop this one to avoid duplicates.
+excludes_core:
+  - gid
+
+# _y and _s columns have nulls for no grids without data, fill with zero
+nulls_to_zero:
+  - diamprim_y
+  - diamsec_y
+  - drug_y
+  - gem_y
+  - goldplacer_y
+  - goldsurface_y
+  - goldvein_y
+  - petroleum_y
+  - diamprim_s
+  - diamsec_s
+  - gem_s
+  - goldplacer_s
+  - goldsurface_s
+  - goldvein_s
+  - petroleum_s
+
+# Yearly data often stops early, fill it forward instead of zeroing
+# This ffilling happens before zeroing the nulls.
+cols_ffill:
+  - diamprim_y
+  - diamsec_y
+  - drug_y
+  - gem_y
+  - goldplacer_y
+  - goldsurface_y
+  - goldvein_y
+  - petroleum_y
+
+prefix: pgd
+public_tables:
+  pgy: pgdata.pgy
+cols_data:
+  - agri_gc
+  - agri_ih
+  - aquaveg_gc
+  - barren_gc
+  - barren_ih
+  - bdist3
+  - capdist
+  - cmr_mean
+  - diamprim # combined as max(_s, _y)
+  - diamsec # combined as max(_s, _y)
+  - drug_y
+  - excluded
+  - forest_gc
+  - forest_ih
+  - gcp_mer
+  - gem # combined as max(_s, _y)
+  - goldplacer # combined as max(_s, _y)
+  - goldsurface # combined as max(_s, _y)
+  - goldvein # combined as max(_s, _y)
+  - grass_ih
+  - gwarea
+  - harvarea
+  - herb_gc
+  - imr_mean
+  - irrig_sum
+  - landarea
+  - maincrop
+  - mountains_mean
+  - nlights_calib_mean
+  - pasture_ih
+  - petroleum # combined as max(_s, _y)
+  - pop_gpw_sum
+  - savanna_ih
+  - shrub_gc
+  - shrub_ih
+  - temp
+  - ttime_mean
+  - urban_gc
+  - urban_ih
+  - water_gc
+  - water_ih
+  # Following cols not used
+  # - bdist1
+  # - bdist2
+  # - cmr_max
+  # - cmr_min
+  # - cmr_sd
+  # - droughtcrop_speibase
+  # - droughtcrop_speigdm
+  # - droughtcrop_spi
+  # - droughtend_speibase
+  # - droughtend_speigdm
+  # - droughtend_spi
+  # - droughtstart_speibase
+  # - droughtstart_speigdm
+  # - droughtstart_spi
+  # - droughtyr_speibase
+  # - droughtyr_speigdm
+  # - droughtyr_spi
+  # - gcp_ppp
+  # - gcp_qual
+  # - growend
+  # - growstart
+  # - gwno
+  # - imr_max
+  # - imr_min
+  # - imr_sd
+  # - irrig_max
+  # - irrig_min
+  # - irrig_sd
+  # - nlights_max
+  # - nlights_mean
+  # - nlights_min
+  # - nlights_sd
+  # - pop_gpw_max
+  # - pop_gpw_min
+  # - pop_gpw_sd
+  # - pop_hyd_max
+  # - pop_hyd_min
+  # - pop_hyd_sd
+  # - pop_hyd_sum
+  # - prec_gpcc
+  # - prec_gpcp
+  # - rainseas
+  # - ttime_max
+  # - ttime_min
+  # - ttime_sd
+
+
+

@@ -4,17 +4,27 @@ Many functions assume data in the form of a pandas series or dataframe
 indexed by timevar as level 0 and groupvar as level 1.
 """
 
+import logging
+from typing import Any
+
+from scipy.spatial import cKDTree  # type: ignore
+import geopandas as gpd  # type: ignore
+import libpysal as lps  # type: ignore
 import numpy as np  # type: ignore
 import pandas as pd  # type: ignore
+
 from views.utils.data import check_has_multiindex
 
+# Fiona is extremely verbose in debug mode, set her to warning
+logging.getLogger("fiona").setLevel(logging.WARNING)
 
-def summ(df: pd.DataFrame) -> pd.DataFrame:
+
+def summ(df: pd.DataFrame) -> pd.Series:
     """ Return the row-wise sum of the dataframe """
     return df.sum(axis=1)
 
 
-def product(df: pd.DataFrame) -> pd.DataFrame:
+def product(df: pd.DataFrame) -> pd.Series:
     """ Return the row-wise product of the dataframe """
     return df.product(axis=1)
 
@@ -162,7 +172,7 @@ def cweq(s: pd.Series, value: float, seed=None) -> pd.Series:
     return y
 
 
-def time_since_previous_event(s, value=0, seed=None) -> pd.Series:
+def time_since(s, value=0, seed=None) -> pd.Series:
     """ time since event in s where event is value other than 0.
 
     In order to compute a variable like "time since previous conflict
@@ -231,3 +241,187 @@ def rollmax(s: pd.Series, window: int) -> pd.Series:
     )
 
     return y
+
+
+def onset_possible(s: pd.Series, window: int) -> pd.Series:
+    """ onset possible if no event occured in the preceeding window times
+
+
+    """
+    # fillna() is so that the first t in a group is always a possible onset
+    return (~rollmax(tlag(s, 1).fillna(0), window).astype(bool)).astype(int)
+
+
+def onset(s: pd.Series, window: int) -> pd.Series:
+    """ Compute onset
+
+    A row is defined as an onset if
+    * onset is possible
+    * s is greater than 0
+    """
+    s_onset_possible = (
+        onset_possible(s, window).astype(bool) & s.astype(bool)
+    ).astype(int)
+    return s_onset_possible
+
+
+def distance_to_event(
+    gdf: gpd.GeoDataFrame, col: str, k: int = 1, fill_value: int = 99
+) -> pd.Series:
+    """ Get spatial distance to event
+
+    Args:
+        gdf: GeoDataFrame with a multiindex like [time, group]  and
+            cols for centroid and col.
+        col: Name of col to count as event if == 1
+        k: Number of neighbors to consider
+        fill_value: When no events are found fill with this value
+    Returns:
+        dist: pd.Series of distance to event
+    """
+
+    # Index-only gdf to hold results
+    gdf_results = gdf[[]].copy()
+    gdf_results["distance"] = np.nan
+
+    times = sorted(list(set(gdf_results.index.get_level_values(0))))
+
+    # (x,y) coord pairs for all grids
+    points_canvas = np.array(
+        list(zip(gdf.loc[times[0]].centroid.x, gdf.loc[times[0]].centroid.y))
+    )
+
+    for t in times:
+        gdf_events_t = gdf.loc[t][gdf.loc[t][col] == 1]
+        points_events = np.array(
+            list(zip(gdf_events_t.centroid.x, gdf_events_t.centroid.y))
+        )
+        if len(points_events) > 0:
+            # Build the KDTree of the points
+            btree = cKDTree(data=points_events)  # pylint: disable=not-callable
+            # Find distance to closest k points, discard idx
+            dist, _ = btree.query(points_canvas, k=k)
+            # If more than one neighbor get the mean distance
+            if k > 1:
+                dist = np.mean(dist, axis=1)
+            gdf_results.loc[t, "distance"] = dist
+        else:
+            gdf_results.loc[t, "distance"] = fill_value
+
+    s = gdf_results["distance"]
+    return s
+
+
+# pylint: disable=too-many-locals
+def spacetime_distance_to_event(
+    gdf: gpd.GeoDataFrame,
+    col: str,
+    t_scale: int = 1,
+    k: int = 1,
+    fill_value: int = 99,
+) -> pd.Series:
+    """ Get space-time distance to event
+
+    The time dimension of the index (level=0) is used a third
+    dimension. Making the distance a space-time interval and
+    not just a spatial distance.
+
+    @TODO: Add time scaling to weight distance/time differently
+
+    Args:
+        gdf: GeoDataFrame with a multiindex like [time, group]  and
+            cols for centroid and col.
+        col: Name of col to count as event if == 1
+        k: Number of neighbors to consider, increasing k gives
+           more weight to clusters of events than exceptional blips.
+        fill_value: When no events are found fill with this value
+    Returns:
+        dist: pd.Series of distance to event
+
+    """
+    gdf_results = gdf[[]].copy()
+    gdf_results["distance"] = np.nan
+    times = sorted(list(set(gdf_results.index.get_level_values(0))))
+    xs = gdf.loc[times[0]].centroid.x
+    ys = gdf.loc[times[0]].centroid.y
+    len_a_t = len(gdf.loc[times[0]])
+
+    for t in times:
+        # Subset to look back in time
+        gdf_ts = gdf.loc[min(times) : t]
+        gdf_ts_events = gdf_ts[gdf_ts[col] > 0]
+
+        # Only compute distances if we have any events
+        if len(gdf_ts_events) > k:
+            points_all = np.array(
+                list(zip(xs, ys, np.repeat(t * t_scale, len_a_t)))
+            )
+            times_back = gdf_ts_events.index.get_level_values(0) * t_scale
+            points_events = np.array(
+                list(
+                    zip(
+                        gdf_ts_events.centroid.x,
+                        gdf_ts_events.centroid.y,
+                        times_back,
+                    )
+                )
+            )
+
+            btree = cKDTree(data=points_events)  # pylint: disable=not-callable
+            # Returns dist and idx, ignore idx
+            dist, _ = btree.query(points_all, k=k)
+
+            # if k>1 we get distance to each of k closest points, mean them
+            if k > 1:
+                dist = np.mean(dist, axis=1)
+
+        # If no events fill dist with fill_value
+        else:
+            dist = fill_value
+
+        gdf_results.loc[t, "distance"] = dist
+
+    s = gdf_results["distance"]
+
+    return s
+
+
+def spatial_lag(
+    gdf: gpd.GeoDataFrame, col: str, first: int = 1, last: int = 1
+) -> pd.Series:
+    """ Compute spatial lag on col in gdf """
+
+    def gdf_to_w_q(gdf_geom: gpd.GeoDataFrame, first: int, last: int) -> Any:
+        """ Build queen weights from gdf.
+
+        Use a temporary shapefile to get the geometry into pysal as
+        their new interface is confusing. There must be a less silly
+        way.
+        """
+        # Compute first order spatial weight
+        w = lps.weights.Queen.from_dataframe(gdf_geom, geom_col="geom")
+
+        # If we want higher order
+        if not first == last == 1:
+            w_ho = lps.weights.higher_order(w, first)
+
+            # loop from first to last order
+            for order in range(first + 1, last + 1):
+                w_this_order = lps.weights.higher_order(w, order)
+                w_ho = lps.weights.w_union(w_ho, w_this_order)
+
+            # Replace original w
+            w = w_ho
+
+        return w
+
+    def _splag(y: Any, w: Any) -> Any:
+        """ Flip argument order for transform """
+        return lps.weights.lag_spatial(w, y)
+
+    # @TODO: Add support for time-variant geometries (countries)
+    # If geom's don't change use the one from the last time
+    gdf_geom = gdf.loc[gdf.index.get_level_values(0).max()]
+    w = gdf_to_w_q(gdf_geom, first, last)
+    s = gdf.groupby(level=0)[col].transform(_splag, w=w)
+    return s

@@ -1,3 +1,21 @@
 """ Views applications """
-__all__ = ["evaluation", "model", "transforms"]
-from . import evaluation, model, transforms
+__all__ = [
+    "data",
+    "ensemble",
+    "evaluation",
+    "extras",
+    "model",
+    "pipeline",
+    "slurm",
+    "transforms",
+]
+from . import (
+    data,
+    ensemble,
+    evaluation,
+    extras,
+    model,
+    pipeline,
+    slurm,
+    transforms,
+)
