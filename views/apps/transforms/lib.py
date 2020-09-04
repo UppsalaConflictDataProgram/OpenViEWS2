@@ -233,21 +233,15 @@ def rollmax(s: pd.Series, window: int) -> pd.Series:
     """ Rolling max """
     check_has_multiindex(s)
     # See https://github.com/pandas-dev/pandas/issues/14013
-    y = (
-        s.groupby(level=1)
-        .rolling(window=window, min_periods=0)
-        .max()
-        .reset_index(level=0, drop=True)
+    y = s.groupby(level=1).apply(
+        lambda x: x.rolling(window=window, min_periods=0).max()
     )
 
     return y
 
 
 def onset_possible(s: pd.Series, window: int) -> pd.Series:
-    """ onset possible if no event occured in the preceeding window times
-
-
-    """
+    """onset possible if no event occured in the preceeding window times"""
     # fillna() is so that the first t in a group is always a possible onset
     return (~rollmax(tlag(s, 1).fillna(0), window).astype(bool)).astype(int)
 
