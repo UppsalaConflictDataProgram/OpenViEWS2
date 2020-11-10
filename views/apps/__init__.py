@@ -8,6 +8,7 @@ __all__ = [
     "pipeline",
     "slurm",
     "transforms",
+    "plot",
 ]
 from . import (
     data,
@@ -18,4 +19,5 @@ from . import (
     pipeline,
     slurm,
     transforms,
+    plot,
 )

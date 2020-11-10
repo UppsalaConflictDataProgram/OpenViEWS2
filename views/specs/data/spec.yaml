@@ -2800,6 +2800,10 @@ datasets:
     cols: *cols-pgm
 
 tables:
+  skeleton.m:
+    ids: ["month_id"]
+  skeleton.c:
+    ids: ["country_id"]
   skeleton.cm_africa:
     ids: ["year", "month_id", "country_id"]
   skeleton.cm_global:
@@ -2819,6 +2823,8 @@ tables:
     ids: ["year", "pg_id", "country_id"]
   skeleton.pgy_global:
     ids: ["year", "pg_id", "country_id"]
+  skeleton.pg_c:
+    ids: ["pg_id"]
 
   acled.cm:
     ids: *ids-cm

@@ -16,10 +16,8 @@ dependencies:
  - sqlalchemy # postgres io
  - ipython # interactive terminal
  - pyyaml # YAML IO
- - libpysal #
  - joblib # easier multiprocessing and a faster pickler
  - h5py # hdf5 file for dynasim aggregation
- - geopandas # geometry for python + map plotting
  - pylint == 2.4.4 # linting, freeze at 2.4.4 as 2.5 gave errors
  - beautifulsoup4 # Web scraping
  - lxml # parser for bs4
@@ -28,16 +26,23 @@ dependencies:
  - pyarrow # For Parquet IO in pandas
  - psutil # For physical core detection, thread's don't help dynasim
  - descartes # Basic Geopandas Plotting
+ - xlrd # Dependency pd.read_excel
+ - xlwt # For formatting (old) Excel files
+ - seaborn # Fancy plotting
  # These packages are only available from pip or have later versions there
  - pip:
    - black # Code formatting
-   - requests # read the web
-   - flake8 # Grumpy linter
-   - mypy # Type checking
-   - pytest # Testing
    - coverage # Test coverage report
+   - flake8 # Grumpy linter
    - geoalchemy2 # Geometry types for pushing geodataframes to postgres
-   - netcdf4 # SPEI loading
-   - sphinx # Docs
+   - geopandas
    - html5lib # Reign loader bs4 parser
-
+   - libpysal
+   - mypy # Type checking
+   - netcdf4 # SPEI loading
+   - pytest # Testing
+   - requests # read the web
+   - sphinx # Docs
+   - xgboost # pip has later versions than conda
+   - contextily
+   - pdpbox
