@@ -48,12 +48,11 @@ def refresh_datasets() -> None:
     datasets_to_update = [
         "cm_global_imp_0",
         "cm_africa_imp_0",
-        "pgm_global_imp_0",
         "pgm_africa_imp_0",
     ]
     for dataset_name in datasets_to_update:
         log.info(f"Started refreshing dataset {dataset_name}")
-        views.DATASETS[dataset_name].refresh()
+        views.DATASETS[dataset_name].refresh(do_transforms=False)
 
     log.info("Finished refreshing all imp_0 datasets.")
 
